@@ -40,20 +40,13 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo / Brand */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <span className="text-2xl" aria-hidden="true">🌿</span>
-            <div className="flex flex-col leading-tight">
-              <span
-                className="font-bold text-[#2D6A4F] text-sm md:text-base"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
-                NavCam Women
-              </span>
-              <span className="text-[#C9A84C] text-xs font-medium tracking-wide">
-                2026 Conference
-              </span>
-            </div>
+          {/* Logo */}
+          <Link href="/" className="flex items-center group">
+            <img
+              src="/nav_women_conference_2026_C.svg"
+              alt="Navigators National Women's Conference 2026"
+              className="h-10 md:h-12 w-auto rounded-md"
+            />
           </Link>
 
           {/* Desktop Nav Links */}
