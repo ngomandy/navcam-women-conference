@@ -32,12 +32,12 @@ const objectives = {
     'Challenge Nav women to use their talents and spiritual gifts for the glory of God at home, in the ministry and everywhere they are',
   ],
   fr: [
-    'Offrir aux femmes des occasions d\'approfondir leur foi et de connaître une croissance spirituelle et une expansion du ministère',
+    "Offrir aux femmes des occasions d'approfondir leur foi et de connaître une croissance spirituelle et une expansion du ministère",
     'Créer un environnement sûr où les femmes peuvent se sentir valorisées et estimées',
     'Répondre aux préoccupations profondes des femmes',
     'Construire des réseaux et des relations solides entre les femmes',
     'Encadrer les jeunes femmes, les adolescentes et les filles',
-    'Défier les femmes Navigateurs d\'utiliser leurs talents et dons spirituels pour la gloire de Dieu à la maison, dans le ministère et partout où elles sont',
+    "Défier les femmes Navigateurs d'utiliser leurs talents et dons spirituels pour la gloire de Dieu à la maison, dans le ministère et partout où elles sont",
   ],
 }
 
@@ -45,9 +45,29 @@ const pillars = [
   { icon: '🙏', en: 'Prayer Networks', fr: 'Réseaux de Prière' },
   { icon: '🤝', en: 'Mentoring', fr: 'Mentorat' },
   { icon: '💞', en: 'Relational Ministry', fr: 'Ministère Relationnel' },
-  { icon: '🌍', en: 'Gospel Advance', fr: 'Avancement de l\'Évangile' },
+  { icon: '🌍', en: "Gospel Advance", fr: "Avancement de l'Évangile" },
   { icon: '👩‍👧', en: 'Generational Discipleship', fr: 'Discipulat Intergénérationnel' },
   { icon: '✨', en: 'Spiritual Gift Development', fr: 'Développement des Dons' },
+]
+
+const leaders = [
+  { name: 'Taniform Mary', titleEn: "National Director's Wife", titleFr: 'Épouse du Directeur National', photo: '/leaders/taniform-mary.jpeg', featured: true },
+  { name: 'Bangkolo Ernestine', titleEn: "National Women's Leader", titleFr: 'Responsable Nationale des Femmes', photo: '/leaders/bangkolo-ernestine.jpeg', featured: true },
+  { name: 'Assoumou Emerance', titleEn: 'Adamawa Leader', titleFr: 'Responsable Adamaoua', photo: '/leaders/assoumou-emerance.jpeg', featured: false },
+  { name: 'Boade Prisca', titleEn: 'Leader - Centre', titleFr: 'Responsable - Centre', photo: '/leaders/boade-prisca.jpeg', featured: false },
+  { name: 'Chopou Doris', titleEn: 'Leader - North West', titleFr: 'Responsable - Nord-Ouest', photo: '/leaders/chopou-doris.jpeg', featured: false },
+  { name: 'Ekom Rachel', titleEn: 'Leader - South West', titleFr: 'Responsable - Sud-Ouest', photo: '/leaders/ekom-rachel.jpeg', featured: false },
+  { name: 'Essimbi Tatiana', titleEn: 'Leader - East', titleFr: 'Responsable - Est', photo: '/leaders/essimbi-tatiana.jpeg', featured: false },
+  { name: 'Gima Stella', titleEn: 'Leader - North', titleFr: 'Responsable - Nord', photo: '/leaders/gima-stella.jpeg', featured: false },
+  { name: 'Kum Rabiatou', titleEn: 'Leader - West', titleFr: 'Responsable - Ouest', photo: '/leaders/kum-rabiatou.jpeg', featured: false },
+  { name: 'Megnimo Alice', titleEn: 'Leader - Centre', titleFr: 'Responsable - Centre', photo: '/leaders/megnimo-alice.jpeg', featured: false },
+  { name: 'Ndangang Sirri', titleEn: 'Leader - South West', titleFr: 'Responsable - Sud-Ouest', photo: '/leaders/ndangang-sirri.jpeg', featured: false },
+  { name: 'Ntchuissi Christelle', titleEn: 'Leader - Centre', titleFr: 'Responsable - Centre', photo: '/leaders/ntchuissi-christelle.jpeg', featured: false },
+  { name: 'Obona Sherelle', titleEn: 'Leader - Littoral', titleFr: 'Responsable - Littoral', photo: '/leaders/obona-sherelle.jpeg', featured: false },
+  { name: 'Ofon Christabel', titleEn: 'Leader - South West', titleFr: 'Responsable - Sud-Ouest', photo: '/leaders/ofon-christabel.jpeg', featured: false },
+  { name: 'Souga Solange', titleEn: 'Leader - Centre', titleFr: 'Responsable - Centre', photo: '/leaders/souga-solange.jpeg', featured: false },
+  { name: 'Tambeline Claris', titleEn: 'Leader - Littoral', titleFr: 'Responsable - Littoral', photo: '/leaders/tambeline-claris.jpeg', featured: false },
+  { name: 'Yuniwo Rose', titleEn: 'Leader - Centre', titleFr: 'Responsable - Centre', photo: '/leaders/yuniwo-rose.jpeg', featured: false },
 ]
 
 export default function AboutPage() {
@@ -84,7 +104,6 @@ export default function AboutPage() {
       <section className="py-20 bg-[#FDF6EC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Text */}
             <div>
               <p className="text-[#C9A84C] text-sm font-semibold uppercase tracking-widest mb-2">
                 {lang === 'en' ? 'Our Vision' : 'Notre Vision'}
@@ -95,17 +114,16 @@ export default function AboutPage() {
               <div className="w-14 h-0.5 bg-[#C9A84C] mb-6" />
               <p className="text-gray-600 leading-relaxed mb-4">
                 {lang === 'en'
-                  ? 'Our vision as a Navigator women\'s ministry is to model a life of discipleship in all the diverse roles we play as women. This means that we seek to be disciple housewives, mothers, cooks, career women, students... and to reproduce ourselves in the lives of other women who will do the same.'
-                  : 'Notre vision en tant que ministère des femmes Navigateurs est de modéliser une vie de discipulat dans tous les rôles divers que nous jouons en tant que femmes. Cela signifie que nous cherchons à être des femmes au foyer, mères, cuisinières, femmes de carrière, étudiantes disciples... et à nous reproduire dans la vie d\'autres femmes qui feront de même.'}
+                  ? "Our vision as a Navigator women's ministry is to model a life of discipleship in all the diverse roles we play as women. This means that we seek to be disciple housewives, mothers, cooks, career women, students... and to reproduce ourselves in the lives of other women who will do the same."
+                  : "Notre vision en tant que ministère des femmes Navigateurs est de modéliser une vie de discipulat dans tous les rôles divers que nous jouons en tant que femmes. Cela signifie que nous cherchons à être des femmes au foyer, mères, cuisinières, femmes de carrière, étudiantes disciples... et à nous reproduire dans la vie d'autres femmes qui feront de même."}
               </p>
               <p className="text-gray-600 leading-relaxed">
                 {lang === 'en'
-                  ? 'We challenge and encourage women to trust and know God to the utmost and to rise above their circumstances as they raise God-fearing physical and spiritual generations of laborers.'
-                  : 'Nous défions et encourageons les femmes à faire confiance à Dieu et à Le connaître au maximum, et à s\'élever au-dessus de leurs circonstances tout en élevant des générations physiques et spirituelles d\'ouvriers craignant Dieu.'}
+                  ? "We challenge and encourage women to trust and know God to the utmost and to rise above their circumstances as they raise God-fearing physical and spiritual generations of laborers."
+                  : "Nous défions et encourageons les femmes à faire confiance à Dieu et à Le connaître au maximum, et à s'élever au-dessus de leurs circonstances tout en élevant des générations physiques et spirituelles d'ouvriers craignant Dieu."}
               </p>
             </div>
 
-            {/* Pillars */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
               {pillars.map((p, i) => (
                 <div key={i} className="bg-white rounded-2xl p-5 text-center shadow-sm border border-[#74C69D]/20 hover:shadow-md hover:-translate-y-1 transition-all">
@@ -132,14 +150,13 @@ export default function AboutPage() {
             </h2>
             <p className="text-gray-500 max-w-xl mx-auto">
               {lang === 'en'
-                ? 'Beside the Navigators\' promises, we hold these scriptures as foundational to our women\'s ministry.'
-                : 'En plus des promesses des Navigateurs, nous tenons ces Écritures comme fondamentales pour notre ministère des femmes.'}
+                ? "Beside the Navigators' promises, we hold these scriptures as foundational to our women's ministry."
+                : "En plus des promesses des Navigateurs, nous tenons ces Écritures comme fondamentales pour notre ministère des femmes."}
             </p>
             <div className="w-16 h-0.5 bg-[#C9848A] mx-auto mt-4" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {/* Promise 1 */}
             <div className="relative bg-gradient-to-br from-[#2D6A4F] to-[#1B3A5C] rounded-3xl p-8 text-white overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
               <div className="relative z-10">
@@ -155,7 +172,6 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Promise 2 */}
             <div className="relative bg-gradient-to-br from-[#C9848A] to-[#9B5F65] rounded-3xl p-8 text-white overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
               <div className="relative z-10">
@@ -200,6 +216,70 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* ── MEET THE TEAM ── */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <p className="text-[#C9A84C] text-sm font-semibold uppercase tracking-widest mb-2">
+              {lang === 'en' ? 'Our Team' : 'Notre Équipe'}
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#1B3A5C] mb-3" style={{ fontFamily: "'Playfair Display', serif" }}>
+              {lang === 'en' ? 'Meet the Ministry Leaders' : 'Rencontrez les Responsables du Ministère'}
+            </h2>
+            <div className="w-16 h-0.5 bg-[#C9A84C] mx-auto mt-4" />
+          </div>
+
+          {/* Featured leaders — Taniform Mary & Bangkolo Ernestine */}
+          <div className="flex flex-col sm:flex-row justify-center gap-8 mb-12">
+            {leaders.filter((l) => l.featured).map((leader, i) => (
+              <div key={i} className="flex flex-col items-center text-center">
+                <div className="relative mb-4">
+                  <div className="w-36 h-36 rounded-full overflow-hidden border-4 border-[#C9A84C] shadow-xl">
+                    <img
+                      src={leader.photo}
+                      alt={leader.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  {i === 0 && (
+                    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-[#C9A84C] text-white text-xs font-bold px-3 py-0.5 rounded-full whitespace-nowrap shadow">
+                      {lang === 'en' ? '⭐ Guest of Honour' : '⭐ Invitée d\'Honneur'}
+                    </div>
+                  )}
+                </div>
+                <h3 className="font-bold text-[#1B3A5C] text-base mt-3" style={{ fontFamily: "'Playfair Display', serif" }}>
+                  {leader.name}
+                </h3>
+                <p className="text-[#2D6A4F] text-sm font-medium mt-0.5">
+                  {lang === 'en' ? leader.titleEn : leader.titleFr}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Remaining leaders — alphabetical grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
+            {leaders.filter((l) => !l.featured).map((leader, i) => (
+              <div key={i} className="flex flex-col items-center text-center group">
+                <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-[#74C69D]/40 shadow-md group-hover:border-[#C9A84C] group-hover:shadow-lg transition-all mb-3">
+                  <img
+                    src={leader.photo}
+                    alt={leader.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 className="font-semibold text-[#1B3A5C] text-xs leading-tight">
+                  {leader.name}
+                </h3>
+                <p className="text-[#C9A84C] text-xs mt-0.5 leading-tight">
+                  {lang === 'en' ? leader.titleEn : leader.titleFr}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── CLOSING QUOTE ── */}
       <section className="py-20 bg-gradient-to-br from-[#2D6A4F] to-[#1B3A5C] relative overflow-hidden">
         <VinePattern />
@@ -214,7 +294,7 @@ export default function AboutPage() {
               : '"À travers ces aspects, nous désirons utiliser les attributs donnés par Dieu aux femmes pour faire avancer l\'Évangile de Jésus et Son Royaume dans les nations à travers des générations spirituelles d\'ouvriers vivant et discipulant parmi les perdus."'}
           </blockquote>
           <p className="text-[#C9A84C] text-sm font-semibold uppercase tracking-widest">
-            {lang === 'en' ? 'Navigators Cameroon — Women\'s Ministry' : 'Navigateurs Cameroun — Ministère des Femmes'}
+            {lang === 'en' ? "Navigators Cameroon — Women's Ministry" : 'Navigateurs Cameroun — Ministère des Femmes'}
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/register" className="inline-flex items-center gap-2 px-8 py-4 bg-[#C9A84C] hover:bg-[#B8963A] text-white font-bold rounded-full transition-all shadow-lg hover:-translate-y-0.5">
