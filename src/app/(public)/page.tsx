@@ -74,26 +74,10 @@ function VinePattern() {
     >
       <defs>
         <pattern id="vines" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse">
-          <path
-            d="M60 10 Q80 30 60 60 Q40 30 60 10Z"
-            fill="#74C69D"
-            opacity="0.6"
-          />
-          <path
-            d="M10 60 Q30 40 60 60 Q30 80 10 60Z"
-            fill="#74C69D"
-            opacity="0.4"
-          />
-          <path
-            d="M110 60 Q90 40 60 60 Q90 80 110 60Z"
-            fill="#74C69D"
-            opacity="0.4"
-          />
-          <path
-            d="M60 110 Q80 90 60 60 Q40 90 60 110Z"
-            fill="#74C69D"
-            opacity="0.5"
-          />
+          <path d="M60 10 Q80 30 60 60 Q40 30 60 10Z" fill="#74C69D" opacity="0.6" />
+          <path d="M10 60 Q30 40 60 60 Q30 80 10 60Z" fill="#74C69D" opacity="0.4" />
+          <path d="M110 60 Q90 40 60 60 Q90 80 110 60Z" fill="#74C69D" opacity="0.4" />
+          <path d="M60 110 Q80 90 60 60 Q40 90 60 110Z" fill="#74C69D" opacity="0.5" />
           <circle cx="60" cy="60" r="3" fill="#C9A84C" opacity="0.8" />
           <line x1="60" y1="10" x2="60" y2="110" stroke="#74C69D" strokeWidth="1" opacity="0.3" />
           <line x1="10" y1="60" x2="110" y2="60" stroke="#74C69D" strokeWidth="1" opacity="0.3" />
@@ -190,11 +174,11 @@ export default function HomePage() {
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             {lang === 'en'
-              ? 'Navigators National Women\'s Conference'
+              ? "Navigators National Women's Conference"
               : 'Conférence Nationale des Femmes Navigateurs'}
           </h1>
 
-          {/* Theme */}
+          {/* Theme & Full Verse */}
           <div className="my-6">
             <p
               className="text-xl sm:text-2xl md:text-3xl text-[#F4C2C2] italic font-light"
@@ -202,9 +186,16 @@ export default function HomePage() {
             >
               &ldquo;{t.conference.theme}&rdquo;
             </p>
-            <p className="text-[#C9A84C] text-sm mt-2 font-medium">
-              — {t.conference.scripture}
-            </p>
+            <div className="mt-4 max-w-2xl mx-auto bg-white/5 border border-white/10 rounded-2xl px-6 py-4 backdrop-blur-sm">
+              <p className="text-white/85 text-sm sm:text-base italic leading-relaxed" style={{ fontFamily: "'Playfair Display', serif" }}>
+                {lang === 'en'
+                  ? '“I am the vine; you are the branches. If you remain in me and I in you, this is to my Father’s glory, that you bear much fruit, showing yourselves to be my disciples.”'
+                  : '“Je suis le cep ; vous êtes les sarments. Si quelqu’un demeure en moi et si je demeure en lui, il porte beaucoup de fruit. C’est en ceci que mon Père est glorifié : que vous portiez beaucoup de fruit, et que vous soyez ainsi mes disciples.”'}
+              </p>
+              <p className="text-[#C9A84C] text-sm mt-2 font-semibold">
+                — {t.conference.scripture}
+              </p>
+            </div>
           </div>
 
           {/* Event Details */}
@@ -243,10 +234,7 @@ export default function HomePage() {
         {/* Wave divider */}
         <div className="absolute bottom-0 left-0 right-0">
           <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M0 30 C360 60 1080 0 1440 30 L1440 60 L0 60 Z"
-              fill="#FDF6EC"
-            />
+            <path d="M0 30 C360 60 1080 0 1440 30 L1440 60 L0 60 Z" fill="#FDF6EC" />
           </svg>
         </div>
       </section>
@@ -274,7 +262,7 @@ export default function HomePage() {
             <p className="text-gray-600 text-lg leading-relaxed">
               {lang === 'en'
                 ? 'Welcome to a gathering of women rooted in faith, sisterhood, and purpose. This conference is a sacred space for every woman to encounter Christ deeply, be healed, and be equipped to carry lasting fruit into her world.'
-                : 'Bienvenue à un rassemblement de femmes enracinées dans la foi, la sororité et le but. Cette conférence est un espace sacré pour chaque femme pour rencontrer Christ profondément, être guérie et être équipée pour porter des fruits durables dans son monde.'}
+                : "Bienvenue à un rassemblement de femmes enracinées dans la foi, la sororité et le but. Cette conférence est un espace sacré pour chaque femme pour rencontrer Christ profondément, être guérie et être équipée pour porter des fruits durables dans son monde."}
             </p>
           </div>
 
@@ -326,24 +314,19 @@ export default function HomePage() {
 
           {/* Timeline */}
           <div className="relative">
-            {/* Connecting line for desktop */}
             <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-[#74C69D]/30 -translate-y-1/2" />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-0 relative">
               {dayThemes.map((day, i) => (
                 <div key={i} className="relative flex lg:flex-col items-start lg:items-center gap-4 lg:gap-0">
-                  {/* Connector line for mobile */}
                   {i < dayThemes.length - 1 && (
                     <div className="lg:hidden absolute left-6 top-12 w-0.5 h-full bg-[#74C69D]/30 -z-0" />
                   )}
-
-                  {/* Icon Circle */}
                   <div
                     className={`relative z-10 w-12 h-12 lg:w-14 lg:h-14 ${day.color} rounded-full flex items-center justify-center text-xl shadow-md flex-shrink-0 lg:mb-4`}
                   >
                     {day.icon}
                   </div>
-
                   <div className="lg:text-center">
                     <div className="text-xs font-bold text-[#C9A84C] mb-0.5">{day.day}</div>
                     <div className="text-xs text-gray-400 mb-1">{day.date}</div>
@@ -406,9 +389,7 @@ export default function HomePage() {
                 >
                   {fee.type}
                 </h3>
-                <p
-                  className={`text-2xl font-bold mb-1 ${fee.highlight ? 'text-[#F0D080]' : 'text-[#2D6A4F]'}`}
-                >
+                <p className={`text-2xl font-bold mb-1 ${fee.highlight ? 'text-[#F0D080]' : 'text-[#2D6A4F]'}`}>
                   {formatCurrency(fee.amount)}
                 </p>
                 <p className={`text-xs ${fee.highlight ? 'text-[#74C69D]' : 'text-gray-400'}`}>
