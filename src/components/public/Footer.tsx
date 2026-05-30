@@ -68,10 +68,13 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2">
               {[
-                { href: '/', label: t.nav.home },
+                { href: '/about',    label: t.nav.about },
                 { href: '/schedule', label: t.nav.schedule },
+                { href: '/venue',    label: t.nav.venue },
+                { href: '/2025',     label: t.nav.pastEdition },
+                { href: '/fees',     label: t.nav.fees },
                 { href: '/register', label: t.nav.register },
-                { href: '/fees', label: t.nav.fees },
+                { href: '/donate',   label: t.nav.donate },
               ].map((link) => (
                 <li key={link.href}>
                   <Link

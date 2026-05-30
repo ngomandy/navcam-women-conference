@@ -10,7 +10,17 @@ import { AnimatedCounter } from '@/components/public/AnimatedCounter'
 const PHOTOS = Array.from({ length: 36 }, (_, i) => `/2025conf/conf-${String(i + 1).padStart(2, '0')}.jpg`)
 
 // ── Videos ────────────────────────────────────────────────────────────────────
-const VIDEOS = Array.from({ length: 9 }, (_, i) => `/2025conf/video-${String(i + 1).padStart(2, '0')}.mp4`)
+const VIDEOS = [
+  { src: '/2025conf/video-01.mp4', poster: '/2025conf/conf-01.jpg' },
+  { src: '/2025conf/video-02.mp4', poster: '/2025conf/conf-07.jpg' },
+  { src: '/2025conf/video-03.mp4', poster: '/2025conf/conf-10.jpg' },
+  { src: '/2025conf/video-04.mp4', poster: '/2025conf/conf-14.jpg' },
+  { src: '/2025conf/video-05.mp4', poster: '/2025conf/conf-18.jpg' },
+  { src: '/2025conf/video-06.mp4', poster: '/2025conf/conf-22.jpg' },
+  { src: '/2025conf/video-07.mp4', poster: '/2025conf/conf-27.jpg' },
+  { src: '/2025conf/video-08.mp4', poster: '/2025conf/conf-31.jpg' },
+  { src: '/2025conf/video-09.mp4', poster: '/2025conf/conf-36.jpg' },
+]
 
 // ── Report excerpts ───────────────────────────────────────────────────────────
 const EXCERPTS = [
@@ -419,11 +429,12 @@ export default function Edition2025Page() {
           </ScrollReveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {VIDEOS.map((src, i) => (
+            {VIDEOS.map((video, i) => (
               <ScrollReveal key={i} delay={(i % 3) * 100}>
                 <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-[#74C69D]/20">
                   <video
-                    src={src}
+                    src={video.src}
+                    poster={video.poster}
                     controls
                     preload="none"
                     playsInline

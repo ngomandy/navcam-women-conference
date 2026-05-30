@@ -69,6 +69,9 @@ const leaders = [
   { name: 'Souga Solange', titleEn: 'Leader - Centre', titleFr: 'Leader - Centre', photo: '/leaders/souga-solange.jpeg', featured: false },
   { name: 'Tambeline Claris', titleEn: 'Leader - Littoral', titleFr: 'Leader - Littoral', photo: '/leaders/tambeline-claris.jpeg', featured: false },
   { name: 'Yuniwo Rose', titleEn: 'Leader - Centre', titleFr: 'Leader - Centre', photo: '/leaders/yuniwo-rose.jpeg', featured: false },
+  { name: 'Ribouem Christelle', titleEn: 'Leader - Littoral', titleFr: 'Leader - Littoral', photo: '/leaders/ribouem-christelle.jpeg', featured: false },
+  { name: 'Bekolle Martine', titleEn: 'Leader - Littoral', titleFr: 'Leader - Littoral', photo: '/leaders/bekolle-martine.jpeg', featured: false },
+  { name: 'Wounba Joelle-Katy', titleEn: 'Leader - Centre', titleFr: 'Leader - Centre', photo: '/leaders/wounba-joelle-katy.jpeg', featured: false },
 ]
 
 export default function AboutPage() {
