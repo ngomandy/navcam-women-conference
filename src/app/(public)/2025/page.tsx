@@ -9,6 +9,9 @@ import { AnimatedCounter } from '@/components/public/AnimatedCounter'
 // ── Photos ────────────────────────────────────────────────────────────────────
 const PHOTOS = Array.from({ length: 36 }, (_, i) => `/2025conf/conf-${String(i + 1).padStart(2, '0')}.jpg`)
 
+// ── Videos ────────────────────────────────────────────────────────────────────
+const VIDEOS = Array.from({ length: 9 }, (_, i) => `/2025conf/video-${String(i + 1).padStart(2, '0')}.mp4`)
+
 // ── Report excerpts ───────────────────────────────────────────────────────────
 const EXCERPTS = [
   {
@@ -393,6 +396,52 @@ export default function Edition2025Page() {
           >›</button>
         </div>
       )}
+
+      {/* ── VIDEO GALLERY ────────────────────────────────────────────────── */}
+      <section className="py-16 bg-[#FDF6EC]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="text-center mb-10">
+              <p className="text-[#2D6A4F] text-sm font-semibold uppercase tracking-widest mb-2">
+                {lang === 'en' ? 'In Motion' : 'En Mouvement'}
+              </p>
+              <h2
+                className="text-3xl font-bold text-[#1B3A5C]"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
+                {lang === 'en' ? 'Conference Videos' : 'Vidéos de la Conférence'}
+              </h2>
+              <p className="text-gray-400 text-sm mt-2">
+                {lang === 'en' ? `${VIDEOS.length} clips` : `${VIDEOS.length} clips`}
+              </p>
+              <div className="w-14 h-0.5 bg-[#2D6A4F] mx-auto mt-4" />
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {VIDEOS.map((src, i) => (
+              <ScrollReveal key={i} delay={(i % 3) * 100}>
+                <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-[#74C69D]/20">
+                  <video
+                    src={src}
+                    controls
+                    preload="none"
+                    playsInline
+                    className="w-full aspect-video object-cover bg-[#0D1F2D]"
+                    aria-label={`${lang === 'en' ? 'Conference video' : 'Vidéo de la conférence'} ${i + 1}`}
+                  />
+                  <div className="px-4 py-2.5 flex items-center gap-2">
+                    <span className="text-[#2D6A4F]">🎬</span>
+                    <p className="text-[#1B3A5C] text-sm font-medium">
+                      {lang === 'en' ? `Clip ${i + 1}` : `Clip ${i + 1}`}
+                    </p>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ── BOTTOM CTA ───────────────────────────────────────────────────── */}
       <section className="py-16 bg-gradient-to-br from-[#2D6A4F] to-[#1B3A5C] text-center relative overflow-hidden">
