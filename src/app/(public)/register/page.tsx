@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useLanguage } from '@/components/LanguageContext'
 import { formatCurrency } from '@/lib/utils'
+import { ShareButtons } from '@/components/public/ShareButtons'
 
 interface ChildAge {
   age: string
@@ -165,7 +166,7 @@ export default function RegisterPage() {
             {t.register.successTitle}
           </h2>
           <p className="text-gray-600 mb-6">{t.register.successMessage}</p>
-          <div className="bg-[#2D6A4F]/5 rounded-xl p-4 text-sm text-[#2D6A4F]">
+          <div className="bg-[#2D6A4F]/5 rounded-xl p-4 text-sm text-[#2D6A4F] mb-6">
             <p className="font-semibold">{form.firstName} {form.lastName}</p>
             <p className="text-gray-500 mt-1">
               {registrationOptions.find((o) => o.value === form.registrationType)?.label}
@@ -173,6 +174,12 @@ export default function RegisterPage() {
             <p className="text-[#C9A84C] font-bold mt-1">
               {formatCurrency(FEES[form.registrationType])}
             </p>
+          </div>
+          <p className="text-sm text-gray-500 mb-3">
+            {lang === 'en' ? 'Spread the word!' : 'Partagez la nouvelle !'}
+          </p>
+          <div className="flex justify-center">
+            <ShareButtons theme="light" />
           </div>
         </div>
       </div>

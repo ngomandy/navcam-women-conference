@@ -325,6 +325,12 @@ export default function SchedulePage() {
           </h1>
           <p className="text-[#74C69D] text-lg">{t.schedule.subtitle}</p>
           <p className="text-[#C9A84C] text-sm mt-2">{t.conference.dates} • {t.conference.venue}</p>
+          <button
+            onClick={() => window.print()}
+            className="no-print mt-4 inline-flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 text-white text-sm font-medium rounded-full border border-white/20 transition-all"
+          >
+            🖨️ {lang === 'en' ? 'Print Schedule' : 'Imprimer le Programme'}
+          </button>
         </div>
       </div>
 
@@ -416,7 +422,7 @@ export default function SchedulePage() {
         </div>
 
         {/* Legend */}
-        <div className="mt-8 p-4 bg-white rounded-2xl border border-[#74C69D]/20">
+        <div className="no-print mt-8 p-4 bg-white rounded-2xl border border-[#74C69D]/20">
           <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">
             {lang === 'en' ? 'Session Types' : 'Types de Sessions'}
           </p>
@@ -428,6 +434,40 @@ export default function SchedulePage() {
             ))}
           </div>
         </div>
+      </div>
+
+      {/* ── PRINT-ONLY: all 5 days ────────────────────────────────────────── */}
+      <div className="print-only hidden px-8 pb-8">
+        <div className="text-center mb-6">
+          <h1 className="text-2xl font-bold">
+            {lang === 'en' ? "2026 Navigators National Women's Conference" : 'Conférence Nationale des Femmes Navigateurs 2026'}
+          </h1>
+          <p className="text-sm text-gray-500 mt-1">{t.conference.dates} · {t.conference.venue}</p>
+        </div>
+        {fullScheduleData.map((day) => (
+          <div key={day.day} className="print-day">
+            <h2>
+              {lang === 'en'
+                ? `Day ${day.day} — ${day.date.en} · ${day.theme.en}`
+                : `Jour ${day.day} — ${day.date.fr} · ${day.theme.fr}`}
+            </h2>
+            {day.blocks.map((block, bi) => (
+              <div key={bi} className="print-block">
+                <span className="print-time">{block.time}</span>
+                <div>
+                  <span className="print-title">
+                    {lang === 'en' ? block.title.en : block.title.fr}
+                  </span>
+                  {block.items && (
+                    <span className="text-gray-500 text-xs">
+                      {' '}— {block.items[lang].join(' · ')}
+                    </span>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        ))}
       </div>
     </div>
   )

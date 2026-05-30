@@ -7,6 +7,10 @@ import { formatCurrency } from '@/lib/utils'
 import { FloatingLeaves } from '@/components/public/FloatingLeaves'
 import { ScrollReveal } from '@/components/public/ScrollReveal'
 import { AnimatedCounter } from '@/components/public/AnimatedCounter'
+import { ScriptureHighlight } from '@/components/public/ScriptureHighlight'
+import { RegistrationProgress } from '@/components/public/RegistrationProgress'
+import { ShareButtons } from '@/components/public/ShareButtons'
+import { NewsletterSignup } from '@/components/public/NewsletterSignup'
 
 // ─── TESTIMONIALS ────────────────────────────────────────────────────────────
 const testimonials = [
@@ -567,6 +571,9 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ========== SCRIPTURE HIGHLIGHT ========== */}
+      <ScriptureHighlight />
+
       {/* ========== TESTIMONIALS ========== */}
       <TestimonialsSection />
 
@@ -621,7 +628,11 @@ export default function HomePage() {
             ))}
           </div>
 
-          <div className="text-center mt-8">
+          <div className="max-w-4xl mx-auto mt-8">
+            <RegistrationProgress />
+          </div>
+
+          <div className="text-center mt-6">
             <Link
               href="/fees"
               className="inline-flex items-center gap-2 text-[#2D6A4F] hover:text-[#40916C] font-semibold text-sm underline underline-offset-4"
@@ -630,6 +641,29 @@ export default function HomePage() {
               <span>→</span>
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* ========== NEWSLETTER ========== */}
+      <section className="py-16 bg-gradient-to-br from-[#FDF6EC] to-[#F4C2C2]/30">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+          <ScrollReveal>
+            <p className="text-[#C9848A] text-sm font-semibold uppercase tracking-widest mb-2">
+              {lang === 'en' ? 'Stay Informed' : 'Restez Informée'}
+            </p>
+            <h2
+              className="text-2xl sm:text-3xl font-bold text-[#1B3A5C] mb-3"
+              style={{ fontFamily: "'Playfair Display', serif" }}
+            >
+              {lang === 'en' ? "Not Ready to Register Yet?" : 'Pas encore prête à vous inscrire ?'}
+            </h2>
+            <p className="text-gray-500 text-sm mb-8 max-w-md mx-auto">
+              {lang === 'en'
+                ? 'Leave your email and we will keep you updated on all conference news, reminders, and updates.'
+                : 'Laissez votre email et nous vous tiendrons informée de toutes les actualités, rappels et mises à jour de la conférence.'}
+            </p>
+            <NewsletterSignup />
+          </ScrollReveal>
         </div>
       </section>
 
@@ -661,6 +695,9 @@ export default function HomePage() {
             {t.hero.cta}
             <span>🌿</span>
           </Link>
+          <div className="mt-8 flex justify-center">
+            <ShareButtons />
+          </div>
         </div>
       </section>
     </div>
