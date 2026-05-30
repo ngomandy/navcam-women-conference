@@ -63,7 +63,14 @@ export async function POST(req: Request) {
       },
     })
 
-    // Temporarily awaited to surface any Sheets errors
+    const sheetsEnv = {
+      hasSheetId: !!process.env.GOOGLE_SHEET_ID,
+      hasEmail: !!process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+      hasKey: !!process.env.GOOGLE_PRIVATE_KEY,
+      sheetIdPreview: process.env.GOOGLE_SHEET_ID?.substring(0, 15) ?? 'MISSING',
+    }
+
+    let sheetsResult = 'skipped'
     try {
       await appendRegistrationToSheet({
         firstName: attendee.firstName,
@@ -80,16 +87,16 @@ export async function POST(req: Request) {
         language: attendee.language,
         notes: attendee.notes,
       })
+      sheetsResult = 'ok'
     } catch (sheetsErr) {
-      const msg = sheetsErr instanceof Error ? sheetsErr.message : String(sheetsErr)
-      console.error('[Sheets error]', sheetsErr)
-      return NextResponse.json({ success: true, id: attendee.id, sheetsError: msg }, { status: 200 })
+      sheetsResult = sheetsErr instanceof Error ? sheetsErr.message : String(sheetsErr)
     }
 
     return NextResponse.json({
       success: true,
       id: attendee.id,
       message: 'Registration submitted successfully',
+      _sheets: { ...sheetsEnv, result: sheetsResult },
     })
   } catch (error) {
     console.error('Registration error:', error)
