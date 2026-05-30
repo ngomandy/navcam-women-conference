@@ -448,9 +448,9 @@ export default function HomePage() {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
               {[
                 { value: 5,   suffix: '',  icon: '📅', labelEn: 'Days',                labelFr: 'Jours' },
-                { value: 17,  suffix: '',  icon: '👑', labelEn: 'Women Leaders',        labelFr: 'Femmes Leaders' },
+                { value: 20,  suffix: '',  icon: '👑', labelEn: 'Women Leaders',        labelFr: 'Femmes Leaders' },
                 { value: 100, suffix: '+', icon: '🌿', labelEn: 'Women Expected',       labelFr: 'Femmes Attendues' },
-                { value: 10,  suffix: '',  icon: '🌍', labelEn: 'Regions Represented',  labelFr: 'Régions Représentées' },
+                { value: 9,   suffix: '',  icon: '🌍', labelEn: 'Regions Represented',  labelFr: 'Régions Représentées' },
               ].map((stat, i) => (
                 <div key={i}>
                   <div className="text-2xl mb-2">{stat.icon}</div>
