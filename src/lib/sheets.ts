@@ -1,5 +1,3 @@
-import { google } from 'googleapis'
-
 interface RegistrationRow {
   firstName: string
   lastName: string
@@ -34,27 +32,21 @@ const HEADERS = [
   'Status',
 ]
 
-function getClient() {
-  const email = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL
-  const key = process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n')
-
-  if (!email || !key) return null
-
-  return new google.auth.JWT({
-    email,
-    key,
-    scopes: ['https://www.googleapis.com/auth/spreadsheets'],
-  })
-}
-
 export async function appendRegistrationToSheet(data: RegistrationRow): Promise<void> {
   const sheetId = process.env.GOOGLE_SHEET_ID
-  const auth = getClient()
+  const email = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL
+  const rawKey = process.env.GOOGLE_PRIVATE_KEY
 
-  if (!sheetId || !auth) {
-    // Credentials not configured — skip silently
-    return
-  }
+  if (!sheetId || !email || !rawKey) return
+
+  // Dynamic import — keeps googleapis out of the Next.js bundle entirely
+  const { google } = await import('googleapis')
+
+  const auth = new google.auth.JWT({
+    email,
+    key: rawKey.replace(/\\n/g, '\n'),
+    scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+  })
 
   const sheets = google.sheets({ version: 'v4', auth })
 
