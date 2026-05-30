@@ -42,26 +42,33 @@ export async function POST(req: Request) {
       }
     }
 
-    const attendee = await prisma.attendee.create({
-      data: {
-        firstName: firstName.trim(),
-        lastName: lastName.trim(),
-        email: email?.trim() || null,
-        phone: phone.trim(),
-        maritalStatus,
-        city: city.trim(),
-        dietaryNeeds: dietaryNeeds?.trim() || null,
-        hasChildren: Boolean(hasChildren),
-        numberOfChildren: numberOfChildren || 0,
-        childrenAges: childrenAges || null,
-        registrationType: registrationType || 'REGULAR',
-        feesConfirmed: Boolean(feesConfirmed),
-        depositPaid: Boolean(depositConfirmed),
-        notes: notes?.trim() || null,
-        status: 'PENDING',
-        language: language || 'fr',
-      },
-    })
+    let attendee
+    try {
+      attendee = await prisma.attendee.create({
+        data: {
+          firstName: firstName.trim(),
+          lastName: lastName.trim(),
+          email: email?.trim() || null,
+          phone: phone.trim(),
+          maritalStatus,
+          city: city.trim(),
+          dietaryNeeds: dietaryNeeds?.trim() || null,
+          hasChildren: Boolean(hasChildren),
+          numberOfChildren: numberOfChildren || 0,
+          childrenAges: childrenAges || null,
+          registrationType: registrationType || 'REGULAR',
+          feesConfirmed: Boolean(feesConfirmed),
+          depositPaid: Boolean(depositConfirmed),
+          notes: notes?.trim() || null,
+          status: 'PENDING',
+          language: language || 'fr',
+        },
+      })
+    } catch (dbError) {
+      const msg = dbError instanceof Error ? dbError.message : String(dbError)
+      console.error('DB error:', dbError)
+      return NextResponse.json({ success: false, message: `DB: ${msg}` }, { status: 500 })
+    }
 
     // Sync to Google Sheets (fire-and-forget — never blocks or fails the registration)
     appendRegistrationToSheet({
