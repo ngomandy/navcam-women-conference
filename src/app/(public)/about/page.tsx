@@ -243,11 +243,6 @@ export default function AboutPage() {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  {i === 0 && (
-                    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-[#C9A84C] text-white text-xs font-bold px-3 py-0.5 rounded-full whitespace-nowrap shadow">
-                      {lang === 'en' ? '⭐ Guest of Honour' : '⭐ Invitée d\'Honneur'}
-                    </div>
-                  )}
                 </div>
                 <h3 className="font-bold text-[#1B3A5C] text-base mt-3" style={{ fontFamily: "'Playfair Display', serif" }}>
                   {leader.name}
