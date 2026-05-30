@@ -63,22 +63,28 @@ export async function POST(req: Request) {
       },
     })
 
-    // Sync to Google Sheets (fire-and-forget — never blocks or fails the registration)
-    appendRegistrationToSheet({
-      firstName: attendee.firstName,
-      lastName: attendee.lastName,
-      email: attendee.email,
-      phone: attendee.phone,
-      city: attendee.city,
-      maritalStatus: attendee.maritalStatus,
-      registrationType: attendee.registrationType,
-      hasChildren: attendee.hasChildren,
-      numberOfChildren: attendee.numberOfChildren ?? 0,
-      childrenAges: attendee.childrenAges,
-      dietaryNeeds: attendee.dietaryNeeds,
-      language: attendee.language,
-      notes: attendee.notes,
-    }).catch((err) => console.error('[Sheets sync error]', err))
+    // Temporarily awaited to surface any Sheets errors
+    try {
+      await appendRegistrationToSheet({
+        firstName: attendee.firstName,
+        lastName: attendee.lastName,
+        email: attendee.email,
+        phone: attendee.phone,
+        city: attendee.city,
+        maritalStatus: attendee.maritalStatus,
+        registrationType: attendee.registrationType,
+        hasChildren: attendee.hasChildren,
+        numberOfChildren: attendee.numberOfChildren ?? 0,
+        childrenAges: attendee.childrenAges,
+        dietaryNeeds: attendee.dietaryNeeds,
+        language: attendee.language,
+        notes: attendee.notes,
+      })
+    } catch (sheetsErr) {
+      const msg = sheetsErr instanceof Error ? sheetsErr.message : String(sheetsErr)
+      console.error('[Sheets error]', sheetsErr)
+      return NextResponse.json({ success: true, id: attendee.id, sheetsError: msg }, { status: 200 })
+    }
 
     return NextResponse.json({
       success: true,
