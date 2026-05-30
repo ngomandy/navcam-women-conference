@@ -63,40 +63,27 @@ export async function POST(req: Request) {
       },
     })
 
-    const sheetsEnv = {
-      hasSheetId: !!process.env.GOOGLE_SHEET_ID,
-      hasEmail: !!process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-      hasKey: !!process.env.GOOGLE_PRIVATE_KEY,
-      sheetIdPreview: process.env.GOOGLE_SHEET_ID?.substring(0, 15) ?? 'MISSING',
-    }
-
-    let sheetsResult = 'skipped'
-    try {
-      await appendRegistrationToSheet({
-        firstName: attendee.firstName,
-        lastName: attendee.lastName,
-        email: attendee.email,
-        phone: attendee.phone,
-        city: attendee.city,
-        maritalStatus: attendee.maritalStatus,
-        registrationType: attendee.registrationType,
-        hasChildren: attendee.hasChildren,
-        numberOfChildren: attendee.numberOfChildren ?? 0,
-        childrenAges: attendee.childrenAges,
-        dietaryNeeds: attendee.dietaryNeeds,
-        language: attendee.language,
-        notes: attendee.notes,
-      })
-      sheetsResult = 'ok'
-    } catch (sheetsErr) {
-      sheetsResult = sheetsErr instanceof Error ? sheetsErr.message : String(sheetsErr)
-    }
+    // Sync to Google Sheets (fire-and-forget — never blocks or fails the registration)
+    appendRegistrationToSheet({
+      firstName: attendee.firstName,
+      lastName: attendee.lastName,
+      email: attendee.email,
+      phone: attendee.phone,
+      city: attendee.city,
+      maritalStatus: attendee.maritalStatus,
+      registrationType: attendee.registrationType,
+      hasChildren: attendee.hasChildren,
+      numberOfChildren: attendee.numberOfChildren ?? 0,
+      childrenAges: attendee.childrenAges,
+      dietaryNeeds: attendee.dietaryNeeds,
+      language: attendee.language,
+      notes: attendee.notes,
+    }).catch((err) => console.error('[Sheets sync error]', err))
 
     return NextResponse.json({
       success: true,
       id: attendee.id,
       message: 'Registration submitted successfully',
-      _sheets: { ...sheetsEnv, result: sheetsResult },
     })
   } catch (error) {
     console.error('Registration error:', error)
