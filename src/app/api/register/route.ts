@@ -24,6 +24,15 @@ export async function POST(req: Request) {
       language,
     } = body
 
+    // Enforce Early Bird deadline server-side
+    const EARLY_BIRD_DEADLINE = new Date('2026-07-01T00:00:00+01:00')
+    if (registrationType === 'EARLY_BIRD' && new Date() >= EARLY_BIRD_DEADLINE) {
+      return NextResponse.json(
+        { success: false, message: 'Early Bird registration is now closed. Please select the Regular rate.' },
+        { status: 400 }
+      )
+    }
+
     // Validate required fields
     const required: Record<string, unknown> = {
       firstName,

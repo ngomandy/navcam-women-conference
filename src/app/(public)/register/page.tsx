@@ -33,8 +33,13 @@ const FEES: Record<string, number> = {
   CORE_TEAM: 50000,
 }
 
+// Early Bird closes at midnight Cameroon time (WAT = UTC+1) on July 1 2026
+const EARLY_BIRD_DEADLINE = new Date('2026-07-01T00:00:00+01:00')
+
 export default function RegisterPage() {
   const { t, lang } = useLanguage()
+  const earlyBirdOpen = new Date() < EARLY_BIRD_DEADLINE
+
   const [form, setForm] = useState<FormData>({
     firstName: '',
     lastName: '',
@@ -46,7 +51,7 @@ export default function RegisterPage() {
     hasChildren: null,
     numberOfChildren: 0,
     childrenAges: [],
-    registrationType: 'EARLY_BIRD',
+    registrationType: earlyBirdOpen ? 'EARLY_BIRD' : 'REGULAR',
     feesConfirmed: false,
     depositConfirmed: false,
     notes: '',
@@ -134,12 +139,12 @@ export default function RegisterPage() {
   const labelClass = 'block text-sm font-semibold text-[#1B3A5C] mb-1.5'
 
   const registrationOptions = [
-    {
+    ...(earlyBirdOpen ? [{
       value: 'EARLY_BIRD',
-      label: lang === 'en' ? 'Early Bird (before end of June 2026)' : 'Inscription Anticipée (avant fin juin 2026)',
+      label: lang === 'en' ? 'Early Bird — before June 30, 2026' : 'Inscription Anticipée — avant le 30 juin 2026',
       amount: FEES.EARLY_BIRD,
       badge: '🌟',
-    },
+    }] : []),
     {
       value: 'REGULAR',
       label: lang === 'en' ? 'Regular' : 'Standard',
@@ -148,7 +153,7 @@ export default function RegisterPage() {
     },
     {
       value: 'CORE_TEAM',
-      label: lang === 'en' ? 'Core Team Leader' : 'Équipe de Direction',
+      label: lang === 'en' ? 'Core Team Leader' : 'Leader Équipe Centrale',
       amount: FEES.CORE_TEAM,
       badge: '🌳',
     },
@@ -393,6 +398,14 @@ export default function RegisterPage() {
               {t.register.registrationType}
             </h2>
 
+            {!earlyBirdOpen && (
+              <div className="mb-4 flex items-center gap-2 bg-[#C9848A]/10 border border-[#C9848A]/30 rounded-xl px-4 py-3 text-sm text-[#C9848A] font-medium">
+                <span>⏰</span>
+                {lang === 'en'
+                  ? 'Early Bird registration closed on June 30, 2026. Standard rate now applies.'
+                  : "L'inscription anticipée a fermé le 30 juin 2026. Le tarif standard s'applique désormais."}
+              </div>
+            )}
             <div className="space-y-3">
               {registrationOptions.map((opt) => (
                 <label
