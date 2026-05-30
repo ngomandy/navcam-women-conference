@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useLanguage } from '@/components/LanguageContext'
 import { ScrollReveal } from '@/components/public/ScrollReveal'
 import { AnimatedCounter } from '@/components/public/AnimatedCounter'
@@ -124,10 +125,13 @@ export default function Edition2025Page() {
 
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
       <section className="relative min-h-[480px] flex items-end overflow-hidden">
-        <img
+        <Image
           src="/2025conf/conf-36.jpg"
           alt="2025 Navigators National Women's Conference"
-          className="absolute inset-0 w-full h-full object-cover object-top"
+          fill
+          className="object-cover object-top"
+          priority
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0D1F2D]/95 via-[#0D1F2D]/50 to-[#0D1F2D]/10" />
         <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 pb-14 pt-32">
@@ -217,12 +221,15 @@ export default function Edition2025Page() {
 
             <ScrollReveal direction="right">
               <div className="relative">
-                <img
-                  src="/2025conf/conf-01.jpg"
-                  alt="Speaker Toyin Ogundele"
-                  className="rounded-2xl shadow-xl w-full object-cover"
-                  style={{ aspectRatio: '4/3' }}
-                />
+                <div className="relative rounded-2xl shadow-xl overflow-hidden" style={{ aspectRatio: '4/3' }}>
+                  <Image
+                    src="/2025conf/conf-01.jpg"
+                    alt="Speaker Toyin Ogundele"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                </div>
                 <div className="absolute -bottom-5 -left-5 bg-[#2D6A4F] text-white rounded-2xl p-4 shadow-xl max-w-xs">
                   <p className="italic text-sm leading-relaxed mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
                     {lang === 'en'
@@ -362,11 +369,12 @@ export default function Edition2025Page() {
                   }`}
                   style={{ aspectRatio: '1/1' }}
                 >
-                  <img
+                  <Image
                     src={src}
                     alt={`2025 Conference photo ${i + 1}`}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    loading="lazy"
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
                   />
                   <div className="absolute inset-0 bg-[#1B3A5C]/0 group-hover:bg-[#1B3A5C]/20 transition-all duration-300" />
                 </button>

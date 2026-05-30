@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useLanguage } from '@/components/LanguageContext'
 import { ScrollReveal } from '@/components/public/ScrollReveal'
 
@@ -37,10 +38,13 @@ export default function VenuePage() {
 
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
       <section className="relative min-h-[420px] flex items-end overflow-hidden">
-        <img
+        <Image
           src="/venue/venue-aerial.jpg"
           alt="Care & Hope Center"
-          className="absolute inset-0 w-full h-full object-cover"
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0D1F2D]/90 via-[#0D1F2D]/40 to-transparent" />
         <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 pb-12 pt-32">
@@ -165,10 +169,12 @@ export default function VenuePage() {
                   className={`relative overflow-hidden rounded-2xl group cursor-pointer ${i === 0 ? 'col-span-2 row-span-2 sm:col-span-2' : ''}`}
                   style={{ aspectRatio: i === 0 ? '4/3' : '1/1' }}
                 >
-                  <img
+                  <Image
                     src={photo.src}
                     alt={lang === 'en' ? photo.captionEn : photo.captionFr}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   />
                   <div className="absolute inset-0 bg-[#1B3A5C]/0 group-hover:bg-[#1B3A5C]/30 transition-all duration-300 flex items-end p-3">
                     <p className="text-white text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40 rounded-lg px-2 py-1">

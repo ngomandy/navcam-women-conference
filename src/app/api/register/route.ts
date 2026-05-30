@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
 import { appendRegistrationToSheet } from '@/lib/sheets'
+import { sendRegistrationConfirmation } from '@/lib/email'
+
+const FEES: Record<string, number> = { EARLY_BIRD: 30000, REGULAR: 35000, CORE_TEAM: 50000 }
 
 export async function POST(req: Request) {
   try {
@@ -30,6 +33,18 @@ export async function POST(req: Request) {
       return NextResponse.json(
         { success: false, message: 'Early Bird registration is now closed. Please select the Regular rate.' },
         { status: 400 }
+      )
+    }
+
+    // Duplicate check — same phone already registered
+    const existing = await prisma.attendee.findFirst({
+      where: { phone: String(phone).trim(), status: { not: 'CANCELLED' } },
+      select: { id: true },
+    })
+    if (existing) {
+      return NextResponse.json(
+        { success: false, message: 'duplicate', code: 'DUPLICATE_PHONE' },
+        { status: 409 }
       )
     }
 
@@ -71,6 +86,18 @@ export async function POST(req: Request) {
         language: language || 'fr',
       },
     })
+
+    // Send confirmation email (fire-and-forget)
+    if (attendee.email) {
+      sendRegistrationConfirmation({
+        firstName: attendee.firstName,
+        lastName: attendee.lastName,
+        email: attendee.email,
+        registrationType: attendee.registrationType,
+        amount: FEES[attendee.registrationType] ?? 35000,
+        lang: attendee.language,
+      }).catch((err) => console.error('[Email error]', err))
+    }
 
     // Sync to Google Sheets (fire-and-forget — never blocks or fails the registration)
     appendRegistrationToSheet({

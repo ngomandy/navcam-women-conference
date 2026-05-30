@@ -11,6 +11,7 @@ import { ScriptureHighlight } from '@/components/public/ScriptureHighlight'
 import { RegistrationProgress } from '@/components/public/RegistrationProgress'
 import { ShareButtons } from '@/components/public/ShareButtons'
 import { NewsletterSignup } from '@/components/public/NewsletterSignup'
+import { WhatsAppCommunity } from '@/components/public/WhatsAppCommunity'
 
 // ─── TESTIMONIALS ────────────────────────────────────────────────────────────
 const testimonials = [
@@ -64,8 +65,9 @@ function buildFaq(lang: 'en' | 'fr') {
     {
       q: lang === 'en' ? 'Where exactly is the venue?' : 'Où se trouve exactement le lieu de la conférence ?',
       a: lang === 'en'
-        ? 'The conference will be held at Care & Hope Center, Yaoundé, Cameroon. View the location on Google Maps: https://maps.app.goo.gl/7qvQWfhFru2Y2LXG7 — detailed directions will also be sent to all confirmed registrants.'
-        : 'La conférence se tiendra au Care & Hope Center, Yaoundé, Cameroun. Voir la localisation sur Google Maps : https://maps.app.goo.gl/7qvQWfhFru2Y2LXG7 — des itinéraires détaillés seront également envoyés à tous les inscrits confirmés.',
+        ? 'The conference will be held at Care & Hope Center, Yaoundé, Cameroon. Detailed directions will be sent to all confirmed registrants.'
+        : 'La conférence se tiendra au Care & Hope Center, Yaoundé, Cameroun. Des itinéraires détaillés seront envoyés à tous les inscrits confirmés.',
+      link: { href: 'https://maps.app.goo.gl/7qvQWfhFru2Y2LXG7', labelEn: '🗺️ View on Google Maps', labelFr: '🗺️ Voir sur Google Maps' },
     },
     {
       q: lang === 'en' ? 'What should I bring?' : 'Que dois-je apporter ?',
@@ -125,6 +127,18 @@ function FAQSection() {
               {openIndex === i && (
                 <div className="px-6 pb-5">
                   <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+                  {(faq as { a: string; q: string; link?: { href: string; labelEn: string; labelFr: string } }).link && (
+                    <a
+                      href={(faq as { link: { href: string; labelEn: string; labelFr: string } }).link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 mt-3 px-4 py-2 bg-[#2D6A4F] hover:bg-[#40916C] text-white text-xs font-semibold rounded-full transition-all"
+                    >
+                      {lang === 'en'
+                        ? (faq as { link: { href: string; labelEn: string; labelFr: string } }).link.labelEn
+                        : (faq as { link: { href: string; labelEn: string; labelFr: string } }).link.labelFr}
+                    </a>
+                  )}
                 </div>
               )}
             </div>
@@ -664,6 +678,9 @@ export default function HomePage() {
           </ScrollReveal>
         </div>
       </section>
+
+      {/* ========== WHATSAPP COMMUNITY ========== */}
+      <WhatsAppCommunity />
 
       {/* ========== FAQ ========== */}
       <FAQSection />

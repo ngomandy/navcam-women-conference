@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useLanguage } from '@/components/LanguageContext'
 import { ScrollReveal } from '@/components/public/ScrollReveal'
 
@@ -240,9 +241,11 @@ export default function AboutPage() {
               <div className="flex flex-col items-center text-center">
                 <div className="relative mb-4">
                   <div className="w-36 h-36 rounded-full overflow-hidden border-4 border-[#C9A84C] shadow-xl">
-                    <img
+                    <Image
                       src={leader.photo}
                       alt={leader.name}
+                      width={144}
+                      height={144}
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -264,9 +267,11 @@ export default function AboutPage() {
               <ScrollReveal key={i} delay={(i % 5) * 80}>
               <div className="flex flex-col items-center text-center group">
                 <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-[#74C69D]/40 shadow-md group-hover:border-[#C9A84C] group-hover:shadow-lg transition-all mb-3">
-                  <img
+                  <Image
                     src={leader.photo}
                     alt={leader.name}
+                    width={96}
+                    height={96}
                     className="w-full h-full object-cover"
                   />
                 </div>
