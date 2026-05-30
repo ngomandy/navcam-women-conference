@@ -338,7 +338,7 @@ export const translations = {
       earlyBirdDeadline: 'Date limite : 30 juin 2026',
       earlyBirdDesc: 'Inscrivez-vous tôt et économisez !',
       regularDesc: "Inscription standard à la conférence",
-      coreTeamDesc: "Pour les membres de l'équipe centrale et les responsables",
+      coreTeamDesc: "Pour les membres de l'équipe centrale et les leaders",
       included: 'Ce qui est Inclus',
       includedItems: [
         '5 jours de sessions de conférence',

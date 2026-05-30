@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
 
-const CAPACITY = 300
+const CAPACITY = 100
 
 export async function GET() {
   try {

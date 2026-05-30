@@ -53,22 +53,22 @@ const pillars = [
 
 const leaders = [
   { name: 'Taniform Mary', titleEn: "National Director's Wife", titleFr: 'Épouse du Directeur National', photo: '/leaders/taniform-mary.jpeg', featured: true },
-  { name: 'Bangkolo Ernestine', titleEn: "National Women's Leader", titleFr: 'Responsable Nationale des Femmes', photo: '/leaders/bangkolo-ernestine.jpeg', featured: true },
-  { name: 'Assoumou Emerance', titleEn: 'Adamawa Leader', titleFr: 'Responsable Adamaoua', photo: '/leaders/assoumou-emerance.jpeg', featured: false },
-  { name: 'Boade Prisca', titleEn: 'Leader - Centre', titleFr: 'Responsable - Centre', photo: '/leaders/boade-prisca.jpeg', featured: false },
-  { name: 'Chopou Doris', titleEn: 'Leader - North West', titleFr: 'Responsable - Nord-Ouest', photo: '/leaders/chopou-doris.jpeg', featured: false },
-  { name: 'Ekom Rachel', titleEn: 'Leader - South West', titleFr: 'Responsable - Sud-Ouest', photo: '/leaders/ekom-rachel.jpeg', featured: false },
-  { name: 'Essimbi Tatiana', titleEn: 'Leader - East', titleFr: 'Responsable - Est', photo: '/leaders/essimbi-tatiana.jpeg', featured: false },
-  { name: 'Gima Stella', titleEn: 'Leader - North', titleFr: 'Responsable - Nord', photo: '/leaders/gima-stella.jpeg', featured: false },
-  { name: 'Kum Rabiatou', titleEn: 'Leader - West', titleFr: 'Responsable - Ouest', photo: '/leaders/kum-rabiatou.jpeg', featured: false },
-  { name: 'Megnimo Alice', titleEn: 'Leader - Centre', titleFr: 'Responsable - Centre', photo: '/leaders/megnimo-alice.jpeg', featured: false },
-  { name: 'Ndangang Sirri', titleEn: 'Leader - South West', titleFr: 'Responsable - Sud-Ouest', photo: '/leaders/ndangang-sirri.jpeg', featured: false },
-  { name: 'Ntchuissi Christelle', titleEn: 'Leader - Centre', titleFr: 'Responsable - Centre', photo: '/leaders/ntchuissi-christelle.jpeg', featured: false },
-  { name: 'Obona Sherelle', titleEn: 'Leader - Littoral', titleFr: 'Responsable - Littoral', photo: '/leaders/obona-sherelle.jpeg', featured: false },
-  { name: 'Ofon Christabel', titleEn: 'Leader - South West', titleFr: 'Responsable - Sud-Ouest', photo: '/leaders/ofon-christabel.jpeg', featured: false },
-  { name: 'Souga Solange', titleEn: 'Leader - Centre', titleFr: 'Responsable - Centre', photo: '/leaders/souga-solange.jpeg', featured: false },
-  { name: 'Tambeline Claris', titleEn: 'Leader - Littoral', titleFr: 'Responsable - Littoral', photo: '/leaders/tambeline-claris.jpeg', featured: false },
-  { name: 'Yuniwo Rose', titleEn: 'Leader - Centre', titleFr: 'Responsable - Centre', photo: '/leaders/yuniwo-rose.jpeg', featured: false },
+  { name: 'Bangkolo Ernestine', titleEn: "National Women's Leader", titleFr: 'Leader Nationale des Femmes', photo: '/leaders/bangkolo-ernestine.jpeg', featured: true },
+  { name: 'Assoumou Emerance', titleEn: 'Adamawa Leader', titleFr: 'Leader Adamaoua', photo: '/leaders/assoumou-emerance.jpeg', featured: false },
+  { name: 'Boade Prisca', titleEn: 'Leader - Centre', titleFr: 'Leader - Centre', photo: '/leaders/boade-prisca.jpeg', featured: false },
+  { name: 'Chopou Doris', titleEn: 'Leader - North West', titleFr: 'Leader - Nord-Ouest', photo: '/leaders/chopou-doris.jpeg', featured: false },
+  { name: 'Ekom Rachel', titleEn: 'Leader - South West', titleFr: 'Leader - Sud-Ouest', photo: '/leaders/ekom-rachel.jpeg', featured: false },
+  { name: 'Essimbi Tatiana', titleEn: 'Leader - East', titleFr: 'Leader - Est', photo: '/leaders/essimbi-tatiana.jpeg', featured: false },
+  { name: 'Gima Stella', titleEn: 'Leader - North', titleFr: 'Leader - Nord', photo: '/leaders/gima-stella.jpeg', featured: false },
+  { name: 'Kum Rabiatou', titleEn: 'Leader - West', titleFr: 'Leader - Ouest', photo: '/leaders/kum-rabiatou.jpeg', featured: false },
+  { name: 'Megnimo Alice', titleEn: 'Leader - Centre', titleFr: 'Leader - Centre', photo: '/leaders/megnimo-alice.jpeg', featured: false },
+  { name: 'Ndangang Sirri', titleEn: 'Leader - South West', titleFr: 'Leader - Sud-Ouest', photo: '/leaders/ndangang-sirri.jpeg', featured: false },
+  { name: 'Ntchuissi Christelle', titleEn: 'Leader - Centre', titleFr: 'Leader - Centre', photo: '/leaders/ntchuissi-christelle.jpeg', featured: false },
+  { name: 'Obona Sherelle', titleEn: 'Leader - Littoral', titleFr: 'Leader - Littoral', photo: '/leaders/obona-sherelle.jpeg', featured: false },
+  { name: 'Ofon Christabel', titleEn: 'Leader - South West', titleFr: 'Leader - Sud-Ouest', photo: '/leaders/ofon-christabel.jpeg', featured: false },
+  { name: 'Souga Solange', titleEn: 'Leader - Centre', titleFr: 'Leader - Centre', photo: '/leaders/souga-solange.jpeg', featured: false },
+  { name: 'Tambeline Claris', titleEn: 'Leader - Littoral', titleFr: 'Leader - Littoral', photo: '/leaders/tambeline-claris.jpeg', featured: false },
+  { name: 'Yuniwo Rose', titleEn: 'Leader - Centre', titleFr: 'Leader - Centre', photo: '/leaders/yuniwo-rose.jpeg', featured: false },
 ]
 
 export default function AboutPage() {
@@ -91,7 +91,7 @@ export default function AboutPage() {
           <p className="text-[#74C69D] text-lg">
             {lang === 'en'
               ? 'Rooted women. Discipling women. Transforming nations.'
-              : 'Des femmes enracinées. Qui discipulent. Qui transforment les nations.'}
+              : 'Des femmes enracinées. Qui font le discipolat. Qui transforment les nations.'}
           </p>
         </div>
         <div className="absolute bottom-0 left-0 right-0">
@@ -225,7 +225,7 @@ export default function AboutPage() {
               {lang === 'en' ? 'Our Team' : 'Notre Équipe'}
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-[#1B3A5C] mb-3" style={{ fontFamily: "'Playfair Display', serif" }}>
-              {lang === 'en' ? 'Meet the Ministry Leaders' : 'Rencontrez les Responsables du Ministère'}
+              {lang === 'en' ? 'Meet the Ministry Leaders' : 'Rencontrez les Leaders du Ministère'}
             </h2>
             <div className="w-16 h-0.5 bg-[#C9A84C] mx-auto mt-4" />
           </div>
@@ -296,7 +296,7 @@ export default function AboutPage() {
           >
             {lang === 'en'
               ? '"Through these aspects, we desire to use women\'s God-given attributes to advance the Gospel of Jesus and His Kingdom into the nations through spiritual generations of laborers living and discipling among the lost."'
-              : '"À travers ces aspects, nous désirons utiliser les attributs donnés par Dieu aux femmes pour faire avancer l\'Évangile de Jésus et Son Royaume dans les nations à travers des générations spirituelles d\'ouvriers vivant et discipulant parmi les perdus."'}
+              : '"À travers ces aspects, nous désirons utiliser les attributs donnés par Dieu aux femmes pour faire avancer l\'Évangile de Jésus et Son Royaume dans les nations à travers des générations spirituelles d\'ouvriers vivant et faisant le discipolat parmi les perdus."'}
           </blockquote>
           <p className="text-[#C9A84C] text-sm font-semibold uppercase tracking-widest">
             {lang === 'en' ? "Navigators Cameroon — Women's Ministry" : 'Navigateurs Cameroun — Ministère des Femmes'}

@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { useLanguage } from '@/components/LanguageContext'
 
-const CAPACITY = 300
+const CAPACITY = 100
 
 export function RegistrationProgress() {
   const { lang } = useLanguage()

@@ -60,7 +60,7 @@ export function getRegistrationFee(
       },
       fr: {
         label: 'Équipe de Direction',
-        description: "Pour l'équipe centrale et les responsables",
+        description: "Pour l'équipe centrale et les leaders",
       },
     },
   }

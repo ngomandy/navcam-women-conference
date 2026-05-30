@@ -517,14 +517,14 @@ export default function DonatePage() {
                   <div className="w-10 h-10 bg-[#C9A84C] rounded-full flex items-center justify-center font-bold text-white text-sm flex-shrink-0">CR</div>
                   <div>
                     <p className="font-semibold text-white text-sm">Christelle Ribouem</p>
-                    <p className="text-[#74C69D] text-xs">{lang === 'en' ? 'Finance & Fundraising Lead' : 'Responsable Finance & Collecte'}</p>
+                    <p className="text-[#74C69D] text-xs">{lang === 'en' ? 'Finance & Fundraising Lead' : 'Leader Finance & Collecte'}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 bg-white/10 rounded-xl p-4">
                   <div className="w-10 h-10 bg-[#C9848A] rounded-full flex items-center justify-center font-bold text-white text-sm flex-shrink-0">RY</div>
                   <div>
                     <p className="font-semibold text-white text-sm">Rose Yuniwo</p>
-                    <p className="text-[#74C69D] text-xs">{lang === 'en' ? 'Finance & Fundraising Lead' : 'Responsable Finance & Collecte'}</p>
+                    <p className="text-[#74C69D] text-xs">{lang === 'en' ? 'Finance & Fundraising Lead' : 'Leader Finance & Collecte'}</p>
                     <p className="text-white/70 text-xs font-mono mt-0.5">+237 670 838 779</p>
                   </div>
                 </div>

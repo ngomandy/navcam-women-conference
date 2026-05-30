@@ -334,7 +334,7 @@ export default function HomePage() {
     {
       type: lang === 'en' ? 'Core Team' : 'Équipe Centrale',
       amount: 50000,
-      deadline: lang === 'en' ? 'For team leaders' : 'Pour les responsables',
+      deadline: lang === 'en' ? 'For team leaders' : 'Pour les leaders',
       highlight: false,
     },
   ]
@@ -437,7 +437,7 @@ export default function HomePage() {
               {[
                 { value: 5,   suffix: '',  icon: '📅', labelEn: 'Days',                labelFr: 'Jours' },
                 { value: 17,  suffix: '',  icon: '👑', labelEn: 'Women Leaders',        labelFr: 'Femmes Leaders' },
-                { value: 300, suffix: '+', icon: '🌿', labelEn: 'Women Expected',       labelFr: 'Femmes Attendues' },
+                { value: 100, suffix: '+', icon: '🌿', labelEn: 'Women Expected',       labelFr: 'Femmes Attendues' },
                 { value: 10,  suffix: '',  icon: '🌍', labelEn: 'Regions Represented',  labelFr: 'Régions Représentées' },
               ].map((stat, i) => (
                 <div key={i}>
