@@ -46,7 +46,7 @@ const pillars = [
   { icon: '🤝', en: 'Mentoring', fr: 'Mentorat' },
   { icon: '💞', en: 'Relational Ministry', fr: 'Ministère Relationnel' },
   { icon: '🌍', en: "Gospel Advance", fr: "Avancement de l'Évangile" },
-  { icon: '👩‍👧', en: 'Generational Discipleship', fr: 'Discipulat Intergénérationnel' },
+  { icon: '👩‍👧', en: 'Generational Discipleship', fr: 'Discipolat Intergénérationnel' },
   { icon: '✨', en: 'Spiritual Gift Development', fr: 'Développement des Dons' },
 ]
 
@@ -109,13 +109,13 @@ export default function AboutPage() {
                 {lang === 'en' ? 'Our Vision' : 'Notre Vision'}
               </p>
               <h2 className="text-3xl sm:text-4xl font-bold text-[#1B3A5C] mb-5" style={{ fontFamily: "'Playfair Display', serif" }}>
-                {lang === 'en' ? 'Modelling a Life of Discipleship' : 'Modéliser une Vie de Discipulat'}
+                {lang === 'en' ? 'Modeling a Life of Discipleship' : 'Modéliser une Vie de Discipolat'}
               </h2>
               <div className="w-14 h-0.5 bg-[#C9A84C] mb-6" />
               <p className="text-gray-600 leading-relaxed mb-4">
                 {lang === 'en'
                   ? "Our vision as a Navigator women's ministry is to model a life of discipleship in all the diverse roles we play as women. This means that we seek to be disciple housewives, mothers, cooks, career women, students... and to reproduce ourselves in the lives of other women who will do the same."
-                  : "Notre vision en tant que ministère des femmes Navigateurs est de modéliser une vie de discipulat dans tous les rôles divers que nous jouons en tant que femmes. Cela signifie que nous cherchons à être des femmes au foyer, mères, cuisinières, femmes de carrière, étudiantes disciples... et à nous reproduire dans la vie d'autres femmes qui feront de même."}
+                  : "Notre vision en tant que ministère des femmes Navigateurs est de modéliser une vie de discipolat dans tous les rôles divers que nous jouons en tant que femmes. Cela signifie que nous cherchons à être des femmes au foyer, mères, cuisinières, femmes de carrière, étudiantes disciples... et à nous reproduire dans la vie d'autres femmes qui feront de même."}
               </p>
               <p className="text-gray-600 leading-relaxed">
                 {lang === 'en'

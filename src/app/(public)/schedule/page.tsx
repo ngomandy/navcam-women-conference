@@ -80,7 +80,7 @@ const fullScheduleData: ScheduleDay[] = [
         title: { en: 'Breakout Sessions — Round 1 (6 Options)', fr: 'Ateliers — Ronde 1 (6 Options)' },
         items: {
           en: ['Identity in Christ', 'Emotional Healing & Inner Restoration', 'Prayer & Intimacy with God', 'Women & Discipleship', 'Singleness, Waiting & Trusting God', 'Faith, Work & Purpose in Everyday Life'],
-          fr: ['Identité en Christ', 'Guérison Émotionnelle & Restauration Intérieure', 'Prière & Intimité avec Dieu', 'Femmes & Discipulat', 'Célibat, Attente & Confiance en Dieu', 'Foi, Travail & But dans la Vie Quotidienne'],
+          fr: ['Identité en Christ', 'Guérison Émotionnelle & Restauration Intérieure', 'Prière & Intimité avec Dieu', 'Femmes & Discipolat', 'Célibat, Attente & Confiance en Dieu', 'Foi, Travail & But dans la Vie Quotidienne'],
         },
       },
       {
@@ -139,7 +139,7 @@ const fullScheduleData: ScheduleDay[] = [
         title: { en: 'Plenary 3 — Lasting Fruit', fr: 'Plénière 3 — Fruits Durables' },
         items: {
           en: ['Character fruit', 'Discipleship fruit', 'Legacy fruit'],
-          fr: ['Fruit du caractère', 'Fruit du discipulat', "Fruit de l'héritage"],
+          fr: ['Fruit du caractère', 'Fruit du discipolat', "Fruit de l'héritage"],
         },
       },
       {
@@ -147,7 +147,7 @@ const fullScheduleData: ScheduleDay[] = [
         title: { en: 'Breakout Sessions — Round 2 (6 Options)', fr: 'Ateliers — Ronde 2 (6 Options)' },
         items: {
           en: ['Marriage & Family Fruitfulness', 'Leadership & Influence', 'Purpose & Calling', 'Faithful Stewardship', 'Mentorship Across Generations', 'Missions & Disciple-Making'],
-          fr: ['Fécondité dans le Mariage & la Famille', 'Leadership & Influence', 'But & Vocation', 'Intendance Fidèle', 'Mentorat Entre les Générations', 'Missions & Discipulat'],
+          fr: ['Fécondité dans le Mariage & la Famille', 'Leadership & Influence', 'But & Vocation', 'Intendance Fidèle', 'Mentorat Entre les Générations', 'Missions & Discipolat'],
         },
       },
       {
