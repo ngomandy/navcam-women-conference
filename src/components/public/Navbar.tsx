@@ -23,6 +23,7 @@ export default function Navbar() {
     { href: '/about', label: t.nav.about },
     { href: '/schedule', label: t.nav.schedule },
     { href: '/venue', label: t.nav.venue },
+    { href: '/2025', label: t.nav.pastEdition },
     { href: '/fees', label: t.nav.fees },
     { href: '/donate', label: t.nav.donate },
   ]
