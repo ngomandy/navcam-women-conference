@@ -86,9 +86,10 @@ export async function POST(req: Request) {
       message: 'Registration submitted successfully',
     })
   } catch (error) {
+    const msg = error instanceof Error ? error.message : String(error)
     console.error('Registration error:', error)
     return NextResponse.json(
-      { success: false, message: 'Internal server error' },
+      { success: false, message: msg },
       { status: 500 }
     )
   }
