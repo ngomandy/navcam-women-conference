@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useLanguage } from '@/components/LanguageContext'
 
@@ -8,7 +8,7 @@ import { useLanguage } from '@/components/LanguageContext'
 // PAYMENT DETAILS
 // ─────────────────────────────────────────────
 const ACCOUNT_NAME = 'Matchim Tchapoa epse Ribouem Christelle Adeline'
-const FUNDRAISING_GOAL = 5_000_000 // FCFA
+const FUNDRAISING_GOAL = 4_000_000 // FCFA
 
 const PAYMENT_METHODS = [
   {
@@ -111,6 +111,14 @@ export default function DonatePage() {
   const [selectedTier, setSelectedTier] = useState<number | null>(null)
   const [customAmount, setCustomAmount] = useState('')
   const [copied, setCopied] = useState<string | null>(null)
+  const [amountRaised, setAmountRaised] = useState(0)
+
+  useEffect(() => {
+    fetch('/api/fundraising')
+      .then((r) => r.json())
+      .then((data) => setAmountRaised(data.total || 0))
+      .catch(() => {})
+  }, [])
 
   const copyToClipboard = (text: string, id: string) => {
     navigator.clipboard.writeText(text).then(() => {
@@ -167,7 +175,6 @@ export default function DonatePage() {
               ? 'Our collective goal for the 2026 Navigators National Women\'s Conference'
               : 'Notre objectif collectif pour la Conférence Nationale des Femmes Navigateurs 2026'}
           </p>
-          {/* Progress bar — static for now, can be wired to live budget data */}
           <div className="bg-white rounded-2xl p-6 shadow-sm border border-[#74C69D]/20">
             <div className="flex justify-between text-sm mb-2">
               <span className="text-[#2D6A4F] font-semibold">
@@ -178,12 +185,15 @@ export default function DonatePage() {
             <div className="w-full bg-gray-100 rounded-full h-4 overflow-hidden">
               <div
                 className="h-4 rounded-full bg-gradient-to-r from-[#2D6A4F] to-[#74C69D] transition-all duration-1000"
-                style={{ width: '0%' }}
+                style={{ width: `${Math.min(100, (amountRaised / FUNDRAISING_GOAL) * 100).toFixed(1)}%` }}
               />
             </div>
-            <p className="text-xs text-gray-400 mt-2 text-right">
-              {lang === 'en' ? 'Updated by admin · Every gift counts 🌿' : 'Mis à jour par l\'admin · Chaque don compte 🌿'}
-            </p>
+            <div className="flex justify-between items-center mt-2">
+              <span className="text-[#2D6A4F] font-bold text-sm">{formatFCFA(amountRaised)}</span>
+              <p className="text-xs text-gray-400">
+                {lang === 'en' ? 'Every gift counts 🌿' : 'Chaque don compte 🌿'}
+              </p>
+            </div>
           </div>
         </div>
       </section>

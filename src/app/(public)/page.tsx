@@ -5,6 +5,189 @@ import Link from 'next/link'
 import { useLanguage } from '@/components/LanguageContext'
 import { formatCurrency } from '@/lib/utils'
 
+// ─── TESTIMONIALS ────────────────────────────────────────────────────────────
+const testimonials = [
+  {
+    quote: 'I am a wonderful woman called to not remain silent so that generations can rise and be blessed.',
+  },
+  {
+    quote: 'To raise the next generation I must be on my knees.',
+  },
+  {
+    quote: 'Impact is seen and not discussed.',
+  },
+  {
+    quote: 'Love must be loving and active. For the gospel to go through.',
+  },
+]
+
+// ─── FAQ DATA ─────────────────────────────────────────────────────────────────
+function buildFaq(lang: 'en' | 'fr') {
+  return [
+    {
+      q: lang === 'en' ? 'What is included in the registration fee?' : "Qu'est-ce qui est inclus dans les frais d'inscription ?",
+      a: lang === 'en'
+        ? '5 full days of conference sessions, all meals (breakfast, lunch & dinner), your conference pack & materials, accommodation assistance, and the Day 3 excursion.'
+        : '5 jours complets de sessions, tous les repas (petit-déjeuner, déjeuner & dîner), votre pack de conférence & matériels, l\'assistance pour l\'hébergement et l\'excursion du Jour 3.',
+    },
+    {
+      q: lang === 'en' ? 'When is the Early Bird deadline?' : "Quelle est la date limite de l'inscription anticipée ?",
+      a: lang === 'en'
+        ? 'The Early Bird rate of 30 000 FCFA is available until June 30, 2026. After that date, the standard rate of 35 000 FCFA applies.'
+        : 'Le tarif anticipé de 30 000 FCFA est disponible jusqu\'au 30 juin 2026. Après cette date, le tarif standard de 35 000 FCFA s\'applique.',
+    },
+    {
+      q: lang === 'en' ? 'How do I pay my registration fees?' : 'Comment puis-je payer mes frais d\'inscription ?',
+      a: lang === 'en'
+        ? 'Payment is made via MTN Mobile Money (+237 670 546 041) or Orange Money (+237 694 756 099). Use "NavCamWomen2026 — [Your Name]" as your payment reference, then send the screenshot to the finance team on WhatsApp.'
+        : 'Le paiement se fait via MTN Mobile Money (+237 670 546 041) ou Orange Money (+237 694 756 099). Utilisez "NavCamWomen2026 — [Votre Nom]" comme référence, puis envoyez la capture d\'écran à l\'équipe finance sur WhatsApp.',
+    },
+    {
+      q: lang === 'en' ? 'Can I come with my children?' : 'Puis-je venir avec mes enfants ?',
+      a: lang === 'en'
+        ? 'Yes! Children are welcome. Please indicate the number and ages of your children during registration so we can make the appropriate arrangements for them.'
+        : 'Oui ! Les enfants sont les bienvenus. Veuillez indiquer le nombre et l\'âge de vos enfants lors de l\'inscription afin que nous puissions prendre les dispositions appropriées.',
+    },
+    {
+      q: lang === 'en' ? 'What language will the sessions be in?' : 'Dans quelle langue se dérouleront les sessions ?',
+      // ⚠️ FLAG FOR USER: Confirm whether sessions are bilingual, French-only, or have translation.
+      a: lang === 'en'
+        ? 'The conference is bilingual — sessions will be conducted in both French and English to welcome all women across Cameroon.'
+        : 'La conférence est bilingue — les sessions se déroulent en français et en anglais pour accueillir toutes les femmes du Cameroun.',
+    },
+    {
+      q: lang === 'en' ? 'Where exactly is the venue?' : 'Où se trouve exactement le lieu de la conférence ?',
+      // ⚠️ FLAG FOR USER: Add a more detailed address or Google Maps link if available.
+      a: lang === 'en'
+        ? 'The conference will be held at Care & Hope, Yaoundé, Cameroon. More detailed directions will be sent to confirmed registrants.'
+        : 'La conférence se tiendra à Care & Hope, Yaoundé, Cameroun. Des instructions détaillées seront envoyées aux inscrits confirmés.',
+    },
+    {
+      q: lang === 'en' ? 'What should I bring?' : 'Que dois-je apporter ?',
+      a: lang === 'en'
+        ? 'Please bring: your Bible, a notebook & pen, personal toiletries, comfortable clothing & shoes (including sportswear) for 5 days, one outfit from a previous NavCam Women\'s Conference, a gala/formal dress, a bedsheet, and any other personal items you may need. Your conference pack will be provided upon arrival.'
+        : 'Veuillez apporter : votre Bible, un cahier & stylo, vos articles de toilette, des vêtements & chaussures confortables (y compris une tenue de sport) pour 5 jours, une tenue issue d\'une précédente conférence des femmes NavCam, une robe de gala, un drap de lit et tout article personnel dont vous pourriez avoir besoin. Votre pack de conférence vous sera remis à l\'arrivée.',
+    },
+    {
+      q: lang === 'en' ? 'What is the cancellation policy?' : 'Quelle est la politique d\'annulation ?',
+      a: lang === 'en'
+        ? 'Please note that deposits and contributions are non-refundable. If you are unable to attend, please inform the team as soon as possible via WhatsApp so we can take note.'
+        : 'Veuillez noter que les acomptes et contributions ne sont pas remboursables. Si vous ne pouvez pas assister, veuillez en informer l\'équipe dès que possible via WhatsApp afin que nous puissions en prendre note.',
+    },
+  ]
+}
+
+function FAQSection() {
+  const { lang } = useLanguage()
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
+  const faqs = buildFaq(lang)
+
+  return (
+    <section className="py-20 bg-white">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6">
+        <div className="text-center mb-14">
+          <p className="text-[#C9A84C] text-sm font-semibold uppercase tracking-widest mb-2">
+            {lang === 'en' ? 'Common Questions' : 'Questions Fréquentes'}
+          </p>
+          <h2
+            className="text-3xl sm:text-4xl font-bold text-[#1B3A5C] mb-3"
+            style={{ fontFamily: "'Playfair Display', serif" }}
+          >
+            {lang === 'en' ? 'Frequently Asked Questions' : 'Questions Fréquemment Posées'}
+          </h2>
+          <div className="w-16 h-0.5 bg-[#C9A84C] mx-auto mt-4" />
+        </div>
+
+        <div className="space-y-3">
+          {faqs.map((faq, i) => (
+            <div
+              key={i}
+              className="bg-[#FDF6EC] rounded-2xl border border-[#74C69D]/20 overflow-hidden"
+            >
+              <button
+                onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                className="w-full flex items-center justify-between gap-4 px-6 py-4 text-left"
+              >
+                <span className="font-semibold text-[#1B3A5C] text-sm leading-snug">{faq.q}</span>
+                <span
+                  className={`flex-shrink-0 w-6 h-6 rounded-full border-2 border-[#C9A84C] flex items-center justify-center text-[#C9A84C] text-xs font-bold transition-transform ${
+                    openIndex === i ? 'rotate-45' : ''
+                  }`}
+                >
+                  +
+                </span>
+              </button>
+              {openIndex === i && (
+                <div className="px-6 pb-5">
+                  <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        <p className="text-center text-sm text-gray-500 mt-8">
+          {lang === 'en'
+            ? 'Still have questions? '
+            : 'Vous avez encore des questions ? '}
+          <a
+            href="https://wa.me/237670546041"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#2D6A4F] font-semibold hover:underline"
+          >
+            {lang === 'en' ? 'Chat with us on WhatsApp' : 'Écrivez-nous sur WhatsApp'}
+          </a>
+        </p>
+      </div>
+    </section>
+  )
+}
+
+function TestimonialsSection() {
+  const { lang } = useLanguage()
+  const attribution = lang === 'en' ? 'NavCam Women\'s Conference — Previous Edition' : 'Conférence Femmes NavCam — Édition Précédente'
+
+  return (
+    <section className="py-20 bg-[#FDF6EC]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-14">
+          <p className="text-[#C9848A] text-sm font-semibold uppercase tracking-widest mb-2">
+            {lang === 'en' ? 'Voices' : 'Témoignages'}
+          </p>
+          <h2
+            className="text-3xl sm:text-4xl font-bold text-[#1B3A5C] mb-3"
+            style={{ fontFamily: "'Playfair Display', serif" }}
+          >
+            {lang === 'en' ? 'Words from Previous Attendees' : 'Paroles des Participantes Précédentes'}
+          </h2>
+          <div className="w-16 h-0.5 bg-[#C9848A] mx-auto mt-4" />
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
+          {testimonials.map((item, i) => (
+            <div
+              key={i}
+              className="bg-white rounded-3xl p-6 shadow-sm border border-[#74C69D]/20 flex flex-col"
+            >
+              <span className="text-[#C9848A] text-4xl leading-none mb-3">&ldquo;</span>
+              <p
+                className="text-gray-700 text-sm leading-relaxed italic flex-1"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
+                {item.quote}
+              </p>
+              <div className="mt-5 pt-4 border-t border-[#74C69D]/20">
+                <p className="text-[#2D6A4F] text-xs font-semibold">— {attribution}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 // Countdown Timer Component
 function CountdownTimer() {
   const { t } = useLanguage()
@@ -349,6 +532,9 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ========== TESTIMONIALS ========== */}
+      <TestimonialsSection />
+
       {/* ========== FEES PREVIEW ========== */}
       <section className="py-20 bg-[#FDF6EC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -410,6 +596,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ========== FAQ ========== */}
+      <FAQSection />
 
       {/* ========== FINAL CTA SECTION ========== */}
       <section className="py-20 bg-gradient-to-br from-[#2D6A4F] to-[#1B3A5C] relative overflow-hidden">

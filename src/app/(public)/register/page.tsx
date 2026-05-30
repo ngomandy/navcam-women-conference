@@ -11,6 +11,7 @@ interface ChildAge {
 interface FormData {
   firstName: string
   lastName: string
+  email: string
   phone: string
   maritalStatus: string
   city: string
@@ -36,6 +37,7 @@ export default function RegisterPage() {
   const [form, setForm] = useState<FormData>({
     firstName: '',
     lastName: '',
+    email: '',
     phone: '',
     maritalStatus: '',
     city: '',
@@ -226,6 +228,16 @@ export default function RegisterPage() {
                   placeholder={lang === 'en' ? 'Your last name' : 'Votre nom'}
                 />
                 {errors.lastName && <p className="text-[#C9848A] text-xs mt-1">{errors.lastName}</p>}
+              </div>
+              <div>
+                <label className={labelClass}>{t.register.email}</label>
+                <input
+                  type="email"
+                  className={fieldClass('email')}
+                  value={form.email}
+                  onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
+                  placeholder={t.register.emailPlaceholder}
+                />
               </div>
               <div>
                 <label className={labelClass}>{t.register.phone} *</label>

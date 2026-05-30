@@ -180,10 +180,12 @@ export default function FeesPage() {
               <p className="text-xs text-gray-500">
                 {t.fees.questions}{' '}
                 <a
-                  href="mailto:info@navcam2026.org"
+                  href="https://wa.me/237670546041"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-[#2D6A4F] font-semibold hover:underline"
                 >
-                  info@navcam2026.org
+                  {lang === 'en' ? 'Chat with us on WhatsApp' : 'Écrivez-nous sur WhatsApp'}
                 </a>
               </p>
             </div>

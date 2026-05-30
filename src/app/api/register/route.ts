@@ -8,6 +8,7 @@ export async function POST(req: Request) {
     const {
       firstName,
       lastName,
+      email,
       phone,
       maritalStatus,
       city,
@@ -44,6 +45,7 @@ export async function POST(req: Request) {
       data: {
         firstName: firstName.trim(),
         lastName: lastName.trim(),
+        email: email?.trim() || null,
         phone: phone.trim(),
         maritalStatus,
         city: city.trim(),

@@ -83,6 +83,8 @@ export const translations = {
       subtitle: 'Secure your place at the conference',
       firstName: 'First Name',
       lastName: 'Last Name',
+      email: 'Email Address (optional)',
+      emailPlaceholder: 'your@email.com',
       phone: 'Phone Number',
       maritalStatus: 'Marital Status',
       maritalOptions: {
@@ -286,6 +288,8 @@ export const translations = {
       subtitle: 'Réservez votre place à la conférence',
       firstName: 'Prénom',
       lastName: 'Nom',
+      email: 'Adresse Email (optionnel)',
+      emailPlaceholder: 'votre@email.com',
       phone: 'Numéro de Téléphone',
       maritalStatus: 'Statut Matrimonial',
       maritalOptions: {

@@ -21,6 +21,7 @@ model Attendee {
   id               String   @id @default(cuid())
   firstName        String
   lastName         String
+  email            String?
   phone            String
   maritalStatus    String
   city             String
