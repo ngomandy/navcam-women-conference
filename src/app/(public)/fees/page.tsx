@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useLanguage } from '@/components/LanguageContext'
 import { formatCurrency } from '@/lib/utils'
+import { ScrollReveal } from '@/components/public/ScrollReveal'
 
 export default function FeesPage() {
   const { t, lang } = useLanguage()
@@ -70,8 +71,8 @@ export default function FeesPage() {
         {/* Fee Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           {feeCards.map((card, i) => (
+            <ScrollReveal key={i} delay={i * 130}>
             <div
-              key={i}
               className={`relative rounded-3xl overflow-hidden transition-all duration-200 card-hover ${
                 card.highlight
                   ? 'bg-[#2D6A4F] text-white shadow-2xl scale-105'
@@ -120,6 +121,7 @@ export default function FeesPage() {
                 </Link>
               </div>
             </div>
+            </ScrollReveal>
           ))}
         </div>
 

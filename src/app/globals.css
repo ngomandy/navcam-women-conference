@@ -147,6 +147,38 @@ h1, h2, h3, h4, h5, h6 {
   background: linear-gradient(180deg, #FDF6EC 0%, #F4C2C2 100%);
 }
 
+/* ── Floating Leaves ─────────────────────────────────────────────────────── */
+@keyframes leaf-drift-1 {
+  0%   { transform: translate(  0px,   0px) rotate(  0deg); opacity: 0; }
+  8%   { opacity: 0.55; }
+  50%  { transform: translate( 10px, -40px) rotate( 12deg); opacity: 0.45; }
+  92%  { opacity: 0.35; }
+  100% { transform: translate( 18px, -88px) rotate( 22deg); opacity: 0; }
+}
+@keyframes leaf-drift-2 {
+  0%   { transform: translate(  0px,   0px) rotate(  0deg); opacity: 0; }
+  8%   { opacity: 0.5; }
+  50%  { transform: translate(-14px, -38px) rotate(-18deg); opacity: 0.4; }
+  92%  { opacity: 0.3; }
+  100% { transform: translate(-22px, -82px) rotate(-28deg); opacity: 0; }
+}
+@keyframes leaf-drift-3 {
+  0%   { transform: translate(  0px,   0px) rotate(  0deg); opacity: 0; }
+  8%   { opacity: 0.48; }
+  35%  { transform: translate( 16px, -28px) rotate( 20deg); }
+  70%  { transform: translate( -6px, -58px) rotate( -8deg); opacity: 0.38; }
+  100% { transform: translate(  8px, -86px) rotate( 14deg); opacity: 0; }
+}
+
+/* ── Page Transition ─────────────────────────────────────────────────────── */
+@keyframes page-enter {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.page-transition {
+  animation: page-enter 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
 /* Print styles */
 @media print {
   .no-print {

@@ -4,6 +4,9 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useLanguage } from '@/components/LanguageContext'
 import { formatCurrency } from '@/lib/utils'
+import { FloatingLeaves } from '@/components/public/FloatingLeaves'
+import { ScrollReveal } from '@/components/public/ScrollReveal'
+import { AnimatedCounter } from '@/components/public/AnimatedCounter'
 
 // ─── TESTIMONIALS ────────────────────────────────────────────────────────────
 const testimonials = [
@@ -166,21 +169,20 @@ function TestimonialsSection() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
           {testimonials.map((item, i) => (
-            <div
-              key={i}
-              className="bg-white rounded-3xl p-6 shadow-sm border border-[#74C69D]/20 flex flex-col"
-            >
-              <span className="text-[#C9848A] text-4xl leading-none mb-3">&ldquo;</span>
-              <p
-                className="text-gray-700 text-sm leading-relaxed italic flex-1"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
-                {item.quote}
-              </p>
-              <div className="mt-5 pt-4 border-t border-[#74C69D]/20">
-                <p className="text-[#2D6A4F] text-xs font-semibold">— {attribution}</p>
+            <ScrollReveal key={i} delay={i * 100}>
+              <div className="bg-white rounded-3xl p-6 shadow-sm border border-[#74C69D]/20 flex flex-col h-full">
+                <span className="text-[#C9848A] text-4xl leading-none mb-3">&ldquo;</span>
+                <p
+                  className="text-gray-700 text-sm leading-relaxed italic flex-1"
+                  style={{ fontFamily: "'Playfair Display', serif" }}
+                >
+                  {item.quote}
+                </p>
+                <div className="mt-5 pt-4 border-t border-[#74C69D]/20">
+                  <p className="text-[#2D6A4F] text-xs font-semibold">— {attribution}</p>
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
@@ -338,6 +340,7 @@ export default function HomePage() {
       {/* ========== HERO SECTION ========== */}
       <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#2D6A4F] via-[#1B3A5C] to-[#40916C]">
         <VinePattern />
+        <FloatingLeaves />
 
         {/* Decorative circles */}
         <div className="absolute top-20 left-10 w-64 h-64 bg-[#74C69D]/10 rounded-full blur-3xl" />
@@ -422,6 +425,35 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ========== STATS SECTION ========== */}
+      <section className="py-14 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
+              {[
+                { value: 5,   suffix: '',  icon: '📅', labelEn: 'Days',                labelFr: 'Jours' },
+                { value: 17,  suffix: '',  icon: '👑', labelEn: 'Women Leaders',        labelFr: 'Femmes Leaders' },
+                { value: 300, suffix: '+', icon: '🌿', labelEn: 'Women Expected',       labelFr: 'Femmes Attendues' },
+                { value: 10,  suffix: '',  icon: '🌍', labelEn: 'Regions Represented',  labelFr: 'Régions Représentées' },
+              ].map((stat, i) => (
+                <div key={i}>
+                  <div className="text-2xl mb-2">{stat.icon}</div>
+                  <div
+                    className="text-3xl sm:text-4xl font-bold text-[#2D6A4F]"
+                    style={{ fontFamily: "'Playfair Display', serif" }}
+                  >
+                    <AnimatedCounter target={stat.value} suffix={stat.suffix} duration={1200 + i * 150} />
+                  </div>
+                  <p className="text-sm text-gray-500 mt-1 font-medium">
+                    {lang === 'en' ? stat.labelEn : stat.labelFr}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* ========== ABOUT / OBJECTIVES SECTION ========== */}
       <section className="py-20 bg-[#FDF6EC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -451,23 +483,24 @@ export default function HomePage() {
 
           {/* Objectives Grid */}
           <div className="mb-8">
-            <h3
-              className="text-xl font-semibold text-[#2D6A4F] text-center mb-6"
-              style={{ fontFamily: "'Playfair Display', serif" }}
-            >
-              {t.about.objectives.title}
-            </h3>
+            <ScrollReveal>
+              <h3
+                className="text-xl font-semibold text-[#2D6A4F] text-center mb-6"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
+                {t.about.objectives.title}
+              </h3>
+            </ScrollReveal>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {t.about.objectives.list.map((obj, i) => (
-                <div
-                  key={i}
-                  className="flex items-start gap-3 bg-white rounded-2xl p-5 shadow-sm border border-[#74C69D]/20 card-hover"
-                >
-                  <div className="flex-shrink-0 w-8 h-8 bg-[#2D6A4F] text-white rounded-full flex items-center justify-center text-sm font-bold">
-                    {i + 1}
+                <ScrollReveal key={i} delay={i * 90}>
+                  <div className="flex items-start gap-3 bg-white rounded-2xl p-5 shadow-sm border border-[#74C69D]/20 card-hover h-full">
+                    <div className="flex-shrink-0 w-8 h-8 bg-[#2D6A4F] text-white rounded-full flex items-center justify-center text-sm font-bold">
+                      {i + 1}
+                    </div>
+                    <p className="text-gray-700 text-sm leading-relaxed">{obj}</p>
                   </div>
-                  <p className="text-gray-700 text-sm leading-relaxed">{obj}</p>
-                </div>
+                </ScrollReveal>
               ))}
             </div>
           </div>
@@ -501,21 +534,23 @@ export default function HomePage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-0 relative">
               {dayThemes.map((day, i) => (
-                <div key={i} className="relative flex lg:flex-col items-start lg:items-center gap-4 lg:gap-0">
-                  {i < dayThemes.length - 1 && (
-                    <div className="lg:hidden absolute left-6 top-12 w-0.5 h-full bg-[#74C69D]/30 -z-0" />
-                  )}
-                  <div
-                    className={`relative z-10 w-12 h-12 lg:w-14 lg:h-14 ${day.color} rounded-full flex items-center justify-center text-xl shadow-md flex-shrink-0 lg:mb-4`}
-                  >
-                    {day.icon}
+                <ScrollReveal key={i} delay={i * 120}>
+                  <div className="relative flex lg:flex-col items-start lg:items-center gap-4 lg:gap-0">
+                    {i < dayThemes.length - 1 && (
+                      <div className="lg:hidden absolute left-6 top-12 w-0.5 h-full bg-[#74C69D]/30 -z-0" />
+                    )}
+                    <div
+                      className={`relative z-10 w-12 h-12 lg:w-14 lg:h-14 ${day.color} rounded-full flex items-center justify-center text-xl shadow-md flex-shrink-0 lg:mb-4`}
+                    >
+                      {day.icon}
+                    </div>
+                    <div className="lg:text-center">
+                      <div className="text-xs font-bold text-[#C9A84C] mb-0.5">{day.day}</div>
+                      <div className="text-xs text-gray-400 mb-1">{day.date}</div>
+                      <p className="text-sm font-medium text-[#1B3A5C] leading-snug">{day.theme}</p>
+                    </div>
                   </div>
-                  <div className="lg:text-center">
-                    <div className="text-xs font-bold text-[#C9A84C] mb-0.5">{day.day}</div>
-                    <div className="text-xs text-gray-400 mb-1">{day.date}</div>
-                    <p className="text-sm font-medium text-[#1B3A5C] leading-snug">{day.theme}</p>
-                  </div>
-                </div>
+                </ScrollReveal>
               ))}
             </div>
           </div>
@@ -553,35 +588,36 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {fees.map((fee, i) => (
-              <div
-                key={i}
-                className={`relative rounded-2xl p-6 text-center shadow-sm card-hover ${
-                  fee.highlight
-                    ? 'bg-[#2D6A4F] text-white border-2 border-[#C9A84C] shadow-lg'
-                    : 'bg-white border border-[#74C69D]/20'
-                }`}
-              >
-                {fee.highlight && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#C9A84C] text-white text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap">
-                    {lang === 'en' ? '🌟 Best Value' : '🌟 Meilleure Offre'}
-                  </div>
-                )}
-                <div className="text-3xl mb-2">
-                  {i === 0 ? '🌱' : i === 1 ? '🌿' : '🌳'}
-                </div>
-                <h3
-                  className={`text-lg font-bold mb-2 ${fee.highlight ? 'text-white' : 'text-[#1B3A5C]'}`}
-                  style={{ fontFamily: "'Playfair Display', serif" }}
+              <ScrollReveal key={i} delay={i * 130}>
+                <div
+                  className={`relative rounded-2xl p-6 text-center shadow-sm card-hover ${
+                    fee.highlight
+                      ? 'bg-[#2D6A4F] text-white border-2 border-[#C9A84C] shadow-lg'
+                      : 'bg-white border border-[#74C69D]/20'
+                  }`}
                 >
-                  {fee.type}
-                </h3>
-                <p className={`text-2xl font-bold mb-1 ${fee.highlight ? 'text-[#F0D080]' : 'text-[#2D6A4F]'}`}>
-                  {formatCurrency(fee.amount)}
-                </p>
-                <p className={`text-xs ${fee.highlight ? 'text-[#74C69D]' : 'text-gray-400'}`}>
-                  {fee.deadline}
-                </p>
-              </div>
+                  {fee.highlight && (
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#C9A84C] text-white text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap">
+                      {lang === 'en' ? '🌟 Best Value' : '🌟 Meilleure Offre'}
+                    </div>
+                  )}
+                  <div className="text-3xl mb-2">
+                    {i === 0 ? '🌱' : i === 1 ? '🌿' : '🌳'}
+                  </div>
+                  <h3
+                    className={`text-lg font-bold mb-2 ${fee.highlight ? 'text-white' : 'text-[#1B3A5C]'}`}
+                    style={{ fontFamily: "'Playfair Display', serif" }}
+                  >
+                    {fee.type}
+                  </h3>
+                  <p className={`text-2xl font-bold mb-1 ${fee.highlight ? 'text-[#F0D080]' : 'text-[#2D6A4F]'}`}>
+                    {formatCurrency(fee.amount)}
+                  </p>
+                  <p className={`text-xs ${fee.highlight ? 'text-[#74C69D]' : 'text-gray-400'}`}>
+                    {fee.deadline}
+                  </p>
+                </div>
+              </ScrollReveal>
             ))}
           </div>
 
