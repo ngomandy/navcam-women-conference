@@ -57,14 +57,12 @@ function buildFaq(lang: 'en' | 'fr') {
     },
     {
       q: lang === 'en' ? 'What language will the sessions be in?' : 'Dans quelle langue se dérouleront les sessions ?',
-      // ⚠️ FLAG FOR USER: Confirm whether sessions are bilingual, French-only, or have translation.
       a: lang === 'en'
         ? 'The conference is bilingual — sessions will be conducted in both French and English to welcome all women across Cameroon.'
         : 'La conférence est bilingue — les sessions se déroulent en français et en anglais pour accueillir toutes les femmes du Cameroun.',
     },
     {
       q: lang === 'en' ? 'Where exactly is the venue?' : 'Où se trouve exactement le lieu de la conférence ?',
-      // ⚠️ FLAG FOR USER: Add a more detailed address or Google Maps link if available.
       a: lang === 'en'
         ? 'The conference will be held at Care & Hope, Yaoundé, Cameroon. More detailed directions will be sent to confirmed registrants.'
         : 'La conférence se tiendra à Care & Hope, Yaoundé, Cameroun. Des instructions détaillées seront envoyées aux inscrits confirmés.',
