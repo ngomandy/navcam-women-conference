@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
-// import { appendRegistrationToSheet } from '@/lib/sheets' // temporarily disabled
+import { appendRegistrationToSheet } from '@/lib/sheets'
 
 export async function POST(req: Request) {
   try {
@@ -42,35 +42,43 @@ export async function POST(req: Request) {
       }
     }
 
-    let attendee
-    try {
-      attendee = await prisma.attendee.create({
-        data: {
-          firstName: firstName.trim(),
-          lastName: lastName.trim(),
-          email: email?.trim() || null,
-          phone: phone.trim(),
-          maritalStatus,
-          city: city.trim(),
-          dietaryNeeds: dietaryNeeds?.trim() || null,
-          hasChildren: Boolean(hasChildren),
-          numberOfChildren: numberOfChildren || 0,
-          childrenAges: childrenAges || null,
-          registrationType: registrationType || 'REGULAR',
-          feesConfirmed: Boolean(feesConfirmed),
-          depositPaid: Boolean(depositConfirmed),
-          notes: notes?.trim() || null,
-          status: 'PENDING',
-          language: language || 'fr',
-        },
-      })
-    } catch (dbError) {
-      const msg = dbError instanceof Error ? dbError.message : String(dbError)
-      console.error('DB error:', dbError)
-      return NextResponse.json({ success: false, message: `DB: ${msg}` }, { status: 500 })
-    }
+    const attendee = await prisma.attendee.create({
+      data: {
+        firstName: firstName.trim(),
+        lastName: lastName.trim(),
+        email: email?.trim() || null,
+        phone: phone.trim(),
+        maritalStatus,
+        city: city.trim(),
+        dietaryNeeds: dietaryNeeds?.trim() || null,
+        hasChildren: Boolean(hasChildren),
+        numberOfChildren: numberOfChildren || 0,
+        childrenAges: childrenAges || null,
+        registrationType: registrationType || 'REGULAR',
+        feesConfirmed: Boolean(feesConfirmed),
+        depositPaid: Boolean(depositConfirmed),
+        notes: notes?.trim() || null,
+        status: 'PENDING',
+        language: language || 'fr',
+      },
+    })
 
-    // Google Sheets sync temporarily disabled for diagnostics
+    // Sync to Google Sheets (fire-and-forget — never blocks or fails the registration)
+    appendRegistrationToSheet({
+      firstName: attendee.firstName,
+      lastName: attendee.lastName,
+      email: attendee.email,
+      phone: attendee.phone,
+      city: attendee.city,
+      maritalStatus: attendee.maritalStatus,
+      registrationType: attendee.registrationType,
+      hasChildren: attendee.hasChildren,
+      numberOfChildren: attendee.numberOfChildren ?? 0,
+      childrenAges: attendee.childrenAges,
+      dietaryNeeds: attendee.dietaryNeeds,
+      language: attendee.language,
+      notes: attendee.notes,
+    }).catch((err) => console.error('[Sheets sync error]', err))
 
     return NextResponse.json({
       success: true,
@@ -78,10 +86,9 @@ export async function POST(req: Request) {
       message: 'Registration submitted successfully',
     })
   } catch (error) {
-    const msg = error instanceof Error ? error.message : String(error)
     console.error('Registration error:', error)
     return NextResponse.json(
-      { success: false, message: msg },
+      { success: false, message: 'Internal server error' },
       { status: 500 }
     )
   }
