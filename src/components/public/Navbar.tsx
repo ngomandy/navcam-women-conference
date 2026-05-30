@@ -19,6 +19,7 @@ export default function Navbar() {
   }, [])
 
   const navLinks = [
+    { href: '/',         label: t.nav.home },
     { href: '/about',    label: t.nav.about },
     { href: '/schedule', label: t.nav.schedule },
     { href: '/venue',    label: t.nav.venue },
