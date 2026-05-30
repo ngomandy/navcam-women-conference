@@ -96,9 +96,13 @@ export function ScriptureHighlight() {
             <>
               "I am the vine; you are the branches.
               <br className="hidden sm:block" />{' '}
-              If you remain in me and I in you,
+              If you remain in me and I in you, you will bear much fruit;
               <br className="hidden sm:block" />{' '}
-              you will bear much fruit…"
+              apart from me you can do nothing.
+              <br className="hidden sm:block" />{' '}
+              This is to my Father&apos;s glory, that you bear much fruit,
+              <br className="hidden sm:block" />{' '}
+              showing yourselves to be my disciples."
             </>
           ) : (
             <>

@@ -391,7 +391,7 @@ export default function HomePage() {
             <div className="mt-4 max-w-2xl mx-auto bg-white/5 border border-white/10 rounded-2xl px-6 py-4 backdrop-blur-sm">
               <p className="text-white/85 text-sm sm:text-base italic leading-relaxed" style={{ fontFamily: "'Playfair Display', serif" }}>
                 {lang === 'en'
-                  ? '“I am the vine; you are the branches. If you remain in me and I in you, this is to my Father’s glory, that you bear much fruit, showing yourselves to be my disciples.”'
+                  ? ‘”I am the vine; you are the branches. If you remain in me and I in you, you will bear much fruit; apart from me you can do nothing. This is to my Father\’s glory, that you bear much fruit, showing yourselves to be my disciples.”’
                   : '“Je suis le cep ; vous êtes les sarments. Si quelqu’un demeure en moi et si je demeure en lui, il porte beaucoup de fruit. C’est en ceci que mon Père est glorifié : que vous portiez beaucoup de fruit, et que vous soyez ainsi mes disciples.”'}
               </p>
               <p className="text-[#C9A84C] text-sm mt-2 font-semibold">
