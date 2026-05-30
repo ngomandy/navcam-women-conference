@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
-import { appendRegistrationToSheet } from '@/lib/sheets'
+// import { appendRegistrationToSheet } from '@/lib/sheets' // temporarily disabled
 
 export async function POST(req: Request) {
   try {
@@ -70,22 +70,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ success: false, message: `DB: ${msg}` }, { status: 500 })
     }
 
-    // Sync to Google Sheets (fire-and-forget — never blocks or fails the registration)
-    appendRegistrationToSheet({
-      firstName: attendee.firstName,
-      lastName: attendee.lastName,
-      email: attendee.email,
-      phone: attendee.phone,
-      city: attendee.city,
-      maritalStatus: attendee.maritalStatus,
-      registrationType: attendee.registrationType,
-      hasChildren: attendee.hasChildren,
-      numberOfChildren: attendee.numberOfChildren ?? 0,
-      childrenAges: attendee.childrenAges,
-      dietaryNeeds: attendee.dietaryNeeds,
-      language: attendee.language,
-      notes: attendee.notes,
-    }).catch((err) => console.error('[Sheets sync error]', err))
+    // Google Sheets sync temporarily disabled for diagnostics
 
     return NextResponse.json({
       success: true,
