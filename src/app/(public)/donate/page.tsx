@@ -477,8 +477,8 @@ export default function DonatePage() {
                     fr: "Inscrivez-vous via le formulaire d'inscription sur ce site pour réserver votre place.",
                   },
                   {
-                    en: 'Pay your deposit using MTN MoMo (+237 670 546 041) or Orange Money (+237 694 756 099) to confirm your registration. Use "NavCamWomen2026 — [Your Name]" as reference.',
-                    fr: 'Payez votre acompte via MTN MoMo (+237 670 546 041) ou Orange Money (+237 694 756 099) pour confirmer votre inscription. Utilisez "NavCamWomen2026 — [Votre Nom]" comme référence.',
+                    en: 'Pay your 10,000 FCFA deposit using MTN MoMo (+237 670 546 041) or Orange Money (+237 694 756 099) to confirm your registration. Use "NavCamWomen2026 — [Your Name]" as reference.',
+                    fr: 'Payez votre acompte de 10 000 FCFA via MTN MoMo (+237 670 546 041) ou Orange Money (+237 694 756 099) pour confirmer votre inscription. Utilisez "NavCamWomen2026 — [Votre Nom]" comme référence.',
                   },
                   {
                     en: 'Send the proof of payment (screenshot) to the Finance team on WhatsApp: +237 670 546 041, +237 694 756 099, or +237 670 838 779.',

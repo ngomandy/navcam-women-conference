@@ -78,8 +78,8 @@ function buildFaq(lang: 'en' | 'fr') {
     {
       q: lang === 'en' ? 'What is the cancellation policy?' : 'Quelle est la politique d\'annulation ?',
       a: lang === 'en'
-        ? 'Please note that deposits and contributions are non-refundable. If you are unable to attend, please inform the team as soon as possible via WhatsApp so we can take note.'
-        : 'Veuillez noter que les acomptes et contributions ne sont pas remboursables. Si vous ne pouvez pas assister, veuillez en informer l\'équipe dès que possible via WhatsApp afin que nous puissions en prendre note.',
+        ? 'Please note that the 10,000 FCFA deposit and all contributions are non-refundable. If you are unable to attend, please inform the team as soon as possible via WhatsApp so we can take note.'
+        : 'Veuillez noter que l\'acompte de 10 000 FCFA et toutes les contributions ne sont pas remboursables. Si vous ne pouvez pas assister, veuillez en informer l\'équipe dès que possible via WhatsApp afin que nous puissions en prendre note.',
     },
   ]
 }
