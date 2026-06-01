@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
@@ -390,9 +390,11 @@ export default function HomePage() {
             </p>
             <div className="mt-4 max-w-2xl mx-auto bg-white/5 border border-white/10 rounded-2xl px-6 py-4 backdrop-blur-sm">
               <p className="text-white/85 text-sm sm:text-base italic leading-relaxed" style={{ fontFamily: "'Playfair Display', serif" }}>
-                {lang === 'en'
-                  ? ‘”I am the vine; you are the branches. If you remain in me and I in you, you will bear much fruit; apart from me you can do nothing. This is to my Father\’s glory, that you bear much fruit, showing yourselves to be my disciples.”’
-                  : '“Je suis le cep ; vous êtes les sarments. Si quelqu’un demeure en moi et si je demeure en lui, il porte beaucoup de fruit. C’est en ceci que mon Père est glorifié : que vous portiez beaucoup de fruit, et que vous soyez ainsi mes disciples.”'}
+                {lang === 'en' ? (
+                  <>&ldquo;I am the vine; you are the branches. If you remain in me and I in you, you will bear much fruit; apart from me you can do nothing. If you do not remain in me, you are like a branch that is thrown away and withers; such branches are picked up, thrown into the fire and burned. If you remain in me and my words remain in you, ask whatever you wish, and it will be done for you. This is to my Father&rsquo;s glory, that you bear much fruit, showing yourselves to be my disciples.&rdquo;</>
+                ) : (
+                  <>&ldquo;Je suis le cep, vous &ecirc;tes les sarments. Celui qui demeure en moi et en qui je demeure porte beaucoup de fruit, car sans moi vous ne pouvez rien faire. Si quelqu&apos;un ne demeure pas en moi, il est jet&eacute; dehors comme un sarment, et il s&egrave;che&nbsp;; on ramasse ces sarments, on les jette au feu, et ils br&ucirc;lent. Si vous demeurez en moi et que mes paroles demeurent en vous, demandez ce que vous voudrez et cela vous sera accord&eacute;. C&apos;est en ceci que mon P&egrave;re est glorifi&eacute;&nbsp;: que vous portiez beaucoup de fruit, et que vous soyez ainsi mes disciples.&rdquo;</>
+                )}
               </p>
               <p className="text-[#C9A84C] text-sm mt-2 font-semibold">
                 — {t.conference.scripture}
