@@ -14,6 +14,17 @@ const PHOTOS = [
   { src: '/venue/venue-kitchen.jpg',      captionEn: 'Full kitchen',                      captionFr: 'Cuisine équipée' },
   { src: '/venue/venue-room-simple.jpg',  captionEn: 'Standard bedroom',                  captionFr: 'Chambre standard' },
   { src: '/venue/venue-bathroom.jpg',     captionEn: 'Bathroom facilities',               captionFr: 'Sanitaires' },
+  { src: '/venue/venue-ch-01.jpg',        captionEn: 'Care & Hope Center',                captionFr: 'Care & Hope Center' },
+  { src: '/venue/venue-ch-02.jpg',        captionEn: 'Care & Hope Center',                captionFr: 'Care & Hope Center' },
+  { src: '/venue/venue-ch-03.jpg',        captionEn: 'Care & Hope Center',                captionFr: 'Care & Hope Center' },
+  { src: '/venue/venue-ch-04.jpg',        captionEn: 'Care & Hope Center',                captionFr: 'Care & Hope Center' },
+  { src: '/venue/venue-ch-05.jpg',        captionEn: 'Care & Hope Center',                captionFr: 'Care & Hope Center' },
+  { src: '/venue/venue-ch-06.jpg',        captionEn: 'Care & Hope Center',                captionFr: 'Care & Hope Center' },
+  { src: '/venue/venue-ch-07.jpg',        captionEn: 'Care & Hope Center',                captionFr: 'Care & Hope Center' },
+  { src: '/venue/venue-ch-08.jpg',        captionEn: 'Care & Hope Center',                captionFr: 'Care & Hope Center' },
+  { src: '/venue/venue-ch-09.jpg',        captionEn: 'Care & Hope Center',                captionFr: 'Care & Hope Center' },
+  { src: '/venue/venue-ch-10.jpg',        captionEn: 'Care & Hope Center',                captionFr: 'Care & Hope Center' },
+  { src: '/venue/venue-ch-11.jpg',        captionEn: 'Care & Hope Center',                captionFr: 'Care & Hope Center' },
 ]
 
 const FACILITIES = [
