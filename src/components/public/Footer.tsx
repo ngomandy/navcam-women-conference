@@ -14,7 +14,7 @@ export default function Footer() {
           {/* Brand & Theme */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <span className="text-3xl" aria-hidden="true">🌿</span>
+              <img src="/nav_women_conference_2026_C.svg" alt="" className="h-10 w-auto rounded-md" />
               <div>
                 <h3
                   className="text-lg font-bold text-white"
