@@ -106,11 +106,19 @@ export function ScriptureHighlight() {
             </>
           ) : (
             <>
-              « Je suis le cep ; vous êtes les sarments.
+              « Je suis le cep, vous êtes les sarments.
               <br className="hidden sm:block" />{' '}
-              Si quelqu'un demeure en moi
+              Celui qui demeure en moi et en qui je demeure
               <br className="hidden sm:block" />{' '}
-              et si je demeure en lui, il porte beaucoup de fruit… »
+              porte beaucoup de fruit,
+              <br className="hidden sm:block" />{' '}
+              car sans moi vous ne pouvez rien faire.
+              <br className="hidden sm:block" />{' '}
+              C&apos;est en ceci que mon Père est glorifié :
+              <br className="hidden sm:block" />{' '}
+              que vous portiez beaucoup de fruit,
+              <br className="hidden sm:block" />{' '}
+              et que vous soyez ainsi mes disciples. »
             </>
           )}
         </blockquote>
