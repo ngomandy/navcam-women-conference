@@ -1,6 +1,7 @@
 ﻿'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import { ChevronDown } from 'lucide-react'
 import Link from 'next/link'
 import { useLanguage } from '@/components/LanguageContext'
 import { formatCurrency } from '@/lib/utils'
@@ -28,6 +29,127 @@ const testimonials = [
     quote: 'Love must be loving and active. For the gospel to go through.',
   },
 ]
+
+// ─── OBJECTIVE DETAILS ────────────────────────────────────────────────────────
+const OBJECTIVE_DETAILS: { en: string[]; fr: string[] }[] = [
+  {
+    en: [
+      'Jesus declared, "I am the vine; you are the branches" (John 15:5). Lasting fruit is only possible when our lives are deeply connected to Him. During this conference, you will be invited into a deeper relationship with Christ through the study of Scripture, personal reflection, worship, and prayer. Together, we will learn what it means to abide in Him daily — not merely as a spiritual practice, but as a way of life.',
+      'As women, we often carry many responsibilities and demands, yet Christ calls us first to sit at His feet and know Him intimately. Through powerful biblical teaching and guided times of prayer, you will be encouraged to strengthen your spiritual foundations, hear God\'s voice more clearly, and cultivate a life that is firmly rooted in His truth. As your roots grow deeper in Christ, you will discover a renewed confidence, stability, and joy that cannot be shaken by life\'s circumstances.',
+    ],
+    fr: [
+      'Jésus a déclaré : « Je suis le cep, vous êtes les sarments » (Jean 15:5). Un fruit durable n\'est possible que lorsque nos vies sont profondément connectées à Lui. Lors de cette conférence, vous serez invitées à approfondir votre relation avec Christ à travers l\'étude des Écritures, la réflexion personnelle, l\'adoration et la prière. Ensemble, nous apprendrons ce que signifie demeurer en Lui au quotidien — non pas simplement comme une pratique spirituelle, mais comme un mode de vie.',
+      'En tant que femmes, nous portons souvent de nombreuses responsabilités, mais Christ nous appelle d\'abord à nous asseoir à Ses pieds et à Le connaître intimement. À travers un enseignement biblique puissant et des moments guidés de prière, vous serez encouragées à renforcer vos fondements spirituels, à entendre la voix de Dieu plus clairement et à cultiver une vie fermement ancrée dans Sa vérité. À mesure que vos racines s\'approfondissent en Christ, vous découvrirez une confiance, une stabilité et une joie renouvelées qu\'aucune circonstance de la vie ne pourra ébranler.',
+    ],
+  },
+  {
+    en: [
+      'The Lord is not only interested in what we do; He cares deeply about who we are. Many women carry hidden wounds, disappointments, fears, regrets, and burdens that affect their relationship with God, themselves, and others. This conference will create space for Christ, the Great Healer, to minister to every area of our lives.',
+      'Through biblical teaching, prayer, worship, and authentic community, you will be invited to bring your whole heart before God. We believe that Jesus still heals broken hearts, restores hope, renews minds, and brings freedom where there has been bondage. As you encounter His love and grace, you will experience greater emotional, spiritual, and relational wholeness — allowing you to move forward in freedom and become all that God has created you to be.',
+    ],
+    fr: [
+      'Le Seigneur ne s\'intéresse pas seulement à ce que nous faisons ; Il se soucie profondément de qui nous sommes. Beaucoup de femmes portent des blessures cachées, des déceptions, des peurs, des regrets et des fardeaux qui affectent leur relation avec Dieu, avec elles-mêmes et avec les autres. Cette conférence créera un espace pour que Christ, le Grand Guérisseur, puisse ministrer à chaque aspect de nos vies.',
+      'À travers l\'enseignement biblique, la prière, l\'adoration et une communauté authentique, vous serez invitées à apporter tout votre cœur devant Dieu. Nous croyons que Jésus guérit encore les cœurs brisés, restaure l\'espoir, renouvelle les esprits et apporte la liberté là où il y a eu servitude. En rencontrant Son amour et Sa grâce, vous vivrez une plus grande plénitude émotionnelle, spirituelle et relationnelle — vous permettant d\'avancer dans la liberté et de devenir tout ce que Dieu vous a créées pour être.',
+    ],
+  },
+  {
+    en: [
+      'God\'s desire is not simply that we survive spiritually, but that we flourish and bear fruit that remains (John 15:8, 16). Fruitfulness is the visible evidence of Christ\'s life flowing through us — transforming our character, relationships, homes, ministries, workplaces, and communities.',
+      'Throughout the conference, you will receive practical biblical tools and spiritual encouragement to help you live out your faith intentionally. You will learn how to cultivate Christlike character, steward your gifts faithfully, influence others for God\'s glory, and remain fruitful through every season of life. Whether you are serving in ministry, raising a family, leading in your workplace, or impacting your community, you will be equipped to produce fruit that reflects God\'s heart and advances His kingdom.',
+    ],
+    fr: [
+      'Le désir de Dieu n\'est pas simplement que nous survivions spirituellement, mais que nous prospérions et portions des fruits qui demeurent (Jean 15:8, 16). La fécondité est la preuve visible de la vie de Christ qui coule à travers nous — transformant notre caractère, nos relations, nos foyers, nos ministères, nos lieux de travail et nos communautés.',
+      'Tout au long de la conférence, vous recevrez des outils bibliques pratiques et des encouragements spirituels pour vous aider à vivre votre foi de manière intentionnelle. Vous apprendrez à cultiver un caractère semblable à celui de Christ, à gérer fidèlement vos dons, à influencer les autres pour la gloire de Dieu et à rester fructueuses à travers chaque saison de la vie. Que vous serviez dans un ministère, élèviez une famille, dirigiez dans votre lieu de travail ou impactiez votre communauté, vous serez équipées pour produire des fruits qui reflètent le cœur de Dieu et font avancer Son royaume.',
+    ],
+  },
+  {
+    en: [
+      'God never intended for women to walk their spiritual journey alone. Throughout Scripture, we see the beauty and power of women encouraging, mentoring, praying for, and strengthening one another. This conference is an opportunity to experience genuine Christian sisterhood centered on Christ.',
+      'As women from different backgrounds and generations gather together, you will form meaningful connections, share experiences, and learn from one another. Through fellowship, prayer, discussions, and shared moments of worship, bonds will be formed that extend beyond the conference itself. You will leave encouraged, supported, and connected to a community of women who are committed to growing in Christ and helping one another remain rooted and fruitful.',
+    ],
+    fr: [
+      'Dieu n\'a jamais eu l\'intention que les femmes marchent seules dans leur voyage spirituel. À travers les Écritures, nous voyons la beauté et la puissance des femmes qui s\'encouragent, se mentorent, prient les unes pour les autres et se fortifient mutuellement. Cette conférence est une opportunité de vivre une véritable sororité chrétienne centrée sur Christ.',
+      'Alors que des femmes de différents milieux et générations se rassemblent, vous formerez des liens significatifs, partagerez des expériences et apprendrez les unes des autres. À travers la communion fraternelle, la prière, les discussions et les moments partagés d\'adoration, des liens se formeront qui s\'étendront au-delà de la conférence elle-même. Vous repartirez encouragées, soutenues et connectées à une communauté de femmes engagées à croître en Christ et à s\'aider mutuellement à rester enracinées et fructueuses.',
+    ],
+  },
+  {
+    en: [
+      'Every woman has been intentionally created by God and uniquely called to participate in His redemptive work in the world. Yet many women struggle with questions about identity, calling, and significance. This conference will help you explore who God says you are and how He desires to use your life for His glory.',
+      'Through biblical teaching and personal reflection, you will gain a clearer understanding of your gifts, passions, experiences, and opportunities for influence. More importantly, you will be challenged to see your purpose not merely as what you do, but as who you are in Christ. As your identity becomes firmly rooted in Him, you will be empowered to walk confidently in your calling and faithfully fulfill the unique assignment God has entrusted to you.',
+    ],
+    fr: [
+      'Chaque femme a été intentionnellement créée par Dieu et uniquement appelée à participer à Son œuvre rédemptrice dans le monde. Pourtant, beaucoup de femmes luttent avec des questions d\'identité, de vocation et de signification. Cette conférence vous aidera à explorer ce que Dieu dit de qui vous êtes et comment Il désire utiliser votre vie pour Sa gloire.',
+      'À travers l\'enseignement biblique et la réflexion personnelle, vous acquerrez une compréhension plus claire de vos dons, passions, expériences et opportunités d\'influence. Plus important encore, vous serez mises au défi de voir votre but non pas simplement comme ce que vous faites, mais comme qui vous êtes en Christ. À mesure que votre identité s\'enracine fermement en Lui, vous serez habilitées à marcher avec confiance dans votre vocation et à accomplir fidèlement la mission unique que Dieu vous a confiée.',
+    ],
+  },
+  {
+    en: [
+      'An encounter with Christ always leads to a mission. As women rooted in Christ and transformed by His presence, we are called to bear fruit that blesses others and points them to Him. The conference will culminate in a powerful call to live intentionally as women of influence wherever God has placed us.',
+      'Whether in your family, church, workplace, neighborhood, campus, or nation, God desires to use you as an instrument of His love, truth, and grace. You will be challenged and encouraged to step out in faith, embrace your role as a disciple-maker, and carry the life of Christ into every sphere of influence. As you return home, you will do so not merely inspired, but commissioned — ready to abide in Christ, bear lasting fruit, and participate wholeheartedly in God\'s mission in the world.',
+    ],
+    fr: [
+      'Une rencontre avec Christ conduit toujours à une mission. En tant que femmes enracinées en Christ et transformées par Sa présence, nous sommes appelées à porter des fruits qui bénissent les autres et les orientent vers Lui. La conférence culminera par un puissant appel à vivre intentionnellement comme des femmes d\'influence partout où Dieu nous a placées.',
+      'Que ce soit dans votre famille, votre église, votre lieu de travail, votre quartier, votre campus ou votre nation, Dieu désire vous utiliser comme instrument de Son amour, de Sa vérité et de Sa grâce. Vous serez mises au défi et encouragées à vous avancer dans la foi, à embrasser votre rôle de femme faisant des disciples et à porter la vie de Christ dans chaque sphère d\'influence. En rentrant chez vous, vous le ferez non pas simplement inspirées, mais commissionnées — prêtes à demeurer en Christ, à porter des fruits durables et à participer pleinement à la mission de Dieu dans le monde.',
+    ],
+  },
+]
+
+function ObjectivesSection() {
+  const { t, lang } = useLanguage()
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
+  const contentRefs = useRef<(HTMLDivElement | null)[]>([])
+
+  return (
+    <div className="mb-8">
+      <ScrollReveal>
+        <h3
+          className="text-xl font-semibold text-[#2D6A4F] text-center mb-8"
+          style={{ fontFamily: "'Playfair Display', serif" }}
+        >
+          {t.about.objectives.title}
+        </h3>
+      </ScrollReveal>
+      <div className="space-y-3 max-w-4xl mx-auto">
+        {t.about.objectives.list.map((obj, i) => {
+          const isOpen = openIndex === i
+          const detail = OBJECTIVE_DETAILS[i]
+          return (
+            <ScrollReveal key={i} delay={i * 60}>
+              <div className={`rounded-2xl border transition-all duration-300 overflow-hidden ${isOpen ? 'border-[#2D6A4F]/40 shadow-md' : 'border-[#74C69D]/20 shadow-sm bg-white'}`}>
+                <button
+                  onClick={() => setOpenIndex(isOpen ? null : i)}
+                  className={`w-full flex items-center gap-4 p-5 text-left transition-colors ${isOpen ? 'bg-[#2D6A4F] text-white' : 'bg-white hover:bg-[#F0FAF4]'}`}
+                >
+                  <div className={`flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold transition-colors ${isOpen ? 'bg-white text-[#2D6A4F]' : 'bg-[#2D6A4F] text-white'}`}>
+                    {i + 1}
+                  </div>
+                  <p className={`flex-1 font-semibold text-sm sm:text-base leading-snug ${isOpen ? 'text-white' : 'text-[#1B3A5C]'}`}>
+                    {obj}
+                  </p>
+                  <ChevronDown
+                    size={18}
+                    className={`flex-shrink-0 transition-all duration-300 ${isOpen ? 'rotate-180 text-white' : 'text-[#2D6A4F]'}`}
+                  />
+                </button>
+                <div
+                  ref={el => { contentRefs.current[i] = el }}
+                  style={{ maxHeight: isOpen ? (contentRefs.current[i]?.scrollHeight ?? 500) + 'px' : '0px' }}
+                  className="transition-[max-height] duration-500 ease-in-out overflow-hidden"
+                >
+                  <div className="px-6 py-5 border-t border-[#74C69D]/20 bg-white space-y-3">
+                    {detail && (lang === 'en' ? detail.en : detail.fr).map((para, j) => (
+                      <p key={j} className="text-gray-600 text-sm leading-relaxed">{para}</p>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
 
 // ─── FAQ DATA ─────────────────────────────────────────────────────────────────
 function buildFaq(lang: 'en' | 'fr') {
@@ -499,29 +621,8 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Objectives Grid */}
-          <div className="mb-8">
-            <ScrollReveal>
-              <h3
-                className="text-xl font-semibold text-[#2D6A4F] text-center mb-6"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
-                {t.about.objectives.title}
-              </h3>
-            </ScrollReveal>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {t.about.objectives.list.map((obj, i) => (
-                <ScrollReveal key={i} delay={i * 90}>
-                  <div className="flex items-start gap-3 bg-white rounded-2xl p-5 shadow-sm border border-[#74C69D]/20 card-hover h-full">
-                    <div className="flex-shrink-0 w-8 h-8 bg-[#2D6A4F] text-white rounded-full flex items-center justify-center text-sm font-bold">
-                      {i + 1}
-                    </div>
-                    <p className="text-gray-700 text-sm leading-relaxed">{obj}</p>
-                  </div>
-                </ScrollReveal>
-              ))}
-            </div>
-          </div>
+          {/* Objectives Accordion */}
+          <ObjectivesSection />
         </div>
       </section>
 
