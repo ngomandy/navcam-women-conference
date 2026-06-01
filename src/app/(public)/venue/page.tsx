@@ -172,23 +172,21 @@ export default function VenuePage() {
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+          <div className="columns-2 sm:columns-3 lg:columns-4 gap-3">
             {PHOTOS.map((photo, i) => (
-              <ScrollReveal key={i} delay={i * 60}>
+              <ScrollReveal key={i} delay={i * 30} className="break-inside-avoid mb-3 block">
                 <button
                   onClick={() => setLightbox(i)}
-                  className={`relative overflow-hidden rounded-2xl group cursor-pointer ${i === 0 ? 'col-span-2 row-span-2 sm:col-span-2' : ''}`}
-                  style={{ aspectRatio: i === 0 ? '4/3' : '1/1' }}
+                  className="relative overflow-hidden rounded-2xl group cursor-pointer w-full block"
                 >
-                  <Image
+                  <img
                     src={photo.src}
                     alt={lang === 'en' ? photo.captionEn : photo.captionFr}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105 block"
+                    loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-[#1B3A5C]/0 group-hover:bg-[#1B3A5C]/30 transition-all duration-300 flex items-end p-3">
-                    <p className="text-white text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40 rounded-lg px-2 py-1">
+                  <div className="absolute inset-0 bg-[#1B3A5C]/0 group-hover:bg-[#1B3A5C]/40 transition-all duration-300 flex items-end p-3">
+                    <p className="text-white text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/50 rounded-lg px-2 py-1">
                       {lang === 'en' ? photo.captionEn : photo.captionFr}
                     </p>
                   </div>

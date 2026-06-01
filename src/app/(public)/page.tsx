@@ -373,7 +373,8 @@ function CountdownTimer() {
           <div key={i} className="flex flex-col items-center">
             <div className="bg-white/15 backdrop-blur-sm border border-white/20 rounded-xl w-16 sm:w-20 h-16 sm:h-20 flex items-center justify-center shadow-lg">
               <span
-                className="text-white text-2xl sm:text-3xl font-bold tabular-nums"
+                key={String(unit.value)}
+                className="text-white text-2xl sm:text-3xl font-bold tabular-nums animate-countdown-tick"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
                 {String(unit.value).padStart(2, '0')}
@@ -566,7 +567,7 @@ export default function HomePage() {
       </section>
 
       {/* ========== STATS SECTION ========== */}
-      <section className="py-14 bg-white">
+      <section className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">

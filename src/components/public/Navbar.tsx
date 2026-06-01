@@ -34,6 +34,7 @@ export default function Navbar() {
     href === '/' ? pathname === '/' : pathname.startsWith(href)
 
   return (
+    <>
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
@@ -115,34 +116,64 @@ export default function Navbar() {
             </button>
           </div>
         </div>
+      </div>
+    </nav>
 
-        {/* Mobile Menu */}
-        {isOpen && (
-          <div className="md:hidden py-3 pb-4 border-t border-[#74C69D]/30 bg-[#FDF6EC]/95 animate-fade-in">
+    {isOpen && (
+      <>
+        <div
+          className="fixed inset-0 z-[55] bg-black/50 backdrop-blur-sm md:hidden animate-backdrop-in"
+          onClick={() => setIsOpen(false)}
+        />
+        <div className="fixed top-0 right-0 bottom-0 z-[60] w-[300px] max-w-[85vw] bg-[#FDF6EC] md:hidden shadow-2xl flex flex-col animate-drawer-in">
+          <div className="flex items-center justify-between px-5 py-4 border-b border-[#74C69D]/30">
+            <img src="/nav_women_conference_2026_C.svg" alt="" className="h-10 w-auto rounded-md" />
+            <button
+              onClick={() => setIsOpen(false)}
+              className="p-2 text-[#2D6A4F] hover:bg-[#74C69D]/20 rounded-lg transition-colors"
+              aria-label="Close menu"
+            >
+              <X size={22} />
+            </button>
+          </div>
+          <nav className="flex-1 overflow-y-auto py-3 px-3">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className={`block px-4 py-3 text-sm font-medium rounded-lg mx-2 mb-1 transition-colors ${
+                className={`flex items-center px-4 py-3.5 text-sm font-medium rounded-xl mb-1 transition-colors ${
                   isActive(link.href)
                     ? 'bg-[#2D6A4F] text-white'
-                    : 'text-[#1B3A5C] hover:bg-[#74C69D]/20 hover:text-[#2D6A4F]'
+                    : 'text-[#1B3A5C] hover:bg-[#74C69D]/20'
                 }`}
               >
                 {link.label}
               </Link>
             ))}
+          </nav>
+          <div className="px-4 py-5 border-t border-[#74C69D]/20 space-y-3">
+            <div className="flex bg-white border border-[#74C69D]/40 rounded-full overflow-hidden shadow-sm">
+              <button
+                onClick={() => setLang('en')}
+                className={`flex-1 py-2 text-xs font-semibold transition-colors ${lang === 'en' ? 'bg-[#2D6A4F] text-white' : 'text-[#1B3A5C] hover:bg-[#74C69D]/10'}`}
+              >EN</button>
+              <button
+                onClick={() => setLang('fr')}
+                className={`flex-1 py-2 text-xs font-semibold transition-colors ${lang === 'fr' ? 'bg-[#2D6A4F] text-white' : 'text-[#1B3A5C] hover:bg-[#74C69D]/10'}`}
+              >FR</button>
+            </div>
             <Link
               href="/register"
               onClick={() => setIsOpen(false)}
-              className="block mx-2 mt-3 px-4 py-3 bg-[#C9A84C] hover:bg-[#B8963A] text-white text-sm font-semibold rounded-lg text-center transition-colors"
+              className="block w-full py-3 bg-[#C9A84C] hover:bg-[#B8963A] text-white text-sm font-semibold rounded-full text-center transition-colors shadow-sm"
             >
               {t.hero.cta}
             </Link>
           </div>
-        )}
-      </div>
-    </nav>
+        </div>
+      </>
+    )}
+    </>
   )
 }

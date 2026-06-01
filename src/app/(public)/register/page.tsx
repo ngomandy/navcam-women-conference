@@ -169,7 +169,20 @@ export default function RegisterPage() {
     return (
       <div className="min-h-screen bg-[#FDF6EC] flex items-center justify-center px-4">
         <div className="bg-white rounded-3xl p-8 sm:p-12 max-w-md w-full text-center shadow-xl border border-[#74C69D]/20">
-          <div className="text-6xl mb-4">🌿</div>
+          <div className="flex justify-center mb-5">
+            <svg className="w-20 h-20 animate-check-circle" viewBox="0 0 80 80" fill="none">
+              <circle cx="40" cy="40" r="38" fill="#2D6A4F" />
+              <circle cx="40" cy="40" r="38" fill="none" stroke="#40916C" strokeWidth="2" opacity="0.4" />
+              <polyline
+                className="animate-check-stroke"
+                points="24,42 35,53 57,28"
+                stroke="white"
+                strokeWidth="4.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </div>
           <h2
             className="text-2xl font-bold text-[#2D6A4F] mb-3"
             style={{ fontFamily: "'Playfair Display', serif" }}

@@ -128,14 +128,78 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-/* Card hover effect */
+/* ── Card hover — depth hierarchy ───────────────────────────────────────── */
 .card-hover {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(45, 106, 79, 0.13), 0 2px 6px rgba(0,0,0,0.05);
+}
+.card-float {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-float:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(45, 106, 79, 0.18), 0 4px 12px rgba(0,0,0,0.07);
 }
 
-.card-hover:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(45, 106, 79, 0.15);
+/* ── Pull-quote ──────────────────────────────────────────────────────────── */
+.pull-quote {
+  border-left: 3px solid var(--color-gold);
+  padding: 0.6rem 1.1rem;
+  margin: 1.1rem 0;
+  font-style: italic;
+  color: var(--color-green-deep);
+  background: rgba(201,168,76,0.06);
+  border-radius: 0 0.5rem 0.5rem 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* ── Mobile Drawer ───────────────────────────────────────────────────────── */
+@keyframes slide-in-drawer {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+@keyframes fade-in-backdrop {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.animate-drawer-in {
+  animation: slide-in-drawer 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.animate-backdrop-in {
+  animation: fade-in-backdrop 0.22s ease-out both;
+}
+
+/* ── Countdown tick ──────────────────────────────────────────────────────── */
+@keyframes countdown-flip {
+  0%   { opacity: 0; transform: translateY(-8px) scale(0.9); }
+  100% { opacity: 1; transform: translateY(0)    scale(1);   }
+}
+.animate-countdown-tick {
+  animation: countdown-flip 0.22s cubic-bezier(0.34, 1.2, 0.64, 1) both;
+}
+
+/* ── Registration success checkmark ─────────────────────────────────────── */
+@keyframes check-circle-in {
+  0%   { transform: scale(0);   opacity: 0; }
+  65%  { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(1);   opacity: 1; }
+}
+@keyframes draw-check {
+  from { stroke-dashoffset: 52; }
+  to   { stroke-dashoffset: 0; }
+}
+.animate-check-circle {
+  animation: check-circle-in 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
+}
+.animate-check-stroke {
+  stroke-dasharray: 52;
+  stroke-dashoffset: 52;
+  animation: draw-check 0.4s ease-out 0.65s forwards;
 }
 
 /* Gradient backgrounds */
@@ -178,11 +242,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ── Page Transition ─────────────────────────────────────────────────────── */
 @keyframes page-enter {
-  from { opacity: 0; transform: translateY(10px); }
+  from { opacity: 0; transform: translateY(14px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 .page-transition {
-  animation: page-enter 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: page-enter 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: opacity, transform;
 }
 
 /* ── Print styles ────────────────────────────────────────────────────────── */
