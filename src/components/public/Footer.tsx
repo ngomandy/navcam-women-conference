@@ -47,7 +47,7 @@ export default function Footer() {
                 <cite className="text-[#C9A84C] text-xs mt-1 block not-italic">— {t.conference.scripture}</cite>
               </blockquote>
               <a
-                href="https://wa.me/237670546041"
+                href="https://wa.me/237696238088"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#25D366] hover:bg-[#1EB85A] text-white text-sm font-semibold rounded-full transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
