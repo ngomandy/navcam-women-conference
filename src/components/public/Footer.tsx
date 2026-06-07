@@ -113,6 +113,11 @@ export default function Footer() {
             <p>{t.common.copyRight}</p>
             <p>{lang === 'en' ? 'The Navigators Cameroon' : 'Les Navigateurs Cameroun'}</p>
           </div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-4 text-center">
+            <p className="text-xs text-white/30 tracking-wide">
+              Designed by <span className="text-[#C9A84C]/60 font-medium">Mandy</span>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
