@@ -499,8 +499,8 @@ export default function HomePage() {
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             {lang === 'en'
-              ? "Navigators National Women's Conference"
-              : 'Conférence Nationale des Femmes Navigateurs'}
+              ? "2026 Navigators of Cameroon National Women's Conference"
+              : 'Conférence Nationale des Femmes Navigateurs du Cameroun 2026'}
           </h1>
 
           {/* Theme & Full Verse */}
