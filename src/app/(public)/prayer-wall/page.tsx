@@ -284,7 +284,7 @@ export default function PrayerWallPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {PRAYERS.map((prayer, i) => (
               <ScrollReveal key={i} delay={i * 60}>
-                <div className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden h-full flex flex-col hover:shadow-md transition-shadow duration-300">
+                <div className="prayer-card bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden h-full flex flex-col">
 
                   {/* Colored top bar */}
                   <div className="h-1.5 w-full" style={{ backgroundColor: prayer.color }} />

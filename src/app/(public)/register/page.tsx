@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useLanguage } from '@/components/LanguageContext'
 import { formatCurrency } from '@/lib/utils'
 import { ShareButtons } from '@/components/public/ShareButtons'
@@ -61,6 +61,50 @@ export default function RegisterPage() {
   const [submitting, setSubmitting] = useState(false)
   const [success, setSuccess] = useState(false)
   const [serverError, setServerError] = useState('')
+
+  // Confetti on success
+  useEffect(() => {
+    if (!success) return
+    const canvas = document.createElement('canvas')
+    canvas.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999'
+    document.body.appendChild(canvas)
+    const ctx = canvas.getContext('2d')!
+    canvas.width = window.innerWidth
+    canvas.height = window.innerHeight
+    const colors = ['#2D6A4F', '#C9A84C', '#C9848A', '#74C69D', '#F4C2C2', '#40916C', '#F0D080']
+    const particles = Array.from({ length: 110 }, () => ({
+      x: Math.random() * canvas.width,
+      y: -20 - Math.random() * 120,
+      vx: (Math.random() - 0.5) * 3.5,
+      vy: Math.random() * 2.5 + 1.5,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      size: Math.random() * 7 + 3,
+      rotation: Math.random() * 360,
+      rotV: (Math.random() - 0.5) * 9,
+      circle: Math.random() > 0.55,
+    }))
+    let frame: number
+    const draw = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
+      let alive = false
+      for (const p of particles) {
+        p.x += p.vx; p.y += p.vy; p.vy += 0.05; p.rotation += p.rotV
+        if (p.y < canvas.height + 20) alive = true
+        ctx.save()
+        ctx.translate(p.x, p.y)
+        ctx.rotate((p.rotation * Math.PI) / 180)
+        ctx.fillStyle = p.color
+        if (p.circle) { ctx.beginPath(); ctx.arc(0, 0, p.size / 2, 0, Math.PI * 2); ctx.fill() }
+        else ctx.fillRect(-p.size / 2, -p.size / 4, p.size, p.size / 2)
+        ctx.restore()
+      }
+      if (alive) frame = requestAnimationFrame(draw)
+      else canvas.remove()
+    }
+    frame = requestAnimationFrame(draw)
+    const t = setTimeout(() => { cancelAnimationFrame(frame); canvas.remove() }, 4500)
+    return () => { cancelAnimationFrame(frame); clearTimeout(t); if (canvas.parentNode) canvas.remove() }
+  }, [success])
 
   const validate = (): boolean => {
     const e: Partial<Record<keyof FormData, string>> = {}

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useLanguage } from '@/components/LanguageContext'
 
 interface ScheduleBlock {
@@ -294,9 +294,69 @@ const fullScheduleData: ScheduleDay[] = [
 const dayColors = ['bg-[#40916C]', 'bg-[#2D6A4F]', 'bg-[#C9848A]', 'bg-[#C9A84C]', 'bg-[#1B3A5C]']
 const dayIcons = ['🌱', '🌿', '🍃', '✨', '🕊️']
 
+function TimelineBlock({ block, lang, bi, total }: {
+  block: ScheduleBlock
+  lang: 'en' | 'fr'
+  bi: number
+  total: number
+}) {
+  const ref = useRef<HTMLDivElement>(null)
+  const [visible, setVisible] = useState(false)
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setVisible(true); observer.disconnect() } },
+      { threshold: 0.08 }
+    )
+    if (ref.current) observer.observe(ref.current)
+    return () => observer.disconnect()
+  }, [])
+
+  return (
+    <div
+      ref={ref}
+      className={`px-5 py-4 flex gap-4 timeline-block${visible ? ' visible' : ''}`}
+      style={{ transitionDelay: `${bi * 45}ms` }}
+    >
+      <div className="flex-shrink-0 w-32 sm:w-40 text-right pt-0.5">
+        <span className="text-[#2D6A4F] font-bold text-xs leading-snug">{block.time}</span>
+      </div>
+      <div className="flex flex-col items-center pt-1.5 flex-shrink-0">
+        <div className="w-2.5 h-2.5 rounded-full bg-[#C9A84C] flex-shrink-0" />
+        {bi < total - 1 && <div className="w-0.5 flex-1 bg-[#74C69D]/20 mt-1 min-h-[20px]" />}
+      </div>
+      <div className="flex-1 pb-1">
+        <p className="text-[#1B3A5C] font-semibold text-sm leading-snug">
+          {lang === 'en' ? block.title.en : block.title.fr}
+        </p>
+        {block.subtitle && (
+          <p className="text-[#40916C] text-xs italic mt-0.5">
+            {lang === 'en' ? block.subtitle.en : block.subtitle.fr}
+          </p>
+        )}
+        {block.items && (
+          <ul className="mt-2 space-y-1">
+            {block.items[lang].map((item, ii) => (
+              <li key={ii} className="text-gray-500 text-xs flex items-start gap-2">
+                <span className="text-[#C9A84C] mt-0.5 flex-shrink-0">•</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </div>
+  )
+}
+
 export default function SchedulePage() {
   const { t, lang } = useLanguage()
   const [activeDay, setActiveDay] = useState(1)
+  const [tabKey, setTabKey] = useState(0)
+
+  const handleDayChange = (day: number) => {
+    setActiveDay(day)
+    setTabKey(k => k + 1)
+  }
 
   const dayData = fullScheduleData.find((d) => d.day === activeDay)!
 
@@ -340,7 +400,7 @@ export default function SchedulePage() {
           {fullScheduleData.map((d) => (
             <button
               key={d.day}
-              onClick={() => setActiveDay(d.day)}
+              onClick={() => handleDayChange(d.day)}
               className={`flex-shrink-0 px-4 py-3 rounded-xl text-sm font-semibold transition-all ${
                 activeDay === d.day
                   ? 'bg-[#2D6A4F] text-white shadow-md'
@@ -359,66 +419,39 @@ export default function SchedulePage() {
           ))}
         </div>
 
-        {/* Active Day Card */}
-        <div className={`${dayColors[activeDay - 1]} rounded-2xl px-6 py-4 mb-6 flex items-center gap-3 shadow-md`}>
-          <span className="text-3xl">{dayIcons[activeDay - 1]}</span>
-          <div>
-            <p className="text-white font-bold text-lg" style={{ fontFamily: "'Playfair Display', serif" }}>
-              {lang === 'en'
-                ? `Day ${activeDay} — ${dayData.date.en}`
-                : `Jour ${activeDay} — ${dayData.date.fr}`}
-            </p>
-            <p className="text-white/80 text-sm italic">
-              {lang === 'en' ? dayData.theme.en : dayData.theme.fr}
-            </p>
-          </div>
-          {activeDay === 5 && (
-            <span className="ml-auto text-xs bg-white/20 text-white border border-white/30 px-3 py-1 rounded-full font-medium">
-              {lang === 'en' ? 'Closes 12:00 PM' : 'Clôture à 12h00'}
-            </span>
-          )}
-        </div>
-
-        {/* Blocks Timeline */}
-        <div className="bg-white rounded-2xl shadow-sm border border-[#74C69D]/20 divide-y divide-[#74C69D]/10">
-          {dayData.blocks.map((block, bi) => (
-            <div key={bi} className="px-5 py-4 flex gap-4">
-              {/* Time */}
-              <div className="flex-shrink-0 w-32 sm:w-40 text-right pt-0.5">
-                <span className="text-[#2D6A4F] font-bold text-xs leading-snug">{block.time}</span>
-              </div>
-
-              {/* Connector */}
-              <div className="flex flex-col items-center pt-1.5 flex-shrink-0">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#C9A84C] flex-shrink-0" />
-                {bi < dayData.blocks.length - 1 && (
-                  <div className="w-0.5 flex-1 bg-[#74C69D]/20 mt-1 min-h-[20px]" />
-                )}
-              </div>
-
-              {/* Content */}
-              <div className="flex-1 pb-1">
-                <p className="text-[#1B3A5C] font-semibold text-sm leading-snug">
-                  {lang === 'en' ? block.title.en : block.title.fr}
-                </p>
-                {block.subtitle && (
-                  <p className="text-[#40916C] text-xs italic mt-0.5">
-                    {lang === 'en' ? block.subtitle.en : block.subtitle.fr}
-                  </p>
-                )}
-                {block.items && (
-                  <ul className="mt-2 space-y-1">
-                    {block.items[lang].map((item, ii) => (
-                      <li key={ii} className="text-gray-500 text-xs flex items-start gap-2">
-                        <span className="text-[#C9A84C] mt-0.5 flex-shrink-0">•</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
+        {/* Active Day Card + Animated Blocks */}
+        <div key={tabKey} className="animate-tab-enter">
+          <div className={`${dayColors[activeDay - 1]} rounded-2xl px-6 py-4 mb-6 flex items-center gap-3 shadow-md`}>
+            <span className="text-3xl">{dayIcons[activeDay - 1]}</span>
+            <div>
+              <p className="text-white font-bold text-lg" style={{ fontFamily: "'Playfair Display', serif" }}>
+                {lang === 'en'
+                  ? `Day ${activeDay} — ${dayData.date.en}`
+                  : `Jour ${activeDay} — ${dayData.date.fr}`}
+              </p>
+              <p className="text-white/80 text-sm italic">
+                {lang === 'en' ? dayData.theme.en : dayData.theme.fr}
+              </p>
             </div>
-          ))}
+            {activeDay === 5 && (
+              <span className="ml-auto text-xs bg-white/20 text-white border border-white/30 px-3 py-1 rounded-full font-medium">
+                {lang === 'en' ? 'Closes 12:00 PM' : 'Clôture à 12h00'}
+              </span>
+            )}
+          </div>
+
+          {/* Animated Timeline Blocks */}
+          <div className="bg-white rounded-2xl shadow-sm border border-[#74C69D]/20 divide-y divide-[#74C69D]/10">
+            {dayData.blocks.map((block, bi) => (
+              <TimelineBlock
+                key={bi}
+                block={block}
+                lang={lang}
+                bi={bi}
+                total={dayData.blocks.length}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Legend */}

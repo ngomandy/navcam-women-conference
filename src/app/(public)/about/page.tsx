@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useLanguage } from '@/components/LanguageContext'
 import { ScrollReveal } from '@/components/public/ScrollReveal'
+import { TiltCard } from '@/components/public/TiltCard'
 
 function VinePattern() {
   return (
@@ -238,6 +239,7 @@ export default function AboutPage() {
           <div className="flex flex-col sm:flex-row justify-center gap-8 mb-12">
             {leaders.filter((l) => l.featured).map((leader, i) => (
               <ScrollReveal key={i} delay={i * 150}>
+              <TiltCard intensity={8}>
               <div className="flex flex-col items-center text-center">
                 <div className="relative mb-4">
                   <div className="w-36 h-36 rounded-full overflow-hidden border-4 border-[#C9A84C] shadow-xl">
@@ -257,6 +259,7 @@ export default function AboutPage() {
                   {lang === 'en' ? leader.titleEn : leader.titleFr}
                 </p>
               </div>
+              </TiltCard>
               </ScrollReveal>
             ))}
           </div>
@@ -265,6 +268,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
             {leaders.filter((l) => !l.featured).map((leader, i) => (
               <ScrollReveal key={i} delay={(i % 5) * 80}>
+              <TiltCard intensity={6}>
               <div className="flex flex-col items-center text-center group">
                 <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-[#74C69D]/40 shadow-md group-hover:border-[#C9A84C] group-hover:shadow-lg transition-all mb-3">
                   <Image
@@ -282,6 +286,7 @@ export default function AboutPage() {
                   {lang === 'en' ? leader.titleEn : leader.titleFr}
                 </p>
               </div>
+              </TiltCard>
               </ScrollReveal>
             ))}
           </div>

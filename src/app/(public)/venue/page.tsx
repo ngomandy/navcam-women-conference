@@ -200,24 +200,28 @@ export default function VenuePage() {
       {/* ── LIGHTBOX ─────────────────────────────────────────────────────── */}
       {lightbox !== null && (
         <div
-          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 animate-lightbox-backdrop"
           onClick={() => setLightbox(null)}
         >
           <button
-            className="absolute top-4 right-4 text-white/80 hover:text-white text-3xl font-light leading-none"
+            className="absolute top-4 right-4 text-white/70 hover:text-white text-4xl font-light leading-none transition-colors z-10"
             onClick={() => setLightbox(null)}
             aria-label="Close"
           >
             ×
           </button>
           <button
-            className="absolute left-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white text-4xl font-light leading-none px-3"
+            className="absolute left-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white text-5xl font-light leading-none px-3 transition-colors z-10"
             onClick={(e) => { e.stopPropagation(); setLightbox((lightbox - 1 + PHOTOS.length) % PHOTOS.length) }}
             aria-label="Previous"
           >
             ‹
           </button>
-          <div className="max-w-4xl max-h-[85vh] relative" onClick={(e) => e.stopPropagation()}>
+          <div
+            key={lightbox}
+            className="max-w-4xl max-h-[85vh] relative animate-lightbox-in"
+            onClick={(e) => e.stopPropagation()}
+          >
             <img
               src={PHOTOS[lightbox].src}
               alt={lang === 'en' ? PHOTOS[lightbox].captionEn : PHOTOS[lightbox].captionFr}
@@ -229,7 +233,7 @@ export default function VenuePage() {
             </p>
           </div>
           <button
-            className="absolute right-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white text-4xl font-light leading-none px-3"
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white text-5xl font-light leading-none px-3 transition-colors z-10"
             onClick={(e) => { e.stopPropagation(); setLightbox((lightbox + 1) % PHOTOS.length) }}
             aria-label="Next"
           >

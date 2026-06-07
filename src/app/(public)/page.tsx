@@ -415,6 +415,36 @@ function VinePattern() {
 export default function HomePage() {
   const { t, lang } = useLanguage()
 
+  // Typewriter effect for hero title
+  const titleText = lang === 'en'
+    ? "2026 Navigators of Cameroon National Women's Conference"
+    : 'Conférence Nationale des Femmes Navigateurs du Cameroun 2026'
+  const [typed, setTyped] = useState('')
+  const [typingDone, setTypingDone] = useState(false)
+  useEffect(() => {
+    let i = 0
+    setTyped('')
+    setTypingDone(false)
+    const id = setInterval(() => {
+      i++
+      setTyped(titleText.slice(0, i))
+      if (i >= titleText.length) { clearInterval(id); setTypingDone(true) }
+    }, 36)
+    return () => clearInterval(id)
+  }, [titleText])
+
+  // Parallax background
+  const parallaxRef = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    const onScroll = () => {
+      if (parallaxRef.current) {
+        parallaxRef.current.style.transform = `translateY(${window.scrollY * 0.35}px)`
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   const dayThemes = [
     {
       day: lang === 'en' ? 'Day 1' : 'Jour 1',
@@ -478,13 +508,14 @@ export default function HomePage() {
     <div className="flex flex-col">
       {/* ========== HERO SECTION ========== */}
       <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#2D6A4F] via-[#1B3A5C] to-[#40916C]">
-        <VinePattern />
+        {/* Parallax background layer */}
+        <div ref={parallaxRef} className="absolute inset-0" style={{ willChange: 'transform' }}>
+          <VinePattern />
+          <div className="absolute top-20 left-10 w-64 h-64 bg-[#74C69D]/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-20 right-10 w-80 h-80 bg-[#C9848A]/10 rounded-full blur-3xl" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#C9A84C]/5 rounded-full blur-3xl" />
+        </div>
         <FloatingLeaves />
-
-        {/* Decorative circles */}
-        <div className="absolute top-20 left-10 w-64 h-64 bg-[#74C69D]/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-[#C9848A]/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#C9A84C]/5 rounded-full blur-3xl" />
 
         <div className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto py-16">
           {/* Badge */}
@@ -493,14 +524,13 @@ export default function HomePage() {
             <span>{t.conference.daysCount}</span>
           </div>
 
-          {/* Title */}
+          {/* Title — typewriter */}
           <h1
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-4"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
-            {lang === 'en'
-              ? "2026 Navigators of Cameroon National Women's Conference"
-              : 'Conférence Nationale des Femmes Navigateurs du Cameroun 2026'}
+            {typed}
+            {!typingDone && <span className="typewriter-cursor" aria-hidden="true" />}
           </h1>
 
           {/* Theme & Full Verse */}
