@@ -48,7 +48,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center group">
             <img
               src="/nav_women_conference_2026_C.svg"
-              alt="Navigators National Women's Conference 2026"
+              alt="2026 Navigators of Cameroon National Women's Conference"
               className="h-10 md:h-12 w-auto rounded-md"
             />
           </Link>

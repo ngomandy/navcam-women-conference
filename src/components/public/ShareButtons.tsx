@@ -13,7 +13,7 @@ export function ShareButtons({ theme = 'dark' }: Props) {
 
   const text =
     lang === 'en'
-      ? `Join me at the 2026 Navigators National Women's Conference in Yaoundé! "Rooted in Christ, Bearing Lasting Fruit" — Aug 10–14, 2026`
+      ? `Join me at the 2026 Navigators of Cameroon National Women's Conference in Yaoundé! "Rooted in Christ, Bearing Lasting Fruit" — Aug 10–14, 2026`
       : `Rejoignez-moi à la Conférence Nationale des Femmes Navigateurs 2026 à Yaoundé ! "Enracinées en Christ, Portant des Fruits Durables" — 10–14 août 2026`
 
   const encoded = encodeURIComponent(text)

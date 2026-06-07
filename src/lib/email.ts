@@ -33,7 +33,7 @@ function buildHtml(data: RegistrationEmailData): string {
       <tr><td style="background:linear-gradient(135deg,#2D6A4F,#1B3A5C);padding:32px 32px 24px;text-align:center">
         <p style="margin:0 0 8px;font-size:28px">🌿</p>
         <h1 style="margin:0;color:#fff;font-size:22px;font-weight:700">
-          ${isEn ? "2026 Navigators National Women's Conference" : 'Conférence Nationale des Femmes Navigateurs 2026'}
+          ${isEn ? "2026 Navigators of Cameroon National Women's Conference" : 'Conférence Nationale des Femmes Navigateurs du Cameroun 2026'}
         </h1>
         <p style="margin:8px 0 0;color:#74C69D;font-size:14px;font-style:italic">
           "${isEn ? 'Rooted in Christ, Bearing Lasting Fruit' : 'Enracinées en Christ, Portant des Fruits Durables'}"

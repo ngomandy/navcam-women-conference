@@ -440,7 +440,7 @@ export default function SchedulePage() {
       <div className="print-only hidden px-8 pb-8">
         <div className="text-center mb-6">
           <h1 className="text-2xl font-bold">
-            {lang === 'en' ? "2026 Navigators National Women's Conference" : 'Conférence Nationale des Femmes Navigateurs 2026'}
+            {lang === 'en' ? "2026 Navigators of Cameroon National Women's Conference" : 'Conférence Nationale des Femmes Navigateurs du Cameroun 2026'}
           </h1>
           <p className="text-sm text-gray-500 mt-1">{t.conference.dates} · {t.conference.venue}</p>
         </div>
