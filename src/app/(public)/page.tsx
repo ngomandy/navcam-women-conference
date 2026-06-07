@@ -272,7 +272,7 @@ function FAQSection() {
             ? 'Still have questions? '
             : 'Vous avez encore des questions ? '}
           <a
-            href="https://wa.me/237670546041"
+            href="https://wa.me/237696238088"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#2D6A4F] font-semibold hover:underline"
