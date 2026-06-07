@@ -436,7 +436,7 @@ export default function Edition2025Page() {
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
             {VIDEOS.map((video, i) => (
               <ScrollReveal key={i} delay={(i % 3) * 100}>
                 <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-[#74C69D]/20">
@@ -446,7 +446,7 @@ export default function Edition2025Page() {
                     controls
                     preload="none"
                     playsInline
-                    className="w-full aspect-video object-cover bg-[#0D1F2D]"
+                    className="w-full aspect-[9/16] object-cover bg-[#0D1F2D]"
                     aria-label={`${lang === 'en' ? 'Conference video' : 'Vidéo de la conférence'} ${i + 1}`}
                   />
                   <div className="px-4 py-2.5 flex items-center gap-2">
