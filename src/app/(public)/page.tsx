@@ -507,24 +507,14 @@ export default function HomePage() {
   return (
     <div className="flex flex-col">
       {/* ========== HERO SECTION ========== */}
-      <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
-        {/* Photo background with parallax */}
-        <div
-          ref={parallaxRef}
-          className="absolute inset-0"
-          style={{ willChange: 'transform', top: '-15%', bottom: '-15%' }}
-        >
-          <img
-            src="/hero-women.jpg"
-            alt=""
-            aria-hidden="true"
-            className="w-full h-full object-cover object-center"
-          />
+      <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#2D6A4F] via-[#1B3A5C] to-[#40916C]">
+        {/* Parallax background layer */}
+        <div ref={parallaxRef} className="absolute inset-0" style={{ willChange: 'transform' }}>
+          <VinePattern />
+          <div className="absolute top-20 left-10 w-64 h-64 bg-[#74C69D]/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-20 right-10 w-80 h-80 bg-[#C9848A]/10 rounded-full blur-3xl" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#C9A84C]/5 rounded-full blur-3xl" />
         </div>
-        {/* Dark overlay for text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/50 to-black/75" />
-        {/* Brand colour tint */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#2D6A4F]/35 via-transparent to-[#1B3A5C]/45" />
         <FloatingLeaves />
 
         <div className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto py-16">
