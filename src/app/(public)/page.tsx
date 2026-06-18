@@ -175,8 +175,8 @@ function buildFaq(lang: 'en' | 'fr') {
     {
       q: lang === 'en' ? 'Can I come with my children?' : 'Puis-je venir avec mes enfants ?',
       a: lang === 'en'
-        ? 'Yes! Children are welcome. Please indicate the number and ages of your children during registration so we can make the appropriate arrangements for them.'
-        : 'Oui ! Les enfants sont les bienvenus. Veuillez indiquer le nombre et l\'âge de vos enfants lors de l\'inscription afin que nous puissions prendre les dispositions appropriées.',
+        ? 'Yes! Children are welcome. Please indicate the number and ages of your children during registration so we can make the appropriate arrangements for them. An additional registration fee of 5,000 FCFA applies per child over 5 years old.'
+        : 'Oui ! Les enfants sont les bienvenus. Veuillez indiquer le nombre et l\'âge de vos enfants lors de l\'inscription afin que nous puissions prendre les dispositions appropriées. Des frais d\'inscription supplémentaires de 5 000 FCFA s\'appliquent par enfant de plus de 5 ans.',
     },
     {
       q: lang === 'en' ? 'What language will the sessions be in?' : 'Dans quelle langue se dérouleront les sessions ?',

@@ -125,6 +125,14 @@ export default function FeesPage() {
           ))}
         </div>
 
+        {/* Children fee note */}
+        <div className="max-w-2xl mx-auto mb-16 -mt-6">
+          <div className="flex items-center gap-3 bg-white border border-[#C9A84C]/40 rounded-2xl px-5 py-4 shadow-sm">
+            <span className="text-2xl flex-shrink-0">👧</span>
+            <p className="text-sm text-[#1B3A5C]">{t.fees.childFee}</p>
+          </div>
+        </div>
+
         {/* What's Included */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
           <div className="bg-white rounded-3xl p-7 shadow-sm border border-[#74C69D]/20">

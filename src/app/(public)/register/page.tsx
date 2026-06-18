@@ -446,6 +446,10 @@ export default function RegisterPage() {
                   <p className="text-sm font-semibold text-[#2D6A4F]">
                     {t.register.numberOfChildren}: {form.childrenAges.length}
                   </p>
+                  <p className="text-xs text-[#C9848A] flex items-start gap-1.5">
+                    <span className="flex-shrink-0">👧</span>
+                    {t.fees.childFee}
+                  </p>
                   {form.childrenAges.map((child, idx) => (
                     <div key={idx} className="flex gap-2 items-center">
                       <label className="text-sm text-gray-600 w-28 flex-shrink-0">

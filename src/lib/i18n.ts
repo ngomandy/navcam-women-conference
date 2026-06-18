@@ -150,6 +150,7 @@ export const translations = {
       paymentDesc: 'A deposit of 10,000 FCFA is required to secure your spot. Send your deposit — or your full contribution — to either of the Mobile Money accounts below, using "NavCamWomen2026 — [Your Name]" as the reference.',
       questions: 'Questions about fees?',
       contact: 'Contact us at',
+      childFee: 'An additional registration fee of 5,000 FCFA applies per child over 5 years old.',
     },
     // Admin
     admin: {
@@ -359,6 +360,7 @@ export const translations = {
       paymentDesc: 'Un acompte de 10 000 FCFA est requis pour réserver votre place. Envoyez votre acompte — ou votre contribution complète — à l\'un des comptes Mobile Money ci-dessous, en utilisant « NavCamWomen2026 — [Votre Nom] » comme référence.',
       questions: 'Questions sur les frais ?',
       contact: 'Contactez-nous à',
+      childFee: 'Des frais d\'inscription supplémentaires de 5 000 FCFA s\'appliquent par enfant de plus de 5 ans.',
     },
     // Admin
     admin: {
