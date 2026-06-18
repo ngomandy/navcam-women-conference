@@ -163,6 +163,43 @@ export default function FeesPage() {
             </div>
             <p className="text-gray-600 text-sm leading-relaxed mb-4">{t.fees.paymentDesc}</p>
 
+            {/* Mobile Money accounts — where to send contributions */}
+            <div className="grid grid-cols-1 gap-3 mb-4">
+              {/* MTN MoMo */}
+              <div className="bg-[#FFFBEB] rounded-2xl p-4 border-2 border-yellow-200">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-9 h-9 bg-[#FFCC00] rounded-xl flex items-center justify-center text-base shadow-sm">📱</div>
+                  <div>
+                    <p className="font-bold text-[#1B3A5C] text-sm">MTN Mobile Money</p>
+                    <span className="text-xs bg-yellow-100 text-yellow-700 font-semibold px-2 py-0.5 rounded-full">MoMo</span>
+                  </div>
+                </div>
+                <div className="bg-white rounded-xl p-3 border border-yellow-100">
+                  <p className="text-xs text-gray-400 mb-0.5">{lang === 'en' ? 'Account Name' : 'Nom du Compte'}</p>
+                  <p className="font-semibold text-[#1B3A5C] text-sm mb-2">Matchim Tchapoa epse Ribouem Christelle Adeline</p>
+                  <p className="text-xs text-gray-400 mb-0.5">{lang === 'en' ? 'MoMo Number' : 'Numéro MoMo'}</p>
+                  <p className="font-bold text-[#2D6A4F] text-base tracking-wide">+237 670 546 041</p>
+                </div>
+              </div>
+
+              {/* Orange Money */}
+              <div className="bg-[#FFF7F0] rounded-2xl p-4 border-2 border-orange-200">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-9 h-9 bg-[#FF6600] rounded-xl flex items-center justify-center text-base shadow-sm">📱</div>
+                  <div>
+                    <p className="font-bold text-[#1B3A5C] text-sm">Orange Money</p>
+                    <span className="text-xs bg-orange-100 text-orange-700 font-semibold px-2 py-0.5 rounded-full">OM</span>
+                  </div>
+                </div>
+                <div className="bg-white rounded-xl p-3 border border-orange-100">
+                  <p className="text-xs text-gray-400 mb-0.5">{lang === 'en' ? 'Account Name' : 'Nom du Compte'}</p>
+                  <p className="font-semibold text-[#1B3A5C] text-sm mb-2">Matchim Tchapoa epse Ribouem Christelle Adeline</p>
+                  <p className="text-xs text-gray-400 mb-0.5">{lang === 'en' ? 'OM Number' : 'Numéro OM'}</p>
+                  <p className="font-bold text-[#2D6A4F] text-base tracking-wide">+237 694 756 099</p>
+                </div>
+              </div>
+            </div>
+
             {/* Deadline Banner */}
             <div className="bg-[#FDF6EC] border border-[#C9A84C]/30 rounded-xl p-4">
               <div className="flex items-center gap-2 text-sm">

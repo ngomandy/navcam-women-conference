@@ -220,11 +220,11 @@ export default function Edition2025Page() {
             </ScrollReveal>
 
             <ScrollReveal direction="right">
-              <div className="relative">
-                <div className="relative rounded-2xl shadow-xl overflow-hidden" style={{ aspectRatio: '4/3' }}>
+              <div className="relative mb-8 lg:mb-0">
+                <div className="relative w-full aspect-[4/3] min-h-[300px] rounded-2xl shadow-xl overflow-hidden bg-[#1B3A5C]/10">
                   <Image
                     src="/2025conf/conf-01.jpg"
-                    alt="Speaker Toyin Ogundele"
+                    alt="2025 Navigators Women's Conference"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 50vw"
