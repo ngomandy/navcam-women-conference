@@ -157,8 +157,8 @@ function buildFaq(lang: 'en' | 'fr') {
     {
       q: lang === 'en' ? 'What is included in the registration fee?' : "Qu'est-ce qui est inclus dans les frais d'inscription ?",
       a: lang === 'en'
-        ? '5 full days of conference sessions, all meals (breakfast, lunch & dinner), your conference pack & materials, accommodation assistance, and the Day 3 excursion.'
-        : '5 jours complets de sessions, tous les repas (petit-déjeuner, déjeuner & dîner), votre pack de conférence & matériels, l\'assistance pour l\'hébergement et l\'excursion du Jour 3.',
+        ? '5 full days of conference sessions, all meals (breakfast, lunch & dinner), your conference pack & materials, on-site accommodation, and the Day 3 excursion.'
+        : '5 jours complets de sessions, tous les repas (petit-déjeuner, déjeuner & dîner), votre pack de conférence & matériels, l\'hébergement sur place et l\'excursion du Jour 3.',
     },
     {
       q: lang === 'en' ? 'When is the Early Bird deadline?' : "Quelle est la date limite de l'inscription anticipée ?",
