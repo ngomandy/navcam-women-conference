@@ -2,6 +2,7 @@ import { LanguageProvider } from '@/components/LanguageContext'
 import Navbar from '@/components/public/Navbar'
 import Footer from '@/components/public/Footer'
 import StickyRegisterCTA from '@/components/public/StickyRegisterCTA'
+import EarlyBirdBanner from '@/components/public/EarlyBirdBanner'
 import { PageTransition } from '@/components/public/PageTransition'
 
 export default function PublicLayout({
@@ -14,6 +15,7 @@ export default function PublicLayout({
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-1 pt-16 md:pt-20 pb-16 md:pb-0">
+          <EarlyBirdBanner />
           <PageTransition>{children}</PageTransition>
         </main>
         <Footer />
