@@ -21,7 +21,8 @@ export const { auth, signIn, signOut, handlers } = NextAuth({
           user = await prisma.adminUser.findUnique({
             where: { email: credentials.email as string },
           })
-        } catch {
+        } catch (e) {
+          console.error('[auth] DB lookup failed during authorize:', e)
           return null
         }
 
