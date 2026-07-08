@@ -37,6 +37,10 @@ h1,h2,h3,h4,h5{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;co
 
 /* DOWNLOAD BUTTONS */
 .dl-group{display:flex;gap:8px;}
+/* Only the current language's download button is shown */
+.dl-group .dl-btn-fr{display:none;}
+body.lang-fr .dl-group .dl-btn-en{display:none;}
+body.lang-fr .dl-group .dl-btn-fr{display:flex;}
 .dl-btn{
   display:flex;align-items:center;gap:6px;
   border:1.5px solid var(--sage-dark);border-radius:999px;
@@ -251,13 +255,13 @@ body.lang-fr .fr.bl{display:block;}
 <div class="topbar">
   <div class="topbar-right" style="margin-left:auto;">
     <div class="dl-group">
-      <button class="dl-btn" onclick="download('en')" title="Download English version">
+      <button class="dl-btn dl-btn-en" onclick="download('en')" title="Download the study (PDF)">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/></svg>
-        <span class="en">Download EN</span><span class="fr">Télécharger EN</span>
+        Download PDF
       </button>
-      <button class="dl-btn" onclick="download('fr')" title="Download French version">
+      <button class="dl-btn dl-btn-fr" onclick="download('fr')" title="Télécharger l'étude (PDF)">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/></svg>
-        <span class="en">Download FR</span><span class="fr">Télécharger FR</span>
+        Télécharger le PDF
       </button>
     </div>
     <div class="lang-toggle">
@@ -1187,50 +1191,16 @@ function setLang(lang){
 }
 
 function download(lang){
-  // Clone the full document
-  var clone = document.documentElement.cloneNode(true);
-
-  // Remove the topbar/buttons from download
-  var tb = clone.querySelector('.topbar');
-  if(tb) tb.remove();
-
-  // Force one language visible
-  var style = clone.querySelector('style');
-  if(lang==='fr'){
-    // Hide EN, show FR
-    style.textContent += '\n.en{display:none!important;}.fr{display:inline!important;}.fr.bl{display:block!important;}';
-    clone.setAttribute('lang','fr');
-  } else {
-    // Hide FR
-    style.textContent += '\n.fr{display:none!important;}';
-    clone.setAttribute('lang','en');
-  }
-
-  // Remove the script (download function not needed in static file)
-  var scripts = clone.querySelectorAll('script');
-  scripts.forEach(function(s){ s.remove(); });
-
-  // Add a print note at top
-  var note = clone.querySelector('.page');
-  var banner = document.createElement('div');
-  banner.style.cssText = 'text-align:center;padding:12px;font-family:Georgia,serif;font-size:13px;color:#888;border-bottom:1px solid #ddd;margin-bottom:20px;';
-  banner.textContent = lang==='fr'
-    ? 'Étude Biblique Pré-Conférence · Les Navigateurs du Cameroun · 2026'
-    : 'Pre-Conference Bible Study · The Navigators of Cameroon · 2026';
-  if(note) note.insertBefore(banner, note.firstChild);
-
-  var html = '<!DOCTYPE html>\n' + clone.outerHTML;
-  var blob = new Blob([html], {type:'text/html;charset=utf-8'});
-  var url = URL.createObjectURL(blob);
+  // Serve the pre-rendered single-language PDF from the site root.
+  var file = lang==='fr'
+    ? '2026_Etude_Biblique_PreConference_FR.pdf'
+    : '2026_PreConference_BibleStudy_EN.pdf';
   var a = document.createElement('a');
-  a.href = url;
-  a.download = lang==='fr'
-    ? '2026_Etude_Biblique_PreConference_FR.html'
-    : '2026_PreConference_BibleStudy_EN.html';
+  a.href = '/' + file;
+  a.download = file;
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
-  URL.revokeObjectURL(url);
 }
 
 /* ---- Embedded-in-site integration ---- */
