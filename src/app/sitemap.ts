@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/register`,    changeFrequency: 'monthly',  priority: 1.0 },
     { url: `${BASE}/fees`,        changeFrequency: 'monthly',  priority: 0.9 },
     { url: `${BASE}/schedule`,    changeFrequency: 'monthly',  priority: 0.8 },
+    { url: `${BASE}/bible-study`, changeFrequency: 'weekly',   priority: 0.8 },
     { url: `${BASE}/about`,       changeFrequency: 'monthly',  priority: 0.8 },
     { url: `${BASE}/venue`,       changeFrequency: 'monthly',  priority: 0.8 },
     { url: `${BASE}/donate`,      changeFrequency: 'monthly',  priority: 0.7 },

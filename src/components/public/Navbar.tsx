@@ -23,6 +23,7 @@ export default function Navbar() {
     { href: '/about',    label: t.nav.about },
     { href: '/schedule',  label: t.nav.schedule },
     { href: '/breakouts',   label: t.nav.breakouts },
+    { href: '/bible-study', label: t.nav.bibleStudy },
     { href: '/prayer-wall', label: t.nav.prayerWall },
     { href: '/venue',       label: t.nav.venue },
     { href: '/2025',     label: '2025' },

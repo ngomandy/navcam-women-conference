@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pre-Conference Bible Study · 2026 Women's Conference</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+:root{
+  --cream:#f6f1e4; --paper:#fffdf9; --ink:#2b2418;
+  --sage:#3f6b3a; --sage-dark:#1f3d22;
+  --gold:#c8862c; --gold-light:#f4e8c8; --gold-border:#e3c98a;
+  --burg:#7a2030; --burg-deep:#5c1722;
+  --line:#dccfa8;
+  --u1:#1f3d22; --u1-acc:#3f6b3a;
+  --u2:#5c1722; --u2-acc:#7a2030;
+  --u3:#2a3f5c; --u3-acc:#3a5878;
+  --u4:#4a2a10; --u4-acc:#7a4820;
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{background:var(--cream);color:var(--ink);font-family:'Lora',Georgia,serif;line-height:1.72;font-size:16px;}
+h1,h2,h3,h4,h5{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;color:var(--sage-dark);letter-spacing:.01em;}
+
+/* TOPBAR */
+.topbar{
+  position:sticky;top:0;z-index:200;
+  background:var(--paper);border-bottom:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:center;
+  padding:10px 24px;gap:12px;flex-wrap:wrap;
+}
+.topbar-right{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+.lang-toggle{display:flex;border:1.5px solid var(--burg);border-radius:999px;overflow:hidden;font-family:'Lora',serif;font-size:13px;letter-spacing:.06em;}
+.lang-toggle button{background:transparent;border:none;padding:6px 16px;cursor:pointer;color:var(--burg-deep);font:inherit;transition:background .2s,color .2s;}
+.lang-toggle button.active{background:var(--burg);color:#fdf6e8;}
+
+/* DOWNLOAD BUTTONS */
+.dl-group{display:flex;gap:8px;}
+.dl-btn{
+  display:flex;align-items:center;gap:6px;
+  border:1.5px solid var(--sage-dark);border-radius:999px;
+  padding:6px 14px;font-family:'Lora',serif;font-size:12px;
+  letter-spacing:.05em;cursor:pointer;background:transparent;
+  color:var(--sage-dark);transition:background .2s,color .2s;white-space:nowrap;
+}
+.dl-btn:hover{background:var(--sage-dark);color:#fff;}
+.dl-btn svg{width:14px;height:14px;flex-shrink:0;}
+.topbar-label{font-size:11px;color:#9a8a70;letter-spacing:.08em;text-transform:uppercase;}
+
+/* PAGE */
+.page{max-width:840px;margin:0 auto;padding:40px 24px 90px;}
+
+/* COVER */
+.cover{
+  text-align:center;padding:60px 12px 52px;
+  background:linear-gradient(175deg,rgba(31,61,34,.08),transparent 65%);
+  border-bottom:3px solid var(--gold);margin-bottom:50px;
+}
+.cover .eyebrow{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+.cover h1{font-size:40px;line-height:1.15;margin-bottom:6px;}
+.cover .tagline{font-style:italic;font-size:21px;color:var(--sage);margin:14px 0 28px;}
+.cover .verse-block{max-width:560px;margin:0 auto 6px;font-style:italic;color:#55503f;font-size:14.5px;line-height:1.7;}
+.cover .dates-block{
+  margin-top:28px;display:inline-flex;flex-direction:column;gap:4px;
+  background:var(--sage-dark);color:#f6e9c9;border-radius:8px;
+  padding:16px 32px;font-family:'Cormorant Garamond',serif;
+}
+.cover .dates-block .date-label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#e8c98a;margin-bottom:2px;}
+.cover .dates-block .date-range{font-size:19px;letter-spacing:.04em;}
+.cover .dates-block .date-note{font-size:13px;font-style:italic;color:rgba(255,255,255,.65);margin-top:4px;}
+
+/* INTRO + HOW TO USE */
+.intro-box{background:var(--paper);border-left:5px solid var(--sage);border-radius:0 8px 8px 0;padding:22px 26px;margin-bottom:28px;}
+.intro-box h2{font-size:26px;margin-bottom:10px;}
+.intro-box p{font-size:15px;line-height:1.75;}
+
+.howto{background:var(--gold-light);border:1px solid var(--gold-border);border-radius:8px;padding:20px 24px;margin-bottom:18px;}
+.howto h3{font-size:20px;color:var(--gold);margin-bottom:12px;}
+.howto ul{padding-left:20px;}
+.howto ul li{margin-bottom:7px;font-size:14.5px;}
+
+.rhythm-box{
+  background:var(--paper);border:1px solid var(--line);border-radius:8px;
+  padding:18px 22px;margin-bottom:44px;
+}
+.rhythm-box h3{font-size:19px;margin-bottom:14px;color:var(--sage-dark);}
+.rhythm-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.rhythm-item{background:var(--cream);border-radius:6px;padding:12px 14px;border-left:3px solid var(--gold);}
+.rhythm-item .ri-label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;display:block;}
+.rhythm-item p{font-size:13.5px;line-height:1.6;}
+
+hr.fleur{border:none;text-align:center;margin:40px 0;}
+hr.fleur:after{content:"❦";color:var(--gold);font-size:22px;}
+
+/* UNIT HEADERS */
+.unit-header{
+  border-radius:8px;padding:22px 26px 20px;
+  margin:56px 0 6px;
+  border-left:6px solid var(--gold);
+  box-shadow:0 3px 12px rgba(0,0,0,.15);
+  position:relative;overflow:hidden;
+}
+.unit-header::after{
+  content:'';position:absolute;right:-20px;top:-20px;
+  width:120px;height:120px;border-radius:50%;
+  background:rgba(255,255,255,.05);
+}
+.unit-header.u1{background:linear-gradient(120deg,var(--u1),#2a5030);}
+.unit-header.u2{background:linear-gradient(120deg,var(--u2),#9a2a40);}
+.unit-header.u3{background:linear-gradient(120deg,var(--u3),#3a5878);}
+.unit-header.u4{background:linear-gradient(120deg,var(--u4),#9a5820);}
+
+.unit-top{display:flex;align-items:flex-start;gap:20px;}
+.unit-num{
+  font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:700;
+  color:rgba(255,255,255,.18);line-height:.85;flex-shrink:0;margin-top:4px;
+}
+.unit-body{flex:1;}
+.unit-eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:5px;}
+.unit-header h2{font-size:26px;color:#fff;margin-bottom:3px;}
+.unit-tagline{font-style:italic;font-size:14px;color:rgba(255,255,255,.72);margin-bottom:10px;}
+.unit-dates-row{
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  background:rgba(0,0,0,.18);border-radius:5px;padding:8px 14px;margin-top:10px;
+}
+.unit-dates-row .ud-label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55);}
+.unit-dates-row .ud-range{font-size:14px;color:#f6e9c9;font-family:'Cormorant Garamond',serif;letter-spacing:.03em;}
+.unit-dates-row .ud-days{font-size:12px;color:rgba(255,255,255,.5);margin-left:auto;}
+.unit-scripture{
+  font-style:italic;font-size:14px;color:rgba(255,255,255,.75);
+  border-top:1px solid rgba(255,255,255,.15);margin-top:14px;padding-top:12px;
+}
+
+/* SUNDAY REST CARD */
+.sunday-card{
+  background:var(--cream);border:1.5px dashed var(--line);border-radius:8px;
+  padding:18px 24px;margin:14px 0 14px;
+  display:flex;align-items:center;gap:16px;
+}
+.sunday-icon{font-size:28px;flex-shrink:0;}
+.sunday-body{}
+.sunday-label{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:2px;}
+.sunday-date{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--sage-dark);margin-bottom:4px;}
+.sunday-body p{font-size:14px;color:#6a6050;line-height:1.6;}
+
+/* PRE-CONFERENCE REST */
+.preconf-card{
+  background:linear-gradient(135deg,var(--sage-dark),#2a5030);
+  border-radius:8px;padding:24px 26px;margin:40px 0 0;
+  border-left:6px solid var(--gold);
+}
+.preconf-card .pc-label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#e8c98a;margin-bottom:6px;}
+.preconf-card h3{font-size:22px;color:#fff;margin-bottom:8px;}
+.preconf-card p{font-size:14.5px;color:rgba(255,255,255,.8);line-height:1.7;}
+.preconf-card .pc-dates{
+  margin-top:14px;background:rgba(0,0,0,.2);border-radius:5px;
+  padding:10px 14px;font-family:'Cormorant Garamond',serif;
+  font-size:16px;color:#f6e9c9;
+}
+
+/* DAY CARDS */
+.day-card{
+  background:var(--paper);border:1px solid var(--line);
+  border-radius:8px;padding:24px 26px;margin:12px 0;
+  position:relative;overflow:hidden;
+}
+.day-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:5px;}
+.day-card.u1::before{background:var(--u1-acc);}
+.day-card.u2::before{background:var(--u2-acc);}
+.day-card.u3::before{background:var(--u3-acc);}
+.day-card.u4::before{background:var(--u4-acc);}
+
+.day-meta{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;flex-wrap:wrap;gap:8px;}
+.day-left{}
+.day-num-label{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1px;}
+.day-date{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--sage-dark);font-weight:500;}
+.day-right{display:flex;flex-direction:column;align-items:flex-end;gap:4px;}
+.time-badge{font-size:11px;background:var(--cream);border:1px solid var(--line);border-radius:20px;padding:3px 11px;color:#7a7060;}
+
+.day-title{font-size:22px;color:var(--sage-dark);margin-bottom:14px;line-height:1.2;}
+
+.scripture-block{
+  font-style:italic;color:var(--burg-deep);
+  border-left:4px solid var(--gold);padding:8px 16px;
+  margin:0 0 16px;background:#f7ede0;font-size:14.5px;
+  border-radius:0 5px 5px 0;line-height:1.65;
+}
+
+.focus-text{font-size:15px;color:#3a342a;margin-bottom:18px;line-height:1.75;}
+
+.q-label{
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--sage);font-weight:600;margin-bottom:10px;
+  font-family:'Lora',serif;display:flex;align-items:center;gap:8px;
+}
+.q-label::after{content:'';flex:1;height:1px;background:var(--line);}
+
+.questions ol{padding-left:22px;}
+.questions ol li{margin-bottom:10px;font-size:14.5px;line-height:1.65;}
+
+.journal-box{
+  background:var(--gold-light);border-radius:6px;padding:14px 18px;
+  margin-top:16px;border:1px solid var(--gold-border);
+}
+.journal-label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:8px;display:block;}
+.fill-line{
+  font-style:italic;font-size:14.5px;color:var(--ink);
+  border-bottom:1px solid #c8a870;padding-bottom:2px;margin-bottom:8px;
+  display:block;line-height:2;
+}
+.fill-line:last-child{margin-bottom:0;}
+
+/* CLOSING */
+.final-card{
+  text-align:center;margin-top:56px;padding:36px 24px;
+  border-top:2px solid var(--gold);border-bottom:2px solid var(--gold);
+  background:linear-gradient(180deg,rgba(200,134,44,.07),transparent);
+}
+.final-card p{font-family:'Cormorant Garamond',serif;font-size:23px;font-style:italic;color:var(--burg-deep);line-height:1.6;}
+.final-card .fc-ref{font-size:13px;color:#9a8a70;margin-top:16px;font-style:normal;}
+
+.footer{text-align:center;color:#9a937a;font-size:13px;margin-top:36px;}
+
+/* LANGUAGE */
+.fr{display:none;}
+body.lang-fr .en{display:none;}
+body.lang-fr .fr{display:inline;}
+body.lang-fr .fr.bl{display:block;}
+
+/* PRINT / DOWNLOAD STYLES */
+@media print{
+  .topbar,.dl-group{display:none!important;}
+  .page{padding:20px 0;}
+  .day-card,.unit-header,.sunday-card,.preconf-card{break-inside:avoid;}
+}
+
+@media(max-width:600px){
+  .cover h1{font-size:28px;}
+  .unit-num{font-size:44px;}
+  .unit-header h2{font-size:20px;}
+  .rhythm-grid{grid-template-columns:1fr;}
+  .day-meta{flex-direction:column;}
+  .topbar{flex-direction:column;align-items:flex-start;}
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-right" style="margin-left:auto;">
+    <div class="dl-group">
+      <button class="dl-btn" onclick="download('en')" title="Download English version">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/></svg>
+        <span class="en">Download EN</span><span class="fr">Télécharger EN</span>
+      </button>
+      <button class="dl-btn" onclick="download('fr')" title="Download French version">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/></svg>
+        <span class="en">Download FR</span><span class="fr">Télécharger FR</span>
+      </button>
+    </div>
+    <div class="lang-toggle">
+      <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+      <button id="btn-fr" onclick="setLang('fr')">FR</button>
+    </div>
+  </div>
+</div>
+
+<div class="page">
+
+<!-- ========== COVER ========== -->
+<div class="cover">
+  <div class="eyebrow">
+    <span class="en">The Navigators of Cameroon · 2026 National Women's Conference</span>
+    <span class="fr">Les Navigateurs du Cameroun · Conférence Nationale des Femmes 2026</span>
+  </div>
+  <h1>
+    <span class="en">Pre-Conference Bible Study</span>
+    <span class="fr">Étude Biblique Pré-Conférence</span>
+  </h1>
+  <div class="tagline">
+    <span class="en">Rooted in Christ, Bearing Lasting Fruit</span>
+    <span class="fr">Enracinées en Christ, Portant du Fruit qui Demeure</span>
+  </div>
+  <div class="verse-block">
+    <span class="en">John 15:5 — "I am the vine; you are the branches. He who abides in Me, and I in him, bears much fruit; for without Me you can do nothing."</span>
+    <span class="fr">Jean 15.5 — « Je suis le cep, vous êtes les sarments. Celui qui demeure en moi et en qui je demeure porte beaucoup de fruit, car sans moi vous ne pouvez rien faire. »</span>
+  </div>
+  <div class="verse-block">
+    <span class="en">John 15:8 — "By this My Father is glorified, that you bear much fruit; so you will be My disciples."</span>
+    <span class="fr">Jean 15.8 — « C'est la gloire de mon Père que vous portiez beaucoup de fruit et soyez ainsi mes disciples. »</span>
+  </div>
+  <div class="dates-block">
+    <span class="date-label"><span class="en">Study Period</span><span class="fr">Période d'étude</span></span>
+    <span class="date-range">
+      <span class="en">Thursday, July 9 – Thursday, August 6, 2026</span>
+      <span class="fr">Jeudi 9 juillet – Jeudi 6 août 2026</span>
+    </span>
+    <span class="date-note">
+      <span class="en">25 days · Study Mon–Sat · Rest on Sundays · Conference opens August 10</span>
+      <span class="fr">25 jours · Étude lun–sam · Repos le dimanche · Conférence : 10 août</span>
+    </span>
+  </div>
+</div>
+
+<!-- ========== INTRO ========== -->
+<div class="intro-box">
+  <h2><span class="en">A Letter to You</span><span class="fr">Une lettre pour vous</span></h2>
+  <p>
+    <span class="en">This Bible study is your personal preparation for the conference. It was built from the very questions and themes you will encounter when you arrive — so that when you sit around those tables and the conversation begins, nothing will feel brand new. It will feel like the natural next step of something God has already been doing in you, quietly, over these weeks.</span>
+    <span class="fr">Cette étude biblique est votre préparation personnelle à la conférence. Elle a été construite à partir des questions et des thèmes que vous rencontrerez à votre arrivée — afin que lorsque vous vous assiérez autour de ces tables et que la conversation commencera, rien ne semble entièrement nouveau. Cela ressemblera à l'étape suivante naturelle de quelque chose que Dieu a déjà commencé à faire en vous, discrètement, au fil de ces semaines.</span>
+  </p>
+  <p style="margin-top:12px;">
+    <span class="en">Each day asks for 10–15 minutes of honest, unhurried time with God. Not performance. Not perfection. Just presence.</span>
+    <span class="fr">Chaque jour demande 10 à 15 minutes de temps honnête et tranquille avec Dieu. Pas de performance. Pas de perfection. Juste de la présence.</span>
+  </p>
+</div>
+
+<!-- ========== HOW TO USE ========== -->
+<div class="howto">
+  <h3><span class="en">How to Use This Study</span><span class="fr">Comment utiliser cette étude</span></h3>
+  <ul>
+    <li><span class="en"><strong>Monday to Saturday:</strong> One study day — a scripture passage to read, a short reflection, and questions to write your honest answers to.</span><span class="fr"><strong>Lundi au samedi :</strong> un jour d'étude — un passage biblique à lire, une brève réflexion et des questions auxquelles écrire vos réponses sincères.</span></li>
+    <li><span class="en"><strong>Sunday:</strong> A day of rest and worship. Re-read whatever moved you most that week. Pray. Let it settle.</span><span class="fr"><strong>Dimanche :</strong> un jour de repos et d'adoration. Relisez ce qui vous a le plus touchée cette semaine. Priez. Laissez reposer.</span></li>
+    <li><span class="en"><strong>Keep a journal:</strong> Write your answers. You are not being graded — you are being prepared. Honesty is more important than the right answer.</span><span class="fr"><strong>Tenez un journal :</strong> écrivez vos réponses. Vous n'êtes pas évaluée — vous êtes préparée. L'honnêteté compte plus que la bonne réponse.</span></li>
+    <li><span class="en"><strong>If you miss a day:</strong> Simply continue from where you left off. What matters is the journey, not the pace.</span><span class="fr"><strong>Si vous manquez un jour :</strong> reprenez simplement là où vous vous êtes arrêtée. Ce qui compte, c'est le voyage, pas le rythme.</span></li>
+    <li><span class="en"><strong>August 7–9:</strong> No new content. These three days before the conference are for prayer, review, and quiet anticipation.</span><span class="fr"><strong>7–9 août :</strong> pas de nouveau contenu. Ces trois jours avant la conférence sont réservés à la prière, à la révision et à une douce anticipation.</span></li>
+  </ul>
+</div>
+
+<!-- ========== DAILY RHYTHM ========== -->
+<div class="rhythm-box">
+  <h3><span class="en">A Simple Daily Rhythm</span><span class="fr">Un rythme quotidien simple</span></h3>
+  <div class="rhythm-grid">
+    <div class="rhythm-item">
+      <span class="ri-label"><span class="en">Still yourself</span><span class="fr">Apaisez-vous</span></span>
+      <p><span class="en">Take 2 minutes of silence before you begin. Ask God to speak to you today.</span><span class="fr">Prenez 2 minutes de silence avant de commencer. Demandez à Dieu de vous parler aujourd'hui.</span></p>
+    </div>
+    <div class="rhythm-item">
+      <span class="ri-label"><span class="en">Read slowly</span><span class="fr">Lisez lentement</span></span>
+      <p><span class="en">Read the scripture passage twice. Let one word or phrase stand out to you.</span><span class="fr">Lisez le passage deux fois. Laissez un mot ou une phrase se détacher pour vous.</span></p>
+    </div>
+    <div class="rhythm-item">
+      <span class="ri-label"><span class="en">Reflect honestly</span><span class="fr">Réfléchissez honnêtement</span></span>
+      <p><span class="en">Read the day's reflection. Let it connect to your actual life, not an ideal version of it.</span><span class="fr">Lisez la réflexion du jour. Laissez-la se connecter à votre vraie vie, non à une version idéale.</span></p>
+    </div>
+    <div class="rhythm-item">
+      <span class="ri-label"><span class="en">Write & Pray</span><span class="fr">Écrivez et priez</span></span>
+      <p><span class="en">Answer the questions in writing, then turn your answers into a short, honest prayer.</span><span class="fr">Répondez aux questions par écrit, puis transformez vos réponses en une prière courte et sincère.</span></p>
+    </div>
+  </div>
+</div>
+
+<hr class="fleur">
+
+<!-- ================================================================ -->
+<!--                         UNIT 1                                   -->
+<!-- ================================================================ -->
+<div class="unit-header u1">
+  <div class="unit-top">
+    <div class="unit-num">1</div>
+    <div class="unit-body">
+      <div class="unit-eyebrow"><span class="en">Unit One · Days 1–7</span><span class="fr">Unité 1 · Jours 1–7</span></div>
+      <h2><span class="en">What Lies Beneath?</span><span class="fr">Ce qui se cache en dessous</span></h2>
+      <div class="unit-tagline"><span class="en">Roots · Identity · Hidden Wounds · From Survival to Abiding</span><span class="fr">Racines · Identité · Blessures cachées · De la survie à la demeurance</span></div>
+      <div class="unit-dates-row">
+        <span class="ud-label"><span class="en">Dates</span><span class="fr">Dates</span></span>
+        <span class="ud-range"><span class="en">Thursday, July 9 – Thursday, July 16</span><span class="fr">Jeudi 9 juillet – Jeudi 16 juillet</span></span>
+        <span class="ud-days"><span class="en">Sun July 12 = Rest</span><span class="fr">Dim. 12 juillet = Repos</span></span>
+      </div>
+      <div class="unit-scripture">
+        <span class="en">Proverbs 4:23 — "Above all else, guard your heart, for everything you do flows from it."</span>
+        <span class="fr">Proverbes 4.23 — « Garde ton cœur plus que toute autre chose, car de lui viennent les sources de la vie. »</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DAY 1 -->
+<div class="day-card u1">
+  <div class="day-meta">
+    <div class="day-left">
+      <div class="day-num-label"><span class="en">Day 1</span><span class="fr">Jour 1</span></div>
+      <div class="day-date"><span class="en">Thursday, July 9</span><span class="fr">Jeudi 9 juillet</span></div>
+    </div>
+    <div class="day-right"><span class="time-badge">~12 min</span></div>
+  </div>
+  <h3 class="day-title"><span class="en">The Root Determines the Fruit</span><span class="fr">La racine détermine le fruit</span></h3>
+  <div class="scripture-block">
+    <span class="en">Read: Proverbs 4:20–27 · Jeremiah 17:5–8</span>
+    <span class="fr">Lire : Proverbes 4.20-27 · Jérémie 17.5-8</span>
+  </div>
+  <p class="focus-text">
+    <span class="en">Two trees can look identical on the outside while having completely different root systems. What is hidden underground determines what appears above. This study begins where real change always begins — not at the surface of our behaviour, but beneath it. What drives us matters far more than what we produce.</span>
+    <span class="fr">Deux arbres peuvent se ressembler parfaitement en apparence tout en ayant des systèmes racinaires entièrement différents. Ce qui est caché sous terre détermine ce qui apparaît au-dessus. Cette étude commence là où tout vrai changement commence — non pas à la surface de nos comportements, mais en dessous. Ce qui nous anime compte bien plus que ce que nous produisons.</span>
+  </p>
+  <div class="q-label"><span class="en">Reflect &amp; Write</span><span class="fr">Réfléchis et écris</span></div>
+  <div class="questions"><ol>
+    <li><span class="en">What most often drives my decisions — a desire to be loved, a fear of failure, a need for approval, genuine love for God? Be specific and honest.</span><span class="fr">Qu'est-ce qui guide le plus souvent mes décisions — le désir d'être aimée, la peur de l'échec, le besoin d'approbation, un amour sincère pour Dieu ? Sois précise et honnête.</span></li>
+    <li><span class="en">What fear do I quietly carry, even in seasons when life looks fine on the outside?</span><span class="fr">Quelle peur est-ce que je porte discrètement, même dans les saisons où la vie semble aller bien en apparence ?</span></li>
+    <li><span class="en">What am I trying to prove — and to whom?</span><span class="fr">Qu'est-ce que j'essaie de prouver — et à qui ?</span></li>
+  </ol></div>
+</div>
+
+<!-- DAY 2 -->
+<div class="day-card u1">
+  <div class="day-meta">
+    <div class="day-left">
+      <div class="day-num-label"><span class="en">Day 2</span><span class="fr">Jour 2</span></div>
+      <div class="day-date"><span class="en">Friday, July 10</span><span class="fr">Vendredi 10 juillet</span></div>
+    </div>
+    <div class="day-right"><span class="time-badge">~12 min</span></div>
+  </div>
+  <h3 class="day-title"><span class="en">False Sources of Identity</span><span class="fr">Les fausses sources d'identité</span></h3>
+  <div class="scripture-block">
+    <span class="en">Read: Ephesians 1:3–8 · Isaiah 43:1–4</span>
+    <span class="fr">Lire : Éphésiens 1.3-8 · Ésaïe 43.1-4</span>
+  </div>
+  <p class="focus-text">
+    <span class="en">Many of us have quietly built our sense of worth on things that can shift or disappear overnight — a relationship, a title, a role, a child's success, someone's approval. When those things shake, we shake with them. God does not define us by any of these. He defined us before any of them existed.</span>
+    <span class="fr">Beaucoup d'entre nous ont discrètement bâti leur sentiment de valeur sur des choses qui peuvent changer ou disparaître du jour au lendemain — une relation, un titre, un rôle, la réussite d'un enfant, l'approbation de quelqu'un. Quand ces choses vacillent, nous vacillons avec elles. Dieu ne nous définit par aucune d'elles. Il nous a définies avant qu'aucune d'elles n'existe.</span>
+  </p>
+  <div class="q-label"><span class="en">Reflect &amp; Write</span><span class="fr">Réfléchis et écris</span></div>
+  <div class="questions"><ol>
+    <li><span class="en">What criticism or disappointment hits me most deeply? What does that reveal about where I am drawing my worth from?</span><span class="fr">Quelle critique ou quelle déception me touche le plus profondément ? Que cela révèle-t-il sur la source de ma valeur ?</span></li>
+    <li><span class="en">If everything I was known for disappeared tomorrow — my role, my achievements, my relationships — who would I be?</span><span class="fr">Si tout ce pour quoi j'étais connue disparaissait demain — mon rôle, mes réalisations, mes relations — qui serais-je ?</span></li>
+  </ol></div>
+  <div class="journal-box">
+    <span class="journal-label"><span class="en">Complete honestly — bring this to the conference</span><span class="fr">Complète honnêtement — apporte ceci à la conférence</span></span>
+    <span class="fill-line"><span class="en">"I often feel valuable when ________________________________."</span><span class="fr">« Je me sens souvent digne de valeur quand ________________________________. »</span></span>
+    <span class="fill-line"><span class="en">"I feel like a failure when ________________________________."</span><span class="fr">« Je me sens un échec quand ________________________________. »</span></span>
+    <span class="fill-line"><span class="en">"What I fear losing most is ________________________________."</span><span class="fr">« Ce que je crains le plus de perdre, c'est ________________________________. »</span></span>
+  </div>
+</div>
+
+<!-- DAY 3 -->
+<div class="day-card u1">
+  <div class="day-meta">
+    <div class="day-left">
+      <div class="day-num-label"><span class="en">Day 3</span><span class="fr">Jour 3</span></div>
+      <div class="day-date"><span class="en">Saturday, July 11</span><span class="fr">Samedi 11 juillet</span></div>
+    </div>
+    <div class="day-right"><span class="time-badge">~12 min</span></div>
+  </div>
+  <h3 class="day-title"><span class="en">Hidden Wounds That Still Speak</span><span class="fr">Les blessures cachées qui parlent encore</span></h3>
+  <div class="scripture-block">
+    <span class="en">Read: Psalm 147:1–6 · Isaiah 61:1–3</span>
+    <span class="fr">Lire : Psaume 147.1-6 · Ésaïe 61.1-3</span>
+  </div>
+  <p class="focus-text">
+    <span class="en">Old wounds do not disappear simply because we do not speak of them. Rejection, abandonment, betrayal, shame — these quietly shape how we see ourselves, how we relate to others, and how much we trust God. Today we name them honestly — not to live there, but because healing begins with honesty.</span>
+    <span class="fr">Les vieilles blessures ne disparaissent pas simplement parce qu'on n'en parle pas. Le rejet, l'abandon, la trahison, la honte — ces blessures façonnent discrètement la façon dont nous nous voyons, dont nous nous relions aux autres, et la mesure dans laquelle nous faisons confiance à Dieu. Aujourd'hui, nous les nommons honnêtement — non pour y demeurer, mais parce que la guérison commence par l'honnêteté.</span>
+  </p>
+  <div class="q-label"><span class="en">Reflect &amp; Write</span><span class="fr">Réfléchis et écris</span></div>
+  <div class="questions"><ol>
+    <li><span class="en">What wound — rejection, loss, betrayal, family pain, disappointment with God — still quietly influences how I relate to people or how freely I trust?</span><span class="fr">Quelle blessure — rejet, perte, trahison, douleur familiale, déception envers Dieu — influence encore discrètement ma façon de me relier aux autres ou ma liberté à faire confiance ?</span></li>
+    <li><span class="en">What does that wound tend to make me do — withdraw, perform, control, please?</span><span class="fr">Qu'est-ce que cette blessure me pousse généralement à faire — me retirer, performer, contrôler, plaire ?</span></li>
+    <li><span class="en">Have I ever brought this wound honestly to God — or have I buried it and kept going?</span><span class="fr">Ai-je jamais apporté cette blessure honnêtement à Dieu — ou l'ai-je enfouie et continué à avancer ?</span></li>
+  </ol></div>
+</div>
+
+<!-- SUNDAY REST 1 -->
+<div class="sunday-card">
+  <div class="sunday-icon">☀️</div>
+  <div class="sunday-body">
+    <div class="sunday-label"><span class="en">Sunday Rest</span><span class="fr">Repos du dimanche</span></div>
+    <div class="sunday-date"><span class="en">Sunday, July 12</span><span class="fr">Dimanche 12 juillet</span></div>
+    <p><span class="en">No new content today. Re-read your journal from Days 1–3. Which question stayed with you the longest? Bring it to God in prayer. Rest, worship, let it settle.</span><span class="fr">Pas de nouveau contenu aujourd'hui. Relisez votre journal des jours 1–3. Quelle question vous a habitée le plus longtemps ? Apportez-la à Dieu dans la prière. Reposez-vous, adorez, laissez reposer.</span></p>
+  </div>
+</div>
+
+<!-- DAY 4 -->
+<div class="day-card u1">
+  <div class="day-meta">
+    <div class="day-left">
+      <div class="day-num-label"><span class="en">Day 4</span><span class="fr">Jour 4</span></div>
+      <div class="day-date"><span class="en">Monday, July 13</span><span class="fr">Lundi 13 juillet</span></div>
+    </div>
+    <div class="day-right"><span class="time-badge">~12 min</span></div>
+  </div>
+  <h3 class="day-title"><span class="en">The Lies We Have Believed</span><span class="fr">Les mensonges que nous avons crus</span></h3>
+  <div class="scripture-block">
+    <span class="en">Read: Romans 8:14–17 · 2 Corinthians 10:4–5</span>
+    <span class="fr">Lire : Romains 8.14-17 · 2 Corinthiens 10.4-5</span>
+  </div>
+  <p class="focus-text">
+    <span class="en">Every wound tends to leave behind a conclusion — a lie that feels like truth because pain taught it to us. "I am too much." "I am not enough." "God forgot me." "I have to earn my place." These conclusions live in us quietly, shaping everything. But God's word is not passive in the face of them. Today we practice naming the lie, and replacing it with what God actually says.</span>
+    <span class="fr">Toute blessure tend à laisser derrière elle une conclusion — un mensonge qui ressemble à la vérité parce que la douleur nous l'a enseigné. « Je suis trop. » « Je ne suis pas assez. » « Dieu m'a oubliée. » « Je dois mériter ma place. » Ces conclusions vivent en nous discrètement, façonnant tout. Mais la Parole de Dieu n'est pas passive face à elles. Aujourd'hui, nous pratiquons l'art de nommer le mensonge et de le remplacer par ce que Dieu dit vraiment.</span>
+  </p>
+  <div class="q-label"><span class="en">Reflect &amp; Write</span><span class="fr">Réfléchis et écris</span></div>
+  <div class="questions"><ol>
+    <li><span class="en">What is one lie you have believed about yourself — perhaps for a very long time — that you are now ready to name?</span><span class="fr">Quel est un mensonge que vous avez cru à votre sujet — peut-être depuis très longtemps — que vous êtes maintenant prête à nommer ?</span></li>
+    <li><span class="en">What does God say instead? Look up one verse and write it out in full.</span><span class="fr">Que dit Dieu à la place ? Cherchez un verset et écrivez-le en entier.</span></li>
+    <li><span class="en">What step of surrender might God be gently inviting you to take?</span><span class="fr">À quel pas d'abandon Dieu vous invite-t-il doucement ?</span></li>
+  </ol></div>
+</div>
+
+<!-- DAY 5 -->
+<div class="day-card u1">
+  <div class="day-meta">
+    <div class="day-left">
+      <div class="day-num-label"><span class="en">Day 5</span><span class="fr">Jour 5</span></div>
+      <div class="day-date"><span class="en">Tuesday, July 14</span><span class="fr">Mardi 14 juillet</span></div>
+    </div>
+    <div class="day-right"><span class="time-badge">~12 min</span></div>
+  </div>
+  <h3 class="day-title"><span class="en">From Survival to Abiding</span><span class="fr">De la survie à la demeurance</span></h3>
+  <div class="scripture-block">
+    <span class="en">Read: Matthew 11:28–30 · John 15:1–5</span>
+    <span class="fr">Lire : Matthieu 11.28-30 · Jean 15.1-5</span>
+  </div>
+  <p class="focus-text">
+    <span class="en">Many of us are living in survival mode — performing, managing, people-pleasing, holding it all together. Jesus does not invite us to try harder. He invites us to remain in Him. Abiding is not a spiritual achievement or a reward for the disciplined. It is a daily posture of trust — available to every woman, in every season.</span>
+    <span class="fr">Beaucoup d'entre nous vivent en mode survie — performer, gérer, plaire aux autres, tout tenir ensemble. Jésus ne nous invite pas à faire plus d'efforts. Il nous invite à demeurer en lui. Demeurer n'est pas un accomplissement spirituel ni une récompense pour les disciplinées. C'est une posture quotidienne de confiance — accessible à chaque femme, dans chaque saison.</span>
+  </p>
+  <div class="q-label"><span class="en">Reflect &amp; Write</span><span class="fr">Réfléchis et écris</span></div>
+  <div class="questions"><ol>
+    <li><span class="en">Honestly — is my relationship with God right now event-driven, emergency-driven, or relationship-driven? What does that look like in practice?</span><span class="fr">Honnêtement — ma relation avec Dieu en ce moment est-elle guidée par les événements, par l'urgence, ou par une vraie relation ? À quoi cela ressemble-t-il concrètement ?</span></li>
+    <li><span class="en">What mode am I most often living in — performance, crisis, people-pleasing, perfectionism? What would it take to move into rest?</span><span class="fr">Dans quel mode est-ce que je vis le plus souvent — performance, crise, besoin de plaire, perfectionnisme ? Que faudrait-il pour passer au repos ?</span></li>
+  </ol></div>
+</div>
+
+<!-- DAY 6 -->
+<div class="day-card u1">
+  <div class="day-meta">
+    <div class="day-left">
+      <div class="day-num-label"><span class="en">Day 6</span><span class="fr">Jour 6</span></div>
+      <div class="day-date"><span class="en">Wednesday, July 15</span><span class="fr">Mercredi 15 juillet</span></div>
+    </div>
+    <div class="day-right"><span class="time-badge">~12 min</span></div>
+  </div>
+  <h3 class="day-title"><span class="en">Waiting on God Without Growing Bitter</span><span class="fr">Attendre Dieu sans devenir amère</span></h3>
+  <div class="scripture-block">
+    <span class="en">Read: Psalm 27:13–14 · Lamentations 3:22–26</span>
+    <span class="fr">Lire : Psaume 27.13-14 · Lamentations 3.22-26</span>
+  </div>
+  <p class="focus-text">
+    <span class="en">One of the most common but rarely discussed sources of spiritual pain is unanswered prayer. When we pray and nothing changes — for months, for years — trust quietly erodes. We may keep the language of faith on the outside while something very different is happening underneath. Today we sit honestly with that tension.</span>
+    <span class="fr">L'une des sources de douleur spirituelle les plus fréquentes mais rarement évoquées est la prière sans réponse apparente. Lorsque nous prions et que rien ne change — pendant des mois, des années — la confiance s'érode discrètement. Nous pouvons garder le langage de la foi en apparence tandis que quelque chose de très différent se passe en dessous. Aujourd'hui, nous nous asseyons honnêtement avec cette tension.</span>
+  </p>
+  <div class="q-label"><span class="en">Reflect &amp; Write</span><span class="fr">Réfléchis et écris</span></div>
+  <div class="questions"><ol>
+    <li><span class="en">Is there a prayer you have been carrying for a long time with no visible answer? How has the waiting shaped you — for better or for worse?</span><span class="fr">Y a-t-il une prière que vous portez depuis longtemps sans réponse visible ? Comment l'attente vous a-t-elle façonnée — en bien ou en mal ?</span></li>
+    <li><span class="en">What has the waiting taught you about the character of God — even if what it taught was hard?</span><span class="fr">Qu'est-ce que l'attente vous a appris sur le caractère de Dieu — même si ce qu'elle a enseigné était difficile ?</span></li>
+  </ol></div>
+</div>
+
+<!-- DAY 7 -->
+<div class="day-card u1">
+  <div class="day-meta">
+    <div class="day-left">
+      <div class="day-num-label"><span class="en">Day 7</span><span class="fr">Jour 7</span></div>
+      <div class="day-date"><span class="en">Thursday, July 16</span><span class="fr">Jeudi 16 juillet</span></div>
+    </div>
+    <div class="day-right"><span class="time-badge">~12 min</span></div>
+  </div>
+  <h3 class="day-title"><span class="en">Unit 1 Review — What Has God Been Saying?</span><span class="fr">Révision de l'unité 1 — Qu'est-ce que Dieu a dit ?</span></h3>
+  <div class="scripture-block">
+    <span class="en">Read: Psalm 139:1–6, 23–24</span>
+    <span class="fr">Lire : Psaume 139.1-6, 23-24</span>
+  </div>
+  <p class="focus-text">
+    <span class="en">Before moving into the next unit, pause and look back. God rarely speaks in a single moment — He builds on what He has already said. Today is a day to gather what this first unit has stirred, named, or begun to shift in you. Come to the conference with that already in hand.</span>
+    <span class="fr">Avant de passer à l'unité suivante, faites une pause et regardez en arrière. Dieu parle rarement en un seul moment — il construit sur ce qu'il a déjà dit. Aujourd'hui est un jour pour rassembler ce que cette première unité a remué, nommé ou commencé à faire bouger en vous. Arrivez à la conférence avec cela déjà en main.</span>
+  </p>
+  <div class="q-label"><span class="en">Reflect &amp; Write</span><span class="fr">Réfléchis et écris</span></div>
+  <div class="questions"><ol>
+    <li><span class="en">Looking back at Days 1–6: what is the one question God has been asking you most persistently?</span><span class="fr">En regardant les jours 1–6 : quelle est la question que Dieu vous a posée le plus persistamment ?</span></li>
+    <li><span class="en">What wound, lie, or fear has surfaced this week that you want to bring before God?</span><span class="fr">Quelle blessure, quel mensonge ou quelle peur a émergé cette semaine que vous voulez apporter devant Dieu ?</span></li>
+    <li><span class="en">Write a short prayer — just 3–4 sentences — that gives God access to that specific thing.</span><span class="fr">Écrivez une courte prière — juste 3 à 4 phrases — qui donne à Dieu accès à cette chose précise.</span></li>
+  </ol></div>
+</div>
+
+<hr class="fleur">
+
+<!-- ================================================================ -->
+<!--                         UNIT 2                                   -->
+<!-- ================================================================ -->
+<div class="unit-header u2">
+  <div class="unit-top">
+    <div class="unit-num">2</div>
+    <div class="unit-body">
+      <div class="unit-eyebrow"><span class="en">Unit Two · Days 8–14</span><span class="fr">Unité 2 · Jours 8–14</span></div>
+      <h2><span class="en">The Life of the Vine</span><span class="fr">La vie du cep</span></h2>
+      <div class="unit-tagline"><span class="en">Abiding · Burnout · Rhythms · Community · Fruitfulness by Season</span><span class="fr">Demeurer · Épuisement · Rythmes · Communauté · Fécondité par saison</span></div>
+      <div class="unit-dates-row">
+        <span class="ud-label"><span class="en">Dates</span><span class="fr">Dates</span></span>
+        <span class="ud-range"><span class="en">Friday, July 17 – Friday, July 24</span><span class="fr">Vendredi 17 juillet – Vendredi 24 juillet</span></span>
+        <span class="ud-days"><span class="en">Sun July 19 = Rest</span><span class="fr">Dim. 19 juillet = Repos</span></span>
+      </div>
+      <div class="unit-scripture">
+        <span class="en">John 15:4 — "Remain in Me, and I in you. As the branch cannot bear fruit by itself unless it remains in the vine, neither can you, unless you remain in Me."</span>
+        <span class="fr">Jean 15.4 — « Demeurez en moi, et je demeurerai en vous. Comme le sarment ne peut de lui-même porter du fruit s'il ne demeure attaché au cep, ainsi vous ne le pouvez non plus, si vous ne demeurez en moi. »</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DAY 8 -->
+<div class="day-card u2">
+  <div class="day-meta">
+    <div class="day-left">
+      <div class="day-num-label"><span class="en">Day 8</span><span class="fr">Jour 8</span></div>
+      <div class="day-date"><span class="en">Friday, July 17</span><span class="fr">Vendredi 17 juillet</span></div>
+    </div>
+    <div class="day-right"><span class="time-badge">~12 min</span></div>
+  </div>
+  <h3 class="day-title"><span class="en">Visiting the Vine vs. Living in the Vine</span><span class="fr">Visiter le cep ou vivre dans le cep</span></h3>
+  <div class="scripture-block">
+    <span class="en">Read: John 15:1–11 · Psalm 1:1–3</span>
+    <span class="fr">Lire : Jean 15.1-11 · Psaume 1.1-3</span>
+  </div>
+  <p class="focus-text">
+    <span class="en">There is a difference between visiting God and living with Him. Many of us turn to God mainly when something goes wrong — in crisis, in panic, in need. Jesus uses the word "remain" — a word of continuous, unhurried connection, not occasional visits. A phone works fine after being unplugged for a while, but eventually the power runs out. Where are you drawing your daily power from?</span>
+    <span class="fr">Il y a une différence entre rendre visite à Dieu et vivre avec lui. Beaucoup d'entre nous nous tournons vers Dieu surtout quand quelque chose va mal — en crise, en panique, dans le besoin. Jésus utilise le mot « demeurer » — un mot de connexion continue et tranquille, non de visites occasionnelles. Un téléphone fonctionne bien un moment après avoir été débranché, mais finit par s'éteindre. De quoi tirez-vous votre force quotidienne ?</span>
+  </p>
+  <div class="q-label"><span class="en">Reflect &amp; Write</span><span class="fr">Réfléchis et écris</span></div>
+  <div class="questions"><ol>
+    <li><span class="en">Honestly: is my relationship with God event-driven, emergency-driven, or relationship-driven? What does a typical week reveal about this?</span><span class="fr">Honnêtement : ma relation avec Dieu est-elle guidée par les événements, par l'urgence, ou par une vraie relation ? Qu'est-ce qu'une semaine typique révèle à ce sujet ?</span></li>
+    <li><span class="en">When was the last time I came to God with nothing to ask — simply to be with Him?</span><span class="fr">Quand ai-je cherché Dieu pour la dernière fois sans rien à demander — simplement pour être avec lui ?</span></li>
+  </ol></div>
+</div>
+
+<!-- DAY 9 -->
+<div class="day-card u2">
+  <div class="day-meta">
+    <div class="day-left">
+      <div class="day-num-label"><span class="en">Day 9</span><span class="fr">Jour 9</span></div>
+      <div class="day-date"><span class="en">Saturday, July 18</span><span class="fr">Samedi 18 juillet</span></div>
+    </div>
+    <div class="day-right"><span class="time-badge">~12 min</span></div>
+  </div>
+  <h3 class="day-title"><span class="en">When Burnout Signals Disconnection</span><span class="fr">Quand l'épuisement signale une déconnexion</span></h3>
+  <div class="scripture-block">
+    <span class="en">Read: Matthew 11:28–30 · 1 Kings 19:1–9</span>
+    <span class="fr">Lire : Matthieu 11.28-30 · 1 Rois 19.1-9</span>
+  </div>
+  <p class="focus-text">
+    <span class="en">Elijah called fire down from heaven — then collapsed under a tree and asked to die. Burnout does not discriminate between the spiritually strong and the weak. It is often not a sign of failure but a signal that we have been carrying what was never ours to carry alone. Notice how God responded to Elijah: not with correction, but with bread, water, and rest.</span>
+    <span class="fr">Élie a fait descendre le feu du ciel — puis s'est effondré sous un arbre en demandant à mourir. L'épuisement ne fait pas de distinction entre les spirituellement fortes et les faibles. C'est souvent non pas un signe d'échec mais un signal que nous portions ce que nous n'étions pas censées porter seules. Remarquez comment Dieu a répondu à Élie : non par une correction, mais par du pain, de l'eau et du repos.</span>
+  </p>
+  <div class="q-label"><span class="en">Reflect &amp; Write</span><span class="fr">Réfléchis et écris</span></div>
+  <div class="questions"><ol>
+    <li><span class="en">What is currently draining me most? Name it specifically — a relationship, a responsibility, unresolved conflict, a habit, a fear?</span><span class="fr">Qu'est-ce qui me draine le plus en ce moment ? Nommez-le précisément — une relation, une responsabilité, un conflit non résolu, une habitude, une peur ?</span></li>
+    <li><span class="en">Am I showing any signs of spiritual burnout — irritability, loss of joy in prayer, going through the motions, serving without any inner life behind it?</span><span class="fr">Est-ce que je montre des signes d'épuisement spirituel — irritabilité, perte de joie dans la prière, actes mécaniques, servir sans vie intérieure derrière ?</span></li>
+  </ol></div>
+</div>
+
+<!-- SUNDAY REST 2 -->
+<div class="sunday-card">
+  <div class="sunday-icon">☀️</div>
+  <div class="sunday-body">
+    <div class="sunday-label"><span class="en">Sunday Rest</span><span class="fr">Repos du dimanche</span></div>
+    <div class="sunday-date"><span class="en">Sunday, July 19</span><span class="fr">Dimanche 19 juillet</span></div>
+    <p><span class="en">Rest and worship. Re-read your notes from Days 8–9. What has God been saying about your patterns of connection with Him? Let today be genuinely unhurried.</span><span class="fr">Reposez-vous et adorez. Relisez vos notes des jours 8–9. Qu'est-ce que Dieu a dit sur vos habitudes de connexion avec lui ? Laissez aujourd'hui être vraiment sans hâte.</span></p>
+  </div>
+</div>
+
+<!-- DAY 10 -->
+<div class="day-card u2">
+  <div class="day-meta">
+    <div class="day-left">
+      <div class="day-num-label"><span class="en">Day 10</span><span class="fr">Jour 10</span></div>
+      <div class="day-date"><span class="en">Monday, July 20</span><span class="fr">Lundi 20 juillet</span></div>
+    </div>
+    <div class="day-right"><span class="time-badge">~12 min</span></div>
+  </div>
+  <h3 class="day-title"><span class="en">What Drains Me, What Gives Me Life</span><span class="fr">Ce qui me draine, ce qui me donne la vie</span></h3>
+  <div class="scripture-block">
+    <span class="en">Read: Galatians 5:16–25 · Luke 10:38–42</span>
+    <span class="fr">Lire : Galates 5.16-25 · Luc 10.38-42</span>
+  </div>
+  <p class="focus-text">
+    <span class="en">Mary chose to sit at Jesus' feet while Martha spun in anxious activity. Jesus did not say Martha's work was wrong — He said she was distracted from the one thing that mattered most. Walking in the Spirit is less about what we do and more about where we are drawing from. What fills you? What empties you? This exercise matters — you will use it at the conference.</span>
+    <span class="fr">Marie a choisi de s'asseoir aux pieds de Jésus pendant que Marthe s'agitait dans une activité anxieuse. Jésus n'a pas dit que le travail de Marthe était mauvais — il a dit qu'elle était distraite de la seule chose qui comptait le plus. Marcher selon l'Esprit concerne moins ce que nous faisons que ce à partir de quoi nous puisons. Qu'est-ce qui vous remplit ? Qu'est-ce qui vous vide ? Cet exercice compte — vous l'utiliserez à la conférence.</span>
+  </p>
+  <div class="q-label"><span class="en">Reflect &amp; Write</span><span class="fr">Réfléchis et écris</span></div>
+  <div class="questions"><ol>
+    <li><span class="en">Draw two columns in your journal: <em>What drains me</em> and <em>What gives me life.</em> Fill each with specific, honest entries — not what should be there, but what actually is.</span><span class="fr">Dessinez deux colonnes dans votre journal : <em>Ce qui me draine</em> et <em>Ce qui me donne la vie.</em> Remplissez chacune avec des entrées spécifiques et honnêtes — non pas ce qui devrait y être, mais ce qui y est réellement.</span></li>
+    <li><span class="en">Looking at what you have written: what one shift, even a small one, could change the balance?</span><span class="fr">En regardant ce que vous avez écrit : quel changement, même petit, pourrait modifier cet équilibre ?</span></li>
+  </ol></div>
+</div>
+
+<!-- DAY 11 -->
+<div class="day-card u2">
+  <div class="day-meta">
+    <div class="day-left">
+      <div class="day-num-label"><span class="en">Day 11</span><span class="fr">Jour 11</span></div>
+      <div class="day-date"><span class="en">Tuesday, July 21</span><span class="fr">Mardi 21 juillet</span></div>
+    </div>
+    <div class="day-right"><span class="time-badge">~12 min</span></div>
+  </div>
+  <h3 class="day-title"><span class="en">Creating Rhythms That Sustain You</span><span class="fr">Créer des rythmes qui vous soutiennent</span></h3>
+  <div class="scripture-block">
+    <span class="en">Read: Psalm 1:1–3 · Mark 1:35–38</span>
+    <span class="fr">Lire : Psaume 1.1-3 · Marc 1.35-38</span>
+  </div>
+  <p class="focus-text">
+    <span class="en">Even Jesus withdrew before dawn to pray — before the crowds arrived, before the demands began. He did not wait for a convenient moment. Lasting fruit does not come from occasional intense encounters with God. It grows from steady, simple, repeated rhythms of connection. Today we think practically — not ideally — about what that could look like in your real, busy, everyday life.</span>
+    <span class="fr">Même Jésus se retirait avant l'aube pour prier — avant l'arrivée des foules, avant le début des exigences. Il n'attendait pas un moment commode. Du fruit qui demeure ne vient pas de rencontres intenses et occasionnelles avec Dieu. Il grandit à travers des rythmes de connexion réguliers, simples et répétés. Aujourd'hui, nous réfléchissons de façon pratique — non idéale — à ce que cela pourrait ressembler dans votre vraie vie, chargée et quotidienne.</span>
+  </p>
+  <div class="q-label"><span class="en">Reflect &amp; Write</span><span class="fr">Réfléchis et écris</span></div>
+  <div class="questions"><ol>
+    <li><span class="en">What one rhythm do you already have — even a small, imperfect one — that connects you to God? Name it.</span><span class="fr">Quel rythme avez-vous déjà — même petit et imparfait — qui vous connecte à Dieu ? Nommez-le.</span></li>
+    <li><span class="en">What would it look like to add one new practice this month — without adding guilt or pressure to your life?</span><span class="fr">À quoi ressemblerait l'ajout d'une nouvelle pratique ce mois-ci — sans ajouter de culpabilité ni de pression à votre vie ?</span></li>
+  </ol></div>
+  <div class="journal-box">
+    <span class="journal-label"><span class="en">Draft your simple plan — bring it to the conference</span><span class="fr">Esquissez votre plan simple — apportez-le à la conférence</span></span>
+    <span class="fill-line"><span class="en">Daily: I will ________________________________.</span><span class="fr">Quotidien : Je vais ________________________________.</span></span>
+    <span class="fill-line"><span class="en">Weekly: I will ________________________________.</span><span class="fr">Hebdomadaire : Je vais ________________________________.</span></span>
+  </div>
+</div>
+
+<!-- DAY 12 -->
+<div class="day-card u2">
+  <div class="day-meta">
+    <div class="day-left">
+      <div class="day-num-label"><span class="en">Day 12</span><span class="fr">Jour 12</span></div>
+      <div class="day-date"><span class="en">Wednesday, July 22</span><span class="fr">Mercredi 22 juillet</span></div>
+    </div>
+    <div class="day-right"><span class="time-badge">~12 min</span></div>
+  </div>
+  <h3 class="day-title"><span class="en">Fruit Grows in Community — Not Alone</span><span class="fr">Le fruit grandit en communauté — pas seule</span></h3>
+  <div class="scripture-block">
+    <span class="en">Read: Hebrews 10:24–25 · Ecclesiastes 4:9–12</span>
+    <span class="fr">Lire : Hébreux 10.24-25 · Ecclésiaste 4.9-12</span>
+  </div>
+  <p class="focus-text">
+    <span class="en">A branch isolated from the rest of the vine may survive for a time, but it cannot truly flourish or bear fruit alone. Many women pursue spiritual growth very privately — reading alone, praying alone, struggling alone — and quietly disconnect from the community that is part of how God grows us. Fruitfulness was never designed to be solitary.</span>
+    <span class="fr">Un sarment isolé du reste de la vigne peut survivre un temps, mais il ne peut pas vraiment s'épanouir ni porter du fruit seul. Beaucoup de femmes poursuivent leur croissance spirituelle de façon très privée — lisant seules, priant seules, luttant seules — et se déconnectent discrètement de la communauté qui fait partie de la façon dont Dieu nous fait grandir. La fécondité n'a jamais été conçue pour être solitaire.</span>
+  </p>
+  <div class="q-label"><span class="en">Reflect &amp; Write</span><span class="fr">Réfléchis et écris</span></div>
+  <div class="questions"><ol>
+    <li><span class="en">Where have you tried to grow spiritually alone, instead of in community? What has that cost you?</span><span class="fr">Où avez-vous essayé de grandir spirituellement seule, plutôt qu'en communauté ? Qu'est-ce que cela vous a coûté ?</span></li>
+    <li><span class="en">Who has been like soil for your growth in the past year — someone who nourished you, challenged you, or simply stayed close? Have you told them?</span><span class="fr">Qui a été comme un sol pour votre croissance au cours de la dernière année — quelqu'un qui vous a nourrie, mise au défi, ou simplement restée proche ? Le lui avez-vous dit ?</span></li>
+    <li><span class="en">Whose growth are you currently soil for?</span><span class="fr">De la croissance de qui êtes-vous actuellement le sol ?</span></li>
+  </ol></div>
+</div>
+
+<!-- DAY 13 -->
+<div class="day-card u2">
+  <div class="day-meta">
+    <div class="day-left">
+      <div class="day-num-label"><span class="en">Day 13</span><span class="fr">Jour 13</span></div>
+      <div class="day-date"><span class="en">Thursday, July 23</span><span class="fr">Jeudi 23 juillet</span></div>
+    </div>
+    <div class="day-right"><span class="time-badge">~12 min</span></div>
+  </div>
+  <h3 class="day-title"><span class="en">Fruitfulness Across Every Season of Life</span><span class="fr">La fécondité dans chaque saison de la vie</span></h3>
+  <div class="scripture-block">
+    <span class="en">Read: Ecclesiastes 3:1–8 · Philippians 4:11–13</span>
+    <span class="fr">Lire : Ecclésiaste 3.1-8 · Philippiens 4.11-13</span>
+  </div>
+  <p class="focus-text">
+    <span class="en">Fruitfulness does not look the same in every season. A young single woman, a new mother, a woman in leadership, a woman in retirement — each carries a different kind of capacity, a different set of limitations, a different kind of calling. God is not waiting for us to reach a better season to use us. He is at work in this one.</span>
+    <span class="fr">La fécondité ne ressemble pas à la même chose dans chaque saison. Une jeune femme célibataire, une nouvelle mère, une femme en leadership, une femme à la retraite — chacune porte une capacité différente, un ensemble de limites différentes, un appel différent. Dieu n'attend pas que nous atteignions une meilleure saison pour nous utiliser. Il est à l'œuvre dans celle-ci.</span>
+  </p>
+  <div class="q-label"><span class="en">Reflect &amp; Write</span><span class="fr">Réfléchis et écris</span></div>
+  <div class="questions"><ol>
+    <li><span class="en">What season of life are you in right now? What are its unique gifts, and what are its unique limitations?</span><span class="fr">Dans quelle saison de vie vous trouvez-vous en ce moment ? Quels sont ses dons uniques, et quelles en sont les limites uniques ?</span></li>
+    <li><span class="en">Is there a season you are resisting — wishing you were somewhere else — that God may actually be using right now to produce something in you?</span><span class="fr">Y a-t-il une saison que vous résistez — en souhaitant être ailleurs — que Dieu pourrait justement utiliser en ce moment pour produire quelque chose en vous ?</span></li>
+  </ol></div>
+</div>
+
+<!-- DAY 14 -->
+<div class="day-card u2">
+  <div class="day-meta">
+    <div class="day-left">
+      <div class="day-num-label"><span class="en">Day 14</span><span class="fr">Jour 14</span></div>
+      <div class="day-date"><span class="en">Friday, July 24</span><span class="fr">Vendredi 24 juillet</span></div>
+    </div>
+    <div class="day-right"><span class="time-badge">~12 min</span></div>
+  </div>
+  <h3 class="day-title"><span class="en">Unit 2 Review — Naming What God Has Touched</span><span class="fr">Révision de l'unité 2 — Nommer ce que Dieu a touché</span></h3>
+  <div class="scripture-block">
+    <span class="en">Read: Romans 8:5–6 · Colossians 3:1–3</span>
+    <span class="fr">Lire : Romains 8.5-6 · Colossiens 3.1-3</span>
+  </div>
+  <p class="focus-text">
+    <span class="en">Before moving forward, look back at this unit. You have reflected on abiding, burnout, rhythms, community, and season. These are not theoretical topics — they are the terrain of your actual daily life. What has God been naming, shifting, or inviting in you through these days?</span>
+    <span class="fr">Avant d'avancer, regardez en arrière sur cette unité. Vous avez réfléchi à la demeurance, l'épuisement, les rythmes, la communauté et la saison. Ce ne sont pas des sujets théoriques — c'est le terrain de votre vraie vie quotidienne. Qu'est-ce que Dieu a nommé, fait bouger ou invité en vous à travers ces jours ?</span>
+  </p>
+  <div class="q-label"><span class="en">Reflect &amp; Write</span><span class="fr">Réfléchis et écris</span></div>
+  <div class="questions"><ol>
+    <li><span class="en">Of all the days in Unit 2, which reading or question stayed with you the longest? Why?</span><span class="fr">Parmi tous les jours de l'unité 2, quelle lecture ou question vous a habitée le plus longtemps ? Pourquoi ?</span></li>
+    <li><span class="en">What is one life-giving rhythm you are committing to carry forward — even in a small, realistic way?</span><span class="fr">Quel est un rythme source de vie que vous vous engagez à poursuivre — même de façon petite et réaliste ?</span></li>
+  </ol></div>
+</div>
+
+<hr class="fleur">
+
+<!-- ================================================================ -->
+<!--                         UNIT 3                                   -->
+<!-- ================================================================ -->
+<div class="unit-header u3">
+  <div class="unit-top">
+    <div class="unit-num">3</div>
+    <div class="unit-body">
+      <div class="unit-eyebrow"><span class="en">Unit Three · Days 15–21</span><span class="fr">Unité 3 · Jours 15–21</span></div>
+      <h2><span class="en">What Does Lasting Fruit Look Like?</span><span class="fr">À quoi ressemble du fruit qui demeure ?</span></h2>
+      <div class="unit-tagline"><span class="en">Character · Integrity · Influence · Endurance · Fruit That Multiplies</span><span class="fr">Caractère · Intégrité · Influence · Persévérance · Fruit qui se multiplie</span></div>
+      <div class="unit-dates-row">
+        <span class="ud-label"><span class="en">Dates</span><span class="fr">Dates</span></span>
+        <span class="ud-range"><span class="en">Saturday, July 25 – Saturday, August 1</span><span class="fr">Samedi 25 juillet – Samedi 1er août</span></span>
+        <span class="ud-days"><span class="en">Sun July 26 = Rest</span><span class="fr">Dim. 26 juillet = Repos</span></span>
+      </div>
+      <div class="unit-scripture">
+        <span class="en">Galatians 5:22–23 — "The fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, self-control."</span>
+        <span class="fr">Galates 5.22-23 — « Le fruit de l'Esprit, c'est l'amour, la joie, la paix, la patience, la bonté, la bienveillance, la fidélité, la douceur, la maîtrise de soi. »</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DAY 15 -->
+<div class="day-card u3">
+  <div class="day-meta">
+    <div class="day-left">
+      <div class="day-num-label"><span class="en">Day 15</span><span class="fr">Jour 15</span></div>
+      <div class="day-date"><span class="en">Saturday, July 25</span><span class="fr">Samedi 25 juillet</span></div>
+    </div>
+    <div class="day-right"><span class="time-badge">~12 min</span></div>
+  </div>
+  <h3 class="day-title"><span class="en">Fruit Is Not Success</span><span class="fr">Le fruit n'est pas la réussite</span></h3>
+  <div class="scripture-block">
+    <span class="en">Read: Galatians 5:22–23 · Matthew 7:16–20</span>
+    <span class="fr">Lire : Galates 5.22-23 · Matthieu 7.16-20</span>
+  </div>
+  <p class="focus-text">
+    <span class="en">The world measures us by results, visibility, and achievement. Jesus does not. The greatest evidence of spiritual maturity is not how large our influence is, how much we have accomplished, or how many people know our name — it is whether we are becoming more like Him. Today we honestly reexamine what we have been measuring ourselves by.</span>
+    <span class="fr">Le monde nous mesure par les résultats, la visibilité et les réalisations. Jésus ne le fait pas. La plus grande preuve de maturité spirituelle n'est pas l'étendue de notre influence, ce que nous avons accompli, ou le nombre de personnes qui connaissent notre nom — c'est si nous devenons de plus en plus à son image. Aujourd'hui, nous réexaminons honnêtement ce à quoi nous nous sommes mesurées.</span>
+  </p>
+  <div class="q-label"><span class="en">Reflect &amp; Write</span><span class="fr">Réfléchis et écris</span></div>
+  <div class="questions"><ol>
+    <li><span class="en">If everything you had achieved disappeared tomorrow, what evidence would remain that Christ is genuinely transforming you?</span><span class="fr">Si tout ce que vous avez accompli disparaissait demain, quelle preuve resterait que Christ vous transforme vraiment ?</span></li>
+    <li><span class="en">Read through the nine aspects of the fruit of the Spirit slowly. Which one do you sense God is most wanting to grow in you right now — and why?</span><span class="fr">Lisez lentement les neuf aspects du fruit de l'Esprit. Lequel sentez-vous que Dieu veut le plus faire grandir en vous en ce moment — et pourquoi ?</span></li>
+  </ol></div>
+</div>
+
+<!-- SUNDAY REST 3 -->
+<div class="sunday-card">
+  <div class="sunday-icon">☀️</div>
+  <div class="sunday-body">
+    <div class="sunday-label"><span class="en">Sunday Rest</span><span class="fr">Repos du dimanche</span></div>
+    <div class="sunday-date"><span class="en">Sunday, July 26</span><span class="fr">Dimanche 26 juillet</span></div>
+    <p><span class="en">Rest and worship. Carry the aspect of the fruit of the Spirit you named yesterday into your day — not as effort, but as a quiet prayer: "Lord, grow this in me."</span><span class="fr">Reposez-vous et adorez. Portez l'aspect du fruit de l'Esprit que vous avez nommé hier dans votre journée — non comme un effort, mais comme une prière silencieuse : « Seigneur, fais grandir ceci en moi. »</span></p>
+  </div>
+</div>
+
+<!-- DAY 16 -->
+<div class="day-card u3">
+  <div class="day-meta">
+    <div class="day-left">
+      <div class="day-num-label"><span class="en">Day 16</span><span class="fr">Jour 16</span></div>
+      <div class="day-date"><span class="en">Monday, July 27</span><span class="fr">Lundi 27 juillet</span></div>
+    </div>
+    <div class="day-right"><span class="time-badge">~12 min</span></div>
+  </div>
+  <h3 class="day-title"><span class="en">Fruit Is Integrity</span><span class="fr">Le fruit est intégrité</span></h3>
+  <div class="scripture-block">
+    <span class="en">Read: Psalm 15:1–5 · Luke 16:10–12</span>
+    <span class="fr">Lire : Psaume 15.1-5 · Luc 16.10-12</span>
+  </div>
+  <p class="focus-text">
+    <span class="en">True fruit appears when who we are in private matches who we are in public. Integrity is not perfection — it is consistency. A healthy tree does not produce different fruit depending on who is watching. The gap between our private self and our public self is one of the most honest measures of where we actually are spiritually.</span>
+    <span class="fr">Le vrai fruit apparaît lorsque ce que nous sommes dans le privé correspond à ce que nous sommes en public. L'intégrité n'est pas la perfection — c'est la cohérence. Un arbre sain ne produit pas un fruit différent selon qui le regarde. L'écart entre notre moi privé et notre moi public est l'une des mesures les plus honnêtes de là où nous en sommes réellement spirituellement.</span>
+  </p>
+  <div class="q-label"><span class="en">Reflect &amp; Write</span><span class="fr">Réfléchis et écris</span></div>
+  <div class="questions"><ol>
+    <li><span class="en">Where is the gap between your public self and your private self the widest? In your words? Your finances? Your online life? A specific relationship?</span><span class="fr">Où l'écart entre votre moi public et votre moi privé est-il le plus grand ? Dans vos paroles ? Vos finances ? Votre vie en ligne ? Une relation spécifique ?</span></li>
+    <li><span class="en">Where is God quietly calling you to greater authenticity — not to shame you, but to free you?</span><span class="fr">Où Dieu vous appelle-t-il doucement à plus d'authenticité — non pour vous honte, mais pour vous libérer ?</span></li>
+  </ol></div>
+</div>
+
+<!-- DAY 17 -->
+<div class="day-card u3">
+  <div class="day-meta">
+    <div class="day-left">
+      <div class="day-num-label"><span class="en">Day 17</span><span class="fr">Jour 17</span></div>
+      <div class="day-date"><span class="en">Tuesday, July 28</span><span class="fr">Mardi 28 juillet</span></div>
+    </div>
+    <div class="day-right"><span class="time-badge">~12 min</span></div>
+  </div>
+  <h3 class="day-title"><span class="en">Fruit Is Influence</span><span class="fr">Le fruit est influence</span></h3>
+  <div class="scripture-block">
+    <span class="en">Read: Matthew 5:13–16 · Romans 12:9–18</span>
+    <span class="fr">Lire : Matthieu 5.13-16 · Romains 12.9-18</span>
+  </div>
+  <p class="focus-text">
+    <span class="en">Every woman influences someone — whether she is aware of it or not. The question is never whether we have influence, but what kind. Salt doesn't announce itself; it simply changes the flavour of whatever it touches. Light doesn't try to be seen; it simply reveals what is already there. What happens in the room — or in a relationship — because you are in it?</span>
+    <span class="fr">Chaque femme a une influence sur quelqu'un — qu'elle en soit consciente ou non. La question n'est jamais de savoir si nous avons de l'influence, mais de quel type. Le sel ne s'annonce pas ; il change simplement la saveur de ce qu'il touche. La lumière n'essaie pas d'être vue ; elle révèle simplement ce qui est déjà là. Que se passe-t-il dans une pièce — ou dans une relation — parce que vous y êtes ?</span>
+  </p>
+  <div class="q-label"><span class="en">Reflect &amp; Write</span><span class="fr">Réfléchis et écris</span></div>
+  <div class="questions"><ol>
+    <li><span class="en">What atmosphere do you tend to create when you walk into a room or a conversation?</span><span class="fr">Quelle atmosphère avez-vous tendance à créer quand vous entrez dans une pièce ou une conversation ?</span></li>
+    <li><span class="en">Who in your life models Christlike character well? What specifically do they do — and what can you learn from it?</span><span class="fr">Qui dans votre vie incarne bien un caractère semblable à Christ ? Que font-elles concrètement — et qu'en pouvez-vous apprendre ?</span></li>
+    <li><span class="en">Are you helping the people closest to you move closer to Christ — or further away?</span><span class="fr">Aidez-vous les personnes les plus proches de vous à se rapprocher de Christ — ou à s'en éloigner ?</span></li>
+  </ol></div>
+</div>
+
+<!-- DAY 18 -->
+<div class="day-card u3">
+  <div class="day-meta">
+    <div class="day-left">
+      <div class="day-num-label"><span class="en">Day 18</span><span class="fr">Jour 18</span></div>
+      <div class="day-date"><span class="en">Wednesday, July 29</span><span class="fr">Mercredi 29 juillet</span></div>
+    </div>
+    <div class="day-right"><span class="time-badge">~12 min</span></div>
+  </div>
+  <h3 class="day-title"><span class="en">Fruit Is Endurance — Faithfulness Over Time</span><span class="fr">Le fruit est persévérance — la fidélité dans le temps</span></h3>
+  <div class="scripture-block">
+    <span class="en">Read: James 1:2–4 · Hebrews 12:1–3</span>
+    <span class="fr">Lire : Jacques 1.2-4 · Hébreux 12.1-3</span>
+  </div>
+  <p class="focus-text">
+    <span class="en">Lasting fruit does not happen overnight. God is less interested in short-term results than in long-term faithfulness. Many women begin well — with fire, with commitment, with vision. The deeper challenge is staying faithful through the disappointments, the quiet years, the seasons when nothing seems to be happening, and nothing seems to be growing. But something is always growing underground.</span>
+    <span class="fr">Du fruit qui demeure ne se produit pas du jour au lendemain. Dieu s'intéresse moins aux résultats à court terme qu'à la fidélité à long terme. Beaucoup de femmes commencent bien — avec du feu, de l'engagement, une vision. Le défi plus profond est de rester fidèle à travers les déceptions, les années discrètes, les saisons où rien ne semble se passer et rien ne semble pousser. Mais quelque chose pousse toujours sous terre.</span>
+  </p>
+  <div class="q-label"><span class="en">Reflect &amp; Write</span><span class="fr">Réfléchis et écris</span></div>
+  <div class="questions"><ol>
+    <li><span class="en">Where have you remained faithful over time — even when it was costly, unseen, or unrewarded? What has that faithfulness produced?</span><span class="fr">Où êtes-vous restée fidèle au fil du temps — même quand c'était coûteux, invisible ou non récompensé ? Qu'est-ce que cette fidélité a produit ?</span></li>
+    <li><span class="en">Looking back: where has God been faithful in a season that felt fruitless or forgotten at the time?</span><span class="fr">En regardant en arrière : où Dieu a-t-il été fidèle dans une saison qui semblait stérile ou oubliée à l'époque ?</span></li>
+  </ol></div>
+</div>
+
+<!-- DAY 19 -->
+<div class="day-card u3">
+  <div class="day-meta">
+    <div class="day-left">
+      <div class="day-num-label"><span class="en">Day 19</span><span class="fr">Jour 19</span></div>
+      <div class="day-date"><span class="en">Thursday, July 30</span><span class="fr">Jeudi 30 juillet</span></div>
+    </div>
+    <div class="day-right"><span class="time-badge">~12 min</span></div>
+  </div>
+  <h3 class="day-title"><span class="en">Fruit That Multiplies — Who Sees Your Growth?</span><span class="fr">Du fruit qui se multiplie — qui voit votre croissance ?</span></h3>
+  <div class="scripture-block">
+    <span class="en">Read: Romans 12:4–5 · 2 Timothy 2:1–2</span>
+    <span class="fr">Lire : Romains 12.4-5 · 2 Timothée 2.1-2</span>
+  </div>
+  <p class="focus-text">
+    <span class="en">Character grown entirely in private cannot disciple anyone. Spiritual fruit reaches its full purpose when it flows outward — love that someone actually receives, patience that someone actually feels, faithfulness that someone can actually depend on. Growth that remains unseen by anyone cannot multiply. Who has access to your life at that level?</span>
+    <span class="fr">Le caractère développé entièrement dans le privé ne peut faire de disciples de personne. Le fruit spirituel atteint sa pleine vocation lorsqu'il rayonne vers l'extérieur — un amour que quelqu'un reçoit vraiment, une patience que quelqu'un ressent vraiment, une fidélité sur laquelle quelqu'un peut vraiment compter. Une croissance que personne ne voit ne peut se multiplier. Qui a accès à votre vie à ce niveau ?</span>
+  </p>
+  <div class="q-label"><span class="en">Reflect &amp; Write</span><span class="fr">Réfléchis et écris</span></div>
+  <div class="questions"><ol>
+    <li><span class="en">Who has recently witnessed genuine growth in you — someone who has seen the real you, not just the public version?</span><span class="fr">Qui a récemment été témoin d'une vraie croissance en vous — quelqu'un qui vous a vue vraiment, pas seulement la version publique ?</span></li>
+    <li><span class="en">Is there someone you have not let close enough to see your growth or your struggle? What holds you back?</span><span class="fr">Y a-t-il quelqu'un que vous n'avez pas laissé assez proche pour voir votre croissance ou vos luttes ? Qu'est-ce qui vous retient ?</span></li>
+  </ol></div>
+</div>
+
+<!-- DAY 20 -->
+<div class="day-card u3">
+  <div class="day-meta">
+    <div class="day-left">
+      <div class="day-num-label"><span class="en">Day 20</span><span class="fr">Jour 20</span></div>
+      <div class="day-date"><span class="en">Friday, July 31</span><span class="fr">Vendredi 31 juillet</span></div>
+    </div>
+    <div class="day-right"><span class="time-badge">~12 min</span></div>
+  </div>
+  <h3 class="day-title"><span class="en">My Growth Plan — One Honest Step</span><span class="fr">Mon plan de croissance — un pas honnête</span></h3>
+  <div class="scripture-block">
+    <span class="en">Read: Philippians 1:6 · 1 Corinthians 15:58</span>
+    <span class="fr">Lire : Philippiens 1.6 · 1 Corinthiens 15.58</span>
+  </div>
+  <p class="focus-text">
+    <span class="en">God does not ask us to fix everything at once. He asks for one faithful step — one honest commitment, made in dependence on Him. Today, looking back over Unit 3, you will name your one growth commitment and one accountability relationship. Bring these to the conference. They will become the foundation of real conversations at the tables.</span>
+    <span class="fr">Dieu ne nous demande pas de tout régler à la fois. Il demande un pas fidèle — un engagement honnête, fait dans la dépendance à lui. Aujourd'hui, en regardant l'unité 3, vous nommerez votre engagement de croissance et votre relation de reddition de comptes. Apportez ceci à la conférence. Ils deviendront la base de vraies conversations autour des tables.</span>
+  </p>
+  <div class="q-label"><span class="en">Reflect &amp; Write</span><span class="fr">Réfléchis et écris</span></div>
+  <div class="questions"><ol>
+    <li><span class="en">Which aspect of the fruit of the Spirit needs the most intentional growth in you right now? Name one concrete habit that would support that growth.</span><span class="fr">Quel aspect du fruit de l'Esprit a le plus besoin d'une croissance intentionnelle en vous en ce moment ? Nommez une habitude concrète qui soutiendrait cette croissance.</span></li>
+    <li><span class="en">Who will you ask to hold you accountable to this — someone who knows you well enough to actually notice?</span><span class="fr">À qui demanderez-vous de vous tenir responsable de cela — quelqu'un qui vous connaît assez bien pour le remarquer vraiment ?</span></li>
+  </ol></div>
+  <div class="journal-box">
+    <span class="journal-label"><span class="en">Bring this to the conference</span><span class="fr">Apporte ceci à la conférence</span></span>
+    <span class="fill-line"><span class="en">The aspect of the fruit of the Spirit I am asking God to grow in me: ________________</span><span class="fr">L'aspect du fruit de l'Esprit que je demande à Dieu de faire grandir en moi : ________________</span></span>
+    <span class="fill-line"><span class="en">One concrete habit I will practice: ________________</span><span class="fr">Une habitude concrète que je pratiquerai : ________________</span></span>
+    <span class="fill-line"><span class="en">One person I will ask to walk with me: ________________</span><span class="fr">Une personne que je demanderai de marcher avec moi : ________________</span></span>
+  </div>
+</div>
+
+<!-- DAY 21 -->
+<div class="day-card u3">
+  <div class="day-meta">
+    <div class="day-left">
+      <div class="day-num-label"><span class="en">Day 21</span><span class="fr">Jour 21</span></div>
+      <div class="day-date"><span class="en">Saturday, August 1</span><span class="fr">Samedi 1er août</span></div>
+    </div>
+    <div class="day-right"><span class="time-badge">~12 min</span></div>
+  </div>
+  <h3 class="day-title"><span class="en">Unit 3 Review — What Kind of Tree Am I Becoming?</span><span class="fr">Révision de l'unité 3 — Quel arbre suis-je en train de devenir ?</span></h3>
+  <div class="scripture-block">
+    <span class="en">Read: John 15:8 · Psalm 92:12–15</span>
+    <span class="fr">Lire : Jean 15.8 · Psaume 92.12-15</span>
+  </div>
+  <p class="focus-text">
+    <span class="en">Psalm 92 says that the righteous will still bear fruit in old age — still full of sap, still green. This is not a picture of performance; it is a picture of a tree that has stayed rooted, stayed connected, stayed in the right soil all its life. That is the vision for every woman at this conference. Not flashy fruitfulness — faithful, lasting, unhurried fruit.</span>
+    <span class="fr">Le Psaume 92 dit que le juste portera encore du fruit dans la vieillesse — toujours plein de sève, toujours vert. Ce n'est pas un tableau de performance ; c'est le tableau d'un arbre qui est resté enraciné, connecté, dans le bon sol tout au long de sa vie. Telle est la vision pour chaque femme à cette conférence. Non pas une fécondité flamboyante — un fruit fidèle, qui demeure, tranquille.</span>
+  </p>
+  <div class="q-label"><span class="en">Reflect &amp; Write</span><span class="fr">Réfléchis et écris</span></div>
+  <div class="questions"><ol>
+    <li><span class="en">In 20 years, what do you want to be true of your character — not your achievements, but who you have become?</span><span class="fr">Dans 20 ans, qu'est-ce que vous voulez qui soit vrai de votre caractère — non pas de vos réalisations, mais de qui vous serez devenue ?</span></li>
+    <li><span class="en">What would need to change today to make that possible?</span><span class="fr">Qu'est-ce qui devrait changer aujourd'hui pour que cela soit possible ?</span></li>
+  </ol></div>
+</div>
+
+<hr class="fleur">
+
+<!-- ================================================================ -->
+<!--                         UNIT 4                                   -->
+<!-- ================================================================ -->
+<div class="unit-header u4">
+  <div class="unit-top">
+    <div class="unit-num">4</div>
+    <div class="unit-body">
+      <div class="unit-eyebrow"><span class="en">Unit Four · Days 22–25</span><span class="fr">Unité 4 · Jours 22–25</span></div>
+      <h2><span class="en">From Rooted to Sent</span><span class="fr">D'enracinée à envoyée</span></h2>
+      <div class="unit-tagline"><span class="en">Counting the Cost · Mission Field · Making Disciples · Commissioned</span><span class="fr">Compter le prix · Champ de mission · Former des disciples · Envoyée</span></div>
+      <div class="unit-dates-row">
+        <span class="ud-label"><span class="en">Dates</span><span class="fr">Dates</span></span>
+        <span class="ud-range"><span class="en">Sunday, August 2 (Rest) then Monday, August 3 – Thursday, August 6</span><span class="fr">Dimanche 2 août (Repos) puis lundi 3 – jeudi 6 août</span></span>
+        <span class="ud-days"><span class="en">Sun Aug 2 = Rest</span><span class="fr">Dim. 2 août = Repos</span></span>
+      </div>
+      <div class="unit-scripture">
+        <span class="en">John 15:16 — "You did not choose Me, but I chose you and appointed you so that you might go and bear fruit — fruit that will last."</span>
+        <span class="fr">Jean 15.16 — « Ce n'est pas vous qui m'avez choisi, mais moi qui vous ai choisis et établis, afin que vous alliez et que vous portiez du fruit, et que votre fruit demeure. »</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SUNDAY REST 4 -->
+<div class="sunday-card">
+  <div class="sunday-icon">☀️</div>
+  <div class="sunday-body">
+    <div class="sunday-label"><span class="en">Sunday Rest</span><span class="fr">Repos du dimanche</span></div>
+    <div class="sunday-date"><span class="en">Sunday, August 2</span><span class="fr">Dimanche 2 août</span></div>
+    <p><span class="en">Rest and worship. As you enter this final unit, ask God one simple question today: "What are you sending me to?" Write whatever comes — even if it surprises you.</span><span class="fr">Reposez-vous et adorez. En entrant dans cette dernière unité, posez à Dieu une question simple aujourd'hui : « À quoi m'envoies-tu ? » Écrivez ce qui vient — même si cela vous surprend.</span></p>
+  </div>
+</div>
+
+<!-- DAY 22 -->
+<div class="day-card u4">
+  <div class="day-meta">
+    <div class="day-left">
+      <div class="day-num-label"><span class="en">Day 22</span><span class="fr">Jour 22</span></div>
+      <div class="day-date"><span class="en">Monday, August 3</span><span class="fr">Lundi 3 août</span></div>
+    </div>
+    <div class="day-right"><span class="time-badge">~12 min</span></div>
+  </div>
+  <h3 class="day-title"><span class="en">The Hesitation Before the Yes</span><span class="fr">L'hésitation avant le « oui »</span></h3>
+  <div class="scripture-block">
+    <span class="en">Read: Isaiah 6:1–8 · Exodus 3:9–14</span>
+    <span class="fr">Lire : Ésaïe 6.1-8 · Exode 3.9-14</span>
+  </div>
+  <p class="focus-text">
+    <span class="en">Moses said he could not speak. Isaiah said he was a man of unclean lips. Jeremiah said he was too young. Esther feared the risk. Nearly every person God sent in Scripture hesitated first — not because they lacked faith, but because they were honest. God does not call the already-equipped. He equips the called. Hesitation is not disqualification; it is often where obedience begins.</span>
+    <span class="fr">Moïse a dit qu'il ne savait pas parler. Ésaïe a dit qu'il était un homme aux lèvres impures. Jérémie a dit qu'il était trop jeune. Esther craignait le risque. Presque toutes les personnes que Dieu a envoyées dans les Écritures ont d'abord hésité — non parce qu'elles manquaient de foi, mais parce qu'elles étaient honnêtes. Dieu n'appelle pas les déjà équipées. Il équipe les appelées. L'hésitation n'est pas une disqualification ; c'est souvent là où commence l'obéissance.</span>
+  </p>
+  <div class="q-label"><span class="en">Reflect &amp; Write</span><span class="fr">Réfléchis et écris</span></div>
+  <div class="questions"><ol>
+    <li><span class="en">What is your honest hesitation about stepping more fully into what God is calling you to? Name it plainly — do not dress it up.</span><span class="fr">Quelle est votre hésitation sincère à vous engager plus pleinement dans ce à quoi Dieu vous appelle ? Nommez-la simplement — ne l'embellissez pas.</span></li>
+    <li><span class="en">What inadequacy, fear, or past failure are you using — consciously or not — as an excuse to hold back?</span><span class="fr">Quelle insuffisance, peur ou échec passé utilisez-vous — consciemment ou non — comme excuse pour vous retenir ?</span></li>
+    <li><span class="en">What would change if you truly believed that the power was never meant to come from you?</span><span class="fr">Que changerait-il si vous croyiez vraiment que cette puissance n'était jamais censée venir de vous ?</span></li>
+  </ol></div>
+</div>
+
+<!-- DAY 23 -->
+<div class="day-card u4">
+  <div class="day-meta">
+    <div class="day-left">
+      <div class="day-num-label"><span class="en">Day 23</span><span class="fr">Jour 23</span></div>
+      <div class="day-date"><span class="en">Tuesday, August 4</span><span class="fr">Mardi 4 août</span></div>
+    </div>
+    <div class="day-right"><span class="time-badge">~12 min</span></div>
+  </div>
+  <h3 class="day-title"><span class="en">Your Mission Field Is Already Around You</span><span class="fr">Votre champ de mission est déjà autour de vous</span></h3>
+  <div class="scripture-block">
+    <span class="en">Read: Matthew 28:18–20 · Colossians 3:17</span>
+    <span class="fr">Lire : Matthieu 28.18-20 · Colossiens 3.17</span>
+  </div>
+  <p class="focus-text">
+    <span class="en">Ministry does not only happen in church, on a stage, or on a mission trip to another country. God has already placed every woman in a specific mission field: her home, her workplace, her neighbourhood, her friendships. The Great Commission does not begin when we board a plane. It begins when we wake up tomorrow morning and walk through our front door.</span>
+    <span class="fr">Le ministère ne se vit pas seulement à l'église, sur une estrade ou lors d'un voyage missionnaire dans un autre pays. Dieu a déjà placé chaque femme dans un champ de mission précis : son foyer, son lieu de travail, son quartier, ses amitiés. Le grand mandat ne commence pas quand on monte dans un avion. Il commence quand on se lève demain matin et qu'on franchit sa propre porte.</span>
+  </p>
+  <div class="q-label"><span class="en">Reflect &amp; Write</span><span class="fr">Réfléchis et écris</span></div>
+  <div class="questions"><ol>
+    <li><span class="en">Name the specific spaces God has placed you in: your home, your workplace, your neighbourhood, your church. Who has He specifically entrusted to you in each one?</span><span class="fr">Nommez les espaces précis où Dieu vous a placée : votre foyer, votre lieu de travail, votre quartier, votre église. À qui vous a-t-il spécifiquement confiée dans chacun ?</span></li>
+    <li><span class="en">How would your ordinary daily life look different if you viewed every day — not just Sundays — as an opportunity for ministry?</span><span class="fr">À quoi ressemblerait votre vie quotidienne ordinaire si vous considériez chaque jour — pas seulement les dimanches — comme une opportunité de ministère ?</span></li>
+  </ol></div>
+</div>
+
+<!-- DAY 24 -->
+<div class="day-card u4">
+  <div class="day-meta">
+    <div class="day-left">
+      <div class="day-num-label"><span class="en">Day 24</span><span class="fr">Jour 24</span></div>
+      <div class="day-date"><span class="en">Wednesday, August 5</span><span class="fr">Mercredi 5 août</span></div>
+    </div>
+    <div class="day-right"><span class="time-badge">~12 min</span></div>
+  </div>
+  <h3 class="day-title"><span class="en">The Fruit That Multiplies — Making Disciples</span><span class="fr">Le fruit qui se multiplie — former des disciples</span></h3>
+  <div class="scripture-block">
+    <span class="en">Read: 2 Timothy 2:1–2 · Titus 2:3–5</span>
+    <span class="fr">Lire : 2 Timothée 2.1-2 · Tite 2.3-5</span>
+  </div>
+  <p class="focus-text">
+    <span class="en">Discipleship is not reserved for those with a theology degree or a ministry title. It is the ordinary calling of every believer. The fruit that truly remains is not what we achieve — it is who we invest in. Who is stronger in faith because we chose to walk alongside them? Who will know Christ because we made space in our lives for them? This is the legacy that lasts.</span>
+    <span class="fr">Le discipulat n'est pas réservé à celles qui ont un diplôme de théologie ou un titre de ministère. C'est l'appel ordinaire de chaque croyante. Le fruit qui demeure vraiment n'est pas ce que nous accomplissons — c'est ceux en qui nous investissons. Qui est plus fort dans la foi parce que nous avons choisi de marcher à leurs côtés ? Qui connaîtra Christ parce que nous avons fait de la place dans nos vies pour eux ? Voilà l'héritage qui dure.</span>
+  </p>
+  <div class="q-label"><span class="en">Reflect &amp; Write</span><span class="fr">Réfléchis et écris</span></div>
+  <div class="questions"><ol>
+    <li><span class="en">Who is stronger in faith because of you — because of your presence, your words, your consistency in their life?</span><span class="fr">Qui est plus fort dans la foi grâce à vous — grâce à votre présence, vos paroles, votre constance dans leur vie ?</span></li>
+    <li><span class="en">If your influence disappeared tomorrow, what spiritual legacy would remain?</span><span class="fr">Si votre influence disparaissait demain, quel héritage spirituel resterait ?</span></li>
+    <li><span class="en">Who are you being called to intentionally walk alongside after this conference — even in a small, faithful way?</span><span class="fr">Aux côtés de qui êtes-vous appelée à marcher intentionnellement après cette conférence — même de façon petite et fidèle ?</span></li>
+  </ol></div>
+</div>
+
+<!-- DAY 25 -->
+<div class="day-card u4">
+  <div class="day-meta">
+    <div class="day-left">
+      <div class="day-num-label"><span class="en">Day 25 · Final Day</span><span class="fr">Jour 25 · Jour final</span></div>
+      <div class="day-date"><span class="en">Thursday, August 6</span><span class="fr">Jeudi 6 août</span></div>
+    </div>
+    <div class="day-right"><span class="time-badge">~15 min</span></div>
+  </div>
+  <h3 class="day-title"><span class="en">Here Am I — Send Me</span><span class="fr">Me voici — envoie-moi</span></h3>
+  <div class="scripture-block">
+    <span class="en">Read: Isaiah 6:5–8 · John 15:9–16</span>
+    <span class="fr">Lire : Ésaïe 6.5-8 · Jean 15.9-16</span>
+  </div>
+  <p class="focus-text">
+    <span class="en">You have spent 25 days looking honestly at your roots, your wounds, your rhythms, your identity, your character, and your calling. Now we arrive at the same place Isaiah did — fully aware of our own limitations, and yet willing. The posture of sending is never the absence of fear. It is the presence of surrender. You are not going alone. You are chosen. You are rooted. You are healed. You are growing. You are called. You are sent.</span>
+    <span class="fr">Vous avez passé 25 jours à regarder honnêtement vos racines, vos blessures, vos rythmes, votre identité, votre caractère et votre appel. Nous arrivons maintenant au même endroit qu'Ésaïe — pleinement conscientes de nos propres limites, et pourtant disposées. La posture de l'envoi n'est jamais l'absence de peur. C'est la présence de l'abandon. Vous ne partez pas seule. Vous êtes choisie. Vous êtes enracinée. Vous êtes guérie. Vous grandissez. Vous êtes appelée. Vous êtes envoyée.</span>
+  </p>
+  <div class="q-label"><span class="en">Reflect &amp; Write — Your Final Preparation</span><span class="fr">Réfléchis et écris — Ta préparation finale</span></div>
+  <div class="questions"><ol>
+    <li><span class="en">Looking back over all 25 days: what is the one thing God has said to you most persistently — the thread that runs through everything?</span><span class="fr">En regardant ces 25 jours : quelle est la chose que Dieu vous a dite le plus persistamment — le fil qui traverse tout ?</span></li>
+    <li><span class="en">What one comfort, habit, or fear might you need to surrender to step into what He is calling you to?</span><span class="fr">Quel confort, habitude ou peur devrez-vous peut-être abandonner pour entrer dans ce à quoi il vous appelle ?</span></li>
+  </ol></div>
+  <div class="journal-box">
+    <span class="journal-label"><span class="en">Complete &amp; bring to the conference — share it at the table</span><span class="fr">Complète et apporte à la conférence — partage-le à la table</span></span>
+    <span class="fill-line"><span class="en">"The fruit God has begun growing in me is ________________________________."</span><span class="fr">« Le fruit que Dieu a commencé à faire grandir en moi est ________________________________. »</span></span>
+    <span class="fill-line"><span class="en">"What I am bringing to the conference is ________________________________."</span><span class="fr">« Ce que j'apporte à la conférence est ________________________________. »</span></span>
+    <span class="fill-line"><span class="en">"After the conference, I am called to ________________________________."</span><span class="fr">« Après la conférence, je suis appelée à ________________________________. »</span></span>
+  </div>
+</div>
+
+<!-- PRE-CONFERENCE REST -->
+<div class="preconf-card">
+  <div class="pc-label"><span class="en">August 7, 8 &amp; 9 · Final Rest Before the Conference</span><span class="fr">7, 8 et 9 août · Dernier repos avant la conférence</span></div>
+  <h3><span class="en">Three Days of Prayer &amp; Quiet Anticipation</span><span class="fr">Trois jours de prière et d'anticipation tranquille</span></h3>
+  <p><span class="en">No new content. These three days are yours — to review your journal, to pray over what God has been saying, and to arrive at the conference not exhausted, but expectant. Read back through your fill-in sentences from Days 2, 11, 20 and 25. Let them be the words you carry through the door on August 10.</span><span class="fr">Pas de nouveau contenu. Ces trois jours vous appartiennent — pour relire votre journal, prier sur ce que Dieu a dit, et arriver à la conférence non pas épuisée, mais dans l'attente. Relisez les phrases que vous avez complétées les jours 2, 11, 20 et 25. Laissez-les être les mots que vous portez en franchissant la porte le 10 août.</span></p>
+  <div class="pc-dates">
+    <span class="en">Friday, August 7 · Saturday, August 8 · Sunday, August 9 → Conference opens Monday, August 10</span>
+    <span class="fr">Vendredi 7 août · Samedi 8 août · Dimanche 9 août → La conférence s'ouvre lundi 10 août</span>
+  </div>
+</div>
+
+<!-- CLOSING -->
+<div class="final-card">
+  <p>
+    <span class="en">"I came rooted.<br>I leave fruitful.<br>I was healed, so I can heal others.<br>I was sent, so I will go."</span>
+    <span class="fr">« Je suis venue enracinée.<br>Je repars féconde.<br>J'ai été guérie, afin de pouvoir guérir d'autres.<br>J'ai été envoyée, alors j'irai. »</span>
+  </p>
+  <div class="fc-ref">
+    <span class="en">John 15:16 — "You did not choose Me, but I chose you and appointed you so that you might go and bear fruit — fruit that will last."</span>
+    <span class="fr">Jean 15.16 — « Ce n'est pas vous qui m'avez choisi, mais moi qui vous ai choisis et établis, afin que vous alliez et que vous portiez du fruit, et que votre fruit demeure. »</span>
+  </div>
+</div>
+
+<div class="footer">
+  <span class="en">The Navigators of Cameroon · 2026 National Women's Conference · Rooted in Christ, Bearing Lasting Fruit</span>
+  <span class="fr">Les Navigateurs du Cameroun · Conférence Nationale des Femmes 2026 · Enracinées en Christ, Portant du Fruit qui Demeure</span>
+</div>
+
+</div><!-- end .page -->
+
+<script>
+function setLang(lang){
+  document.body.classList.toggle('lang-fr', lang==='fr');
+  document.getElementById('btn-en').classList.toggle('active', lang==='en');
+  document.getElementById('btn-fr').classList.toggle('active', lang==='fr');
+  document.documentElement.setAttribute('lang', lang);
+}
+
+function download(lang){
+  // Clone the full document
+  var clone = document.documentElement.cloneNode(true);
+
+  // Remove the topbar/buttons from download
+  var tb = clone.querySelector('.topbar');
+  if(tb) tb.remove();
+
+  // Force one language visible
+  var style = clone.querySelector('style');
+  if(lang==='fr'){
+    // Hide EN, show FR
+    style.textContent += '\n.en{display:none!important;}.fr{display:inline!important;}.fr.bl{display:block!important;}';
+    clone.setAttribute('lang','fr');
+  } else {
+    // Hide FR
+    style.textContent += '\n.fr{display:none!important;}';
+    clone.setAttribute('lang','en');
+  }
+
+  // Remove the script (download function not needed in static file)
+  var scripts = clone.querySelectorAll('script');
+  scripts.forEach(function(s){ s.remove(); });
+
+  // Add a print note at top
+  var note = clone.querySelector('.page');
+  var banner = document.createElement('div');
+  banner.style.cssText = 'text-align:center;padding:12px;font-family:Georgia,serif;font-size:13px;color:#888;border-bottom:1px solid #ddd;margin-bottom:20px;';
+  banner.textContent = lang==='fr'
+    ? 'Étude Biblique Pré-Conférence · Les Navigateurs du Cameroun · 2026'
+    : 'Pre-Conference Bible Study · The Navigators of Cameroon · 2026';
+  if(note) note.insertBefore(banner, note.firstChild);
+
+  var html = '<!DOCTYPE html>\n' + clone.outerHTML;
+  var blob = new Blob([html], {type:'text/html;charset=utf-8'});
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = lang==='fr'
+    ? '2026_Etude_Biblique_PreConference_FR.html'
+    : '2026_PreConference_BibleStudy_EN.html';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+/* ---- Embedded-in-site integration ---- */
+(function(){
+  var embedded = window.self !== window.top;
+
+  // When embedded on the conference site, the site's own EN/FR toggle drives
+  // the language, so hide the in-document toggle to avoid two competing controls.
+  if(embedded){
+    document.documentElement.classList.add('embedded');
+    var s = document.createElement('style');
+    s.textContent = '.lang-toggle{display:none!important;}';
+    document.head.appendChild(s);
+  }
+
+  // Initial language from ?lang= query param (site passes it on first load).
+  try {
+    var qp = new URLSearchParams(window.location.search).get('lang');
+    if(qp === 'fr' || qp === 'en') setLang(qp);
+  } catch(e){}
+
+  // Report our full height to the parent so the iframe can size to content
+  // (no inner scrollbar — the page scrolls naturally).
+  function reportHeight(){
+    if(!embedded) return;
+    var h = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+    parent.postMessage({ type: 'bibleStudyHeight', height: h }, '*');
+  }
+
+  // Listen for language changes pushed from the site's toggle.
+  window.addEventListener('message', function(ev){
+    var d = ev.data;
+    if(d && d.type === 'setLang' && (d.lang === 'en' || d.lang === 'fr')){
+      setLang(d.lang);
+      // content height differs between languages — re-measure after reflow
+      setTimeout(reportHeight, 60);
+    }
+  });
+
+  window.addEventListener('load', reportHeight);
+  window.addEventListener('resize', reportHeight);
+  // Re-measure once fonts have settled (web fonts change line wrapping/height).
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(function(){ setTimeout(reportHeight, 80); }); }
+})();
+</script>
+
+</body>
+</html>
