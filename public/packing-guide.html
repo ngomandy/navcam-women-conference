@@ -211,6 +211,66 @@
     margin:0 auto;
   }
 
+  /* ---------- outfit lookbook ---------- */
+  .look-note{
+    margin-top:6px;
+    font-size:13.5px;
+    font-style:italic;
+    color:var(--mute);
+    max-width:640px;
+  }
+  .gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+    margin-top:28px;
+  }
+  .look{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:16px 14px 18px;
+    text-align:center;
+    box-shadow:0 1px 0 var(--line);
+  }
+  .look-art{
+    background:var(--green-mist);
+    border-radius:10px;
+    padding:16px 10px;
+    margin-bottom:14px;
+  }
+  .ill{
+    width:100%;
+    height:auto;
+    display:block;
+    fill:none;
+    stroke:var(--gold-deep);
+    stroke-width:2;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+  }
+  .look-day{
+    display:block;
+    font-family:'Work Sans',sans-serif;
+    font-size:11px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--gold-deep);
+    font-weight:700;
+    margin-bottom:4px;
+  }
+  .look-name{
+    display:block;
+    font-family:'Cormorant Garamond', serif;
+    font-size:20px;
+    color:var(--green-deep);
+    line-height:1.2;
+  }
+  @media(max-width:640px){
+    .gallery{ grid-template-columns:repeat(2,1fr); gap:14px; }
+    .look-name{ font-size:18px; }
+  }
+
   .lang-block{ display:none; }
   .lang-block.active{ display:block; }
 
@@ -228,6 +288,45 @@
 <body>
 
 <div class="band"></div>
+
+<!-- Outfit line-art sketches (defined once, referenced by both languages) -->
+<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true">
+  <defs>
+    <symbol id="ill-theme" viewBox="0 0 100 160">
+      <path d="M40 34 Q50 29 60 34 L67 40 L70 52 L61 47 L72 118 Q50 126 28 118 L39 47 L30 52 L33 40 Z"/>
+      <path d="M37 76 Q50 80 63 76" stroke="#2D6A4F"/>
+    </symbol>
+    <symbol id="ill-pagne" viewBox="0 0 100 160">
+      <path d="M39 22 Q50 9 61 22 Q56 28 50 27 Q44 28 39 22 Z"/>
+      <path d="M41 40 Q50 35 59 40 L76 52 L69 62 L61 54 L79 128 Q50 138 21 128 L39 54 L31 62 L24 52 Z"/>
+      <path d="M43 128 Q50 133 57 128" stroke="#2D6A4F"/>
+    </symbol>
+    <symbol id="ill-uniform" viewBox="0 0 100 160">
+      <path d="M40 34 Q50 29 60 34 L66 40 L69 50 L61 46 L64 130 Q50 136 36 130 L39 46 L31 50 L34 40 Z"/>
+      <path d="M38 72 Q50 76 62 72" stroke="#2D6A4F"/>
+      <circle cx="50" cy="60" r="1.7" fill="#C9A84C" stroke="none"/>
+      <circle cx="45" cy="88" r="1.7" fill="#C9A84C" stroke="none"/>
+      <circle cx="55" cy="96" r="1.7" fill="#C9A84C" stroke="none"/>
+      <circle cx="48" cy="108" r="1.7" fill="#C9A84C" stroke="none"/>
+      <circle cx="53" cy="120" r="1.7" fill="#C9A84C" stroke="none"/>
+    </symbol>
+    <symbol id="ill-free" viewBox="0 0 100 160">
+      <path d="M40 34 Q50 29 60 34 L67 41 L61 47 L63 72 L37 72 L39 47 L33 41 Z"/>
+      <path d="M38 74 L62 74 L60 126 L53 126 L50 98 L47 126 L40 126 Z"/>
+    </symbol>
+    <symbol id="ill-gala" viewBox="0 0 100 160">
+      <path d="M39 38 Q45 33 50 38 Q55 33 61 38 L57 76 Q63 114 73 150 Q50 158 27 150 Q37 114 43 76 Z"/>
+      <path d="M69 40 l1.6 3.4 3.4 1.6 -3.4 1.6 -1.6 3.4 -1.6 -3.4 -3.4 -1.6 3.4 -1.6 Z" fill="#C9A84C" stroke="none"/>
+      <path d="M77 55 l1 2.2 2.2 1 -2.2 1 -1 2.2 -1 -2.2 -2.2 -1 2.2 -1 Z" fill="#C9A84C" stroke="none"/>
+    </symbol>
+    <symbol id="ill-sport" viewBox="0 0 100 160">
+      <path d="M43 36 L57 36 L62 44 L57 48 L57 70 L43 70 L43 48 L38 44 Z"/>
+      <path d="M42 72 L58 72 L57 122 L52 122 L50 94 L48 122 L43 122 Z"/>
+      <path d="M43 122 L43 127 Q43 129 46 129 L52 129 Q54 129 53 126 L52 122 Z" stroke="#2D6A4F"/>
+      <path d="M48 122 L47 126 Q46 129 48 129 L54 129 Q57 129 57 127 L57 122 Z" stroke="#2D6A4F"/>
+    </symbol>
+  </defs>
+</svg>
 
 <header>
   <div class="eyebrow" data-fr="Femmes Navigateurs · Conférence Nationale" data-en="Women Navigators · National Conference">Femmes Navigateurs · Conférence Nationale</div>
@@ -313,6 +412,43 @@
     </section>
 
     <section>
+      <h2><span class="num">✦</span> Aperçu des tenues</h2>
+      <p class="look-note">Illustrations indicatives pour visualiser chaque tenue — le rendu final peut varier. Des photos de référence seront ajoutées prochainement.</p>
+      <div class="gallery">
+        <div class="look">
+          <div class="look-art"><svg class="ill" viewBox="0 0 100 160"><use href="#ill-theme"/></svg></div>
+          <span class="look-day">Lundi</span>
+          <span class="look-name">Thème régional</span>
+        </div>
+        <div class="look">
+          <div class="look-art"><svg class="ill" viewBox="0 0 100 160"><use href="#ill-pagne"/></svg></div>
+          <span class="look-day">Mardi</span>
+          <span class="look-name">Pagne ou kaba</span>
+        </div>
+        <div class="look">
+          <div class="look-art"><svg class="ill" viewBox="0 0 100 160"><use href="#ill-uniform"/></svg></div>
+          <span class="look-day">Mercredi</span>
+          <span class="look-name">Pagne uniforme</span>
+        </div>
+        <div class="look">
+          <div class="look-art"><svg class="ill" viewBox="0 0 100 160"><use href="#ill-free"/></svg></div>
+          <span class="look-day">Jeu. &amp; Ven.</span>
+          <span class="look-name">Tenue libre</span>
+        </div>
+        <div class="look">
+          <div class="look-art"><svg class="ill" viewBox="0 0 100 160"><use href="#ill-gala"/></svg></div>
+          <span class="look-day">Jeudi soir</span>
+          <span class="look-name">Tenue de gala</span>
+        </div>
+        <div class="look">
+          <div class="look-art"><svg class="ill" viewBox="0 0 100 160"><use href="#ill-sport"/></svg></div>
+          <span class="look-day">Chaque matin</span>
+          <span class="look-name">Tenue de sport</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
       <h2><span class="num">03</span> Trousse de toilette &amp; literie</h2>
 
       <h3>Hygiène personnelle</h3>
@@ -335,7 +471,6 @@
       <ul class="check">
         <li>Une paire de draps</li>
         <li>Une taie d'oreiller (et oreiller si possible)</li>
-        <li>Une moustiquaire de voyage (selon le lieu d'hébergement)</li>
       </ul>
     </section>
 
@@ -424,6 +559,43 @@
     </section>
 
     <section>
+      <h2><span class="num">✦</span> A Look at the Outfits</h2>
+      <p class="look-note">Illustrative sketches to help picture each outfit — final looks may vary. Reference photos will be added soon.</p>
+      <div class="gallery">
+        <div class="look">
+          <div class="look-art"><svg class="ill" viewBox="0 0 100 160"><use href="#ill-theme"/></svg></div>
+          <span class="look-day">Monday</span>
+          <span class="look-name">Regional theme</span>
+        </div>
+        <div class="look">
+          <div class="look-art"><svg class="ill" viewBox="0 0 100 160"><use href="#ill-pagne"/></svg></div>
+          <span class="look-day">Tuesday</span>
+          <span class="look-name">Pagne or kaba</span>
+        </div>
+        <div class="look">
+          <div class="look-art"><svg class="ill" viewBox="0 0 100 160"><use href="#ill-uniform"/></svg></div>
+          <span class="look-day">Wednesday</span>
+          <span class="look-name">Uniform pagne</span>
+        </div>
+        <div class="look">
+          <div class="look-art"><svg class="ill" viewBox="0 0 100 160"><use href="#ill-free"/></svg></div>
+          <span class="look-day">Thu &amp; Fri</span>
+          <span class="look-name">Free choice</span>
+        </div>
+        <div class="look">
+          <div class="look-art"><svg class="ill" viewBox="0 0 100 160"><use href="#ill-gala"/></svg></div>
+          <span class="look-day">Thursday eve</span>
+          <span class="look-name">Gala outfit</span>
+        </div>
+        <div class="look">
+          <div class="look-art"><svg class="ill" viewBox="0 0 100 160"><use href="#ill-sport"/></svg></div>
+          <span class="look-day">Every morning</span>
+          <span class="look-name">Sports outfit</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
       <h2><span class="num">03</span> Toiletries &amp; Bedding</h2>
 
       <h3>Personal hygiene</h3>
@@ -446,7 +618,6 @@
       <ul class="check">
         <li>A pair of bedsheets</li>
         <li>A pillowcase (and pillow if possible)</li>
-        <li>A travel mosquito net (depending on accommodation)</li>
       </ul>
     </section>
 
