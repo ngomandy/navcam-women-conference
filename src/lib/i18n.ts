@@ -78,7 +78,7 @@ export const translations = {
       dayThemes: [
         'Rooted in Christ — Arrival & Welcome',
         'Roots That Heal & Deepen',
-        'Bearing Lasting Fruits',
+        'Bearing Lasting Fruit',
         'Sent to Bear Fruit',
         'Commissioned to Bear Lasting Fruit',
       ],
@@ -289,10 +289,10 @@ export const translations = {
       },
       dayThemes: [
         'Enracinées en Christ — Arrivée & Accueil',
-        'Des Racines qui Guérissent & Approfondissent',
-        'Porter des Fruits Durables',
+        "Des Racines qui Guérissent & s'Approfondissent",
+        'Porter du Fruit qui Demeure',
         'Envoyées pour Porter du Fruit',
-        'Commissionnées pour Porter des Fruits Durables',
+        'Envoyées pour Porter du Fruit qui Demeure',
       ],
     },
     // Registration

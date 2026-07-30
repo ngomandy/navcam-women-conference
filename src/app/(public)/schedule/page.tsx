@@ -8,6 +8,7 @@ interface ScheduleBlock {
   title: { en: string; fr: string }
   subtitle?: { en: string; fr: string }
   items?: { en: string[]; fr: string[] }
+  cont?: boolean
 }
 
 interface ScheduleDay {
@@ -23,62 +24,43 @@ const fullScheduleData: ScheduleDay[] = [
     date: { en: 'Monday, August 10', fr: 'Lundi, 10 Août' },
     theme: { en: 'Rooted in Christ — Arrival & Welcome', fr: 'Enracinées en Christ — Arrivée & Accueil' },
     blocks: [
-      {
-        time: '1:30 PM – 6:00 PM',
-        title: { en: 'Arrival & Registration', fr: 'Arrivée & Inscription' },
-        items: {
-          en: ['Welcome desk & reception', 'Registration & check-in', 'Room allocation', 'Conference packs distribution', 'Refreshments', 'Fellowship & reconnection'],
-          fr: ["Accueil et réception", 'Inscription & enregistrement', 'Attribution des chambres', 'Distribution des pochettes de la conférence', 'Rafraîchissements', 'Communion fraternelle & retrouvailles'],
-        },
-      },
-      {
-        time: '6:00 PM – 7:00 PM',
-        title: { en: 'Dinner', fr: 'Dîner' },
-      },
-      {
-        time: '7:00 PM – 9:00 PM',
-        title: { en: 'Opening Ceremony & Worship Night', fr: "Cérémonie d'Ouverture & Soirée de Louange" },
-        subtitle: { en: 'Theme: Planted in Christ', fr: 'Thème : Plantées en Christ' },
-        items: {
-          en: ['Opening prayer', 'Welcome procession', 'Word of Welcome by the Conference Director — official opening, presentation of theme, vision casting', 'Praise & worship', 'Keynote message', 'Testimony of the Day', 'Prayer of consecration'],
-          fr: ["Prière d'ouverture", "Procession d'accueil", 'Mot de bienvenue de la Directrice de la Conférence — ouverture officielle, présentation du thème, partage de la vision', 'Louange & adoration', 'Message principal', 'Témoignage du Jour', 'Prière de consécration'],
-        },
-      },
+      { time: '1:30 – 2:45 PM', title: { en: 'Arrival & Registration', fr: 'Arrivée et inscription' }, items: { en: ['Welcome desk & reception', 'Registration & check-in', 'Room allocation', 'Conference packs distribution', 'Refreshments', 'Fellowship & reconnection'], fr: ['Accueil et réception', 'Inscription & enregistrement', 'Attribution des chambres', 'Distribution des pochettes de la conférence', 'Rafraîchissements', 'Communion fraternelle & retrouvailles'] } },
+      { time: '2:45 – 3:15 PM', title: { en: 'Registration continues', fr: 'Inscription (suite)' }, cont: true },
+      { time: '3:15 – 3:30 PM', title: { en: 'Registration continues', fr: 'Inscription (suite)' }, cont: true },
+      { time: '3:30 – 3:45 PM', title: { en: 'Registration continues', fr: 'Inscription (suite)' }, cont: true },
+      { time: '4:00 – 5:30 PM', title: { en: 'Registration continues', fr: 'Inscription (suite)' }, cont: true },
+      { time: '5:30 – 6:00 PM', title: { en: 'Registration continues', fr: 'Inscription (suite)' }, cont: true },
+      { time: '6:00 – 7:00 PM', title: { en: 'Dinner', fr: 'Dîner' } },
+      { time: '7:00 – 8:00 PM', title: { en: 'Opening Ceremony & Worship Night', fr: 'Cérémonie d\'ouverture et soirée de louange' }, subtitle: { en: 'Theme: Planted in Christ', fr: 'Thème : Plantées en Christ' }, items: { en: ['Opening prayer', 'Welcome procession', 'Word of Welcome by the Conference Director — official opening, presentation of theme, vision casting', 'Praise & worship', 'Keynote message', 'Testimony of the Day', 'Prayer of consecration'], fr: ['Prière d\'ouverture', 'Procession d\'accueil', 'Mot de bienvenue de la Directrice de la Conférence — ouverture officielle, présentation du thème, partage de la vision', 'Louange & adoration', 'Message principal', 'Témoignage du Jour', 'Prière de consécration'] } },
+      { time: '8:00 – 9:00 PM', title: { en: 'Opening Ceremony continues', fr: 'La cérémonie d\'ouverture se poursuit' }, cont: true },
     ],
   },
   {
     day: 2,
     date: { en: 'Tuesday, August 11', fr: 'Mardi, 11 Août' },
-    theme: { en: 'Roots That Heal & Deepen', fr: "Des Racines qui Guérissent & s'Approfondissent" },
+    theme: { en: 'Roots That Heal & Deepen', fr: 'Des Racines qui Guérissent & s\'Approfondissent' },
     blocks: [
-      { time: '5:30 – 6:00 AM', title: { en: 'Morning Sports & Wellness', fr: 'Sport & Bien-être Matinal' } },
-      { time: '6:00 – 6:30 AM', title: { en: 'Morning Devotion (dorms/rooms)', fr: 'Méditation Matinale (dortoirs/chambres)' } },
-      { time: '6:30 – 7:00 AM', title: { en: 'Morning Preparation', fr: 'Préparation Matinale' } },
+      { time: '5:30 – 6:00 AM', title: { en: 'Morning Sports & Wellness', fr: 'Sport et bien-être matinal' } },
+      { time: '6:00 – 6:30 AM', title: { en: 'Morning Devotion (dorms/rooms)', fr: 'Méditation matinale (dortoirs/chambres)' } },
+      { time: '6:30 – 7:00 AM', title: { en: 'Morning Preparation', fr: 'Préparation matinale' } },
       { time: '7:00 – 8:00 AM', title: { en: 'Breakfast', fr: 'Petit-déjeuner' } },
-      { time: '8:00 – 8:30 AM', title: { en: 'Praise & Worship', fr: 'Louange & Adoration' } },
-      { time: '8:30 – 9:00 AM', title: { en: 'God Focus Time', fr: 'Temps Centré sur Dieu' } },
+      { time: '8:00 – 8:30 AM', title: { en: 'Praise & Worship', fr: 'Louange et adoration' } },
+      { time: '8:30 – 9:00 AM', title: { en: 'God Focus Time', fr: 'Temps centré sur Dieu' } },
       { time: '9:00 – 10:15 AM', title: { en: 'Plenary 1 — "What Lies Beneath?"', fr: 'Plénière 1 — « Ce qui se cache en dessous »' } },
-      { time: '10:15 – 10:45 AM', title: { en: 'Table Talk 1', fr: 'Échange de Table 1' } },
-      { time: '10:45 – 11:00 AM', title: { en: 'Praise & Worship', fr: 'Louange & Adoration' } },
-      { time: '11:00 AM – 12:15 PM', title: { en: 'Panel 1 — Healing, Identity & Inner Wholeness', fr: 'Panel 1 — Guérison, Identité & Plénitude Intérieure' } },
+      { time: '10:15 – 10:45 AM', title: { en: 'Table Talk 1', fr: 'Échange de table 1' } },
+      { time: '10:45 – 11:00 AM', title: { en: 'Praise & Worship', fr: 'Louange et adoration' } },
+      { time: '11:00 AM – 12:15 PM', title: { en: 'Panel 1 — Healing, Identity & Inner Wholeness', fr: 'Panel 1 — Guérison, identité et plénitude intérieure' } },
       { time: '12:15 – 1:15 PM', title: { en: 'Lunch', fr: 'Déjeuner' } },
-      { time: '1:15 – 1:30 PM', title: { en: 'Praise & Worship', fr: 'Louange & Adoration' } },
+      { time: '1:15 – 1:30 PM', title: { en: 'Praise & Worship', fr: 'Louange et adoration' } },
       { time: '1:30 – 2:45 PM', title: { en: 'Plenary 2 — "The Life of the Vine"', fr: 'Plénière 2 — « La vie du cep »' } },
-      { time: '2:45 – 3:15 PM', title: { en: 'Table Talk 2', fr: 'Échange de Table 2' } },
-      { time: '3:15 – 3:30 PM', title: { en: 'Praise & Worship', fr: 'Louange & Adoration' } },
-      { time: '3:30 – 3:45 PM', title: { en: 'Testimony of the Day', fr: 'Témoignage du Jour' } },
-      {
-        time: '4:00 – 5:30 PM',
-        title: { en: 'Breakout Sessions — Round 1 (choose one of six)', fr: 'Ateliers — Série 1 (choisir parmi six)' },
-        items: {
-          en: ['Identity in Christ', 'Emotional Healing & Inner Restoration', 'Prayer & Intimacy With God', 'Women & Discipleship', 'Singleness, Waiting & Trusting God', 'Faith, Work & Everyday Calling'],
-          fr: ["L'Identité en Christ", 'Guérison Émotionnelle & Restauration Intérieure', 'Prière & Intimité avec Dieu', 'Femmes & Disciple-making', 'Célibat, Attente & Confiance en Dieu', 'Foi, Travail & Appel Quotidien'],
-        },
-      },
-      { time: '5:30 – 6:00 PM', title: { en: 'Break / Free Time', fr: 'Pause / Temps Libre' } },
+      { time: '2:45 – 3:15 PM', title: { en: 'Table Talk 2', fr: 'Échange de table 2' } },
+      { time: '3:15 – 3:30 PM', title: { en: 'Praise & Worship', fr: 'Louange et adoration' } },
+      { time: '3:30 – 3:45 PM', title: { en: 'Testimony of the Day', fr: 'Témoignage du jour' } },
+      { time: '4:00 – 5:30 PM', title: { en: 'Breakout Sessions — Round 1', fr: 'Ateliers — série 1' }, items: { en: ['Identity in Christ', 'Emotional Healing & Inner Restoration', 'Prayer & Intimacy With God', 'Women & Discipleship', 'Singleness, Waiting & Trusting God', 'Faith, Work & Everyday Calling'], fr: ['L\'Identité en Christ', 'Guérison Émotionnelle & Restauration Intérieure', 'Prière & Intimité avec Dieu', 'Femmes & Disciple-making', 'Célibat, Attente & Confiance en Dieu', 'Foi, Travail & Appel Quotidien'] } },
+      { time: '5:30 – 6:00 PM', title: { en: 'Break / Free Time', fr: 'Pause / temps libre' } },
       { time: '6:00 – 7:00 PM', title: { en: 'Dinner', fr: 'Dîner' } },
-      { time: '7:00 – 8:00 PM', title: { en: 'Free Time', fr: 'Temps Libre' } },
-      { time: '8:00 – 9:00 PM', title: { en: 'Evening Worship Hour', fr: 'Heure de Louange du Soir' } },
+      { time: '7:00 – 8:00 PM', title: { en: 'Free Time', fr: 'Temps libre' } },
+      { time: '8:00 – 9:00 PM', title: { en: 'Evening Worship Hour', fr: 'Heure de louange du soir' } },
     ],
   },
   {
@@ -86,26 +68,27 @@ const fullScheduleData: ScheduleDay[] = [
     date: { en: 'Wednesday, August 12', fr: 'Mercredi, 12 Août' },
     theme: { en: 'Bearing Lasting Fruit', fr: 'Porter du Fruit qui Demeure' },
     blocks: [
-      { time: '5:30 – 6:00 AM', title: { en: 'Morning Sports & Wellness', fr: 'Sport & Bien-être Matinal' } },
-      { time: '6:00 – 6:30 AM', title: { en: 'Morning Devotion (dorms/rooms)', fr: 'Méditation Matinale (dortoirs/chambres)' } },
-      { time: '6:30 – 7:00 AM', title: { en: 'Morning Preparation', fr: 'Préparation Matinale' } },
+      { time: '5:30 – 6:00 AM', title: { en: 'Morning Sports & Wellness', fr: 'Sport et bien-être matinal' } },
+      { time: '6:00 – 6:30 AM', title: { en: 'Morning Devotion (dorms/rooms)', fr: 'Méditation matinale (dortoirs/chambres)' } },
+      { time: '6:30 – 7:00 AM', title: { en: 'Morning Preparation', fr: 'Préparation matinale' } },
       { time: '7:00 – 8:00 AM', title: { en: 'Breakfast', fr: 'Petit-déjeuner' } },
-      { time: '8:00 – 8:30 AM', title: { en: 'Praise & Worship', fr: 'Louange & Adoration' } },
-      { time: '8:30 – 9:00 AM', title: { en: 'God Focus Time', fr: 'Temps Centré sur Dieu' } },
+      { time: '8:00 – 8:30 AM', title: { en: 'Praise & Worship', fr: 'Louange et adoration' } },
+      { time: '8:30 – 9:00 AM', title: { en: 'God Focus Time', fr: 'Temps centré sur Dieu' } },
       { time: '9:00 – 10:15 AM', title: { en: 'Plenary 3 — "What Does Lasting Fruit Look Like?"', fr: 'Plénière 3 — « À quoi ressemble du fruit qui demeure ? »' } },
-      { time: '10:15 – 10:45 AM', title: { en: 'Table Talk 3', fr: 'Échange de Table 3' } },
-      { time: '10:45 – 11:00 AM', title: { en: 'Praise & Worship', fr: 'Louange & Adoration' } },
+      { time: '10:15 – 10:45 AM', title: { en: 'Table Talk 3', fr: 'Échange de table 3' } },
+      { time: '10:45 – 11:00 AM', title: { en: 'Praise & Worship', fr: 'Louange et adoration' } },
       { time: '11:00 AM – 12:15 PM', title: { en: 'Plenary 4 — "Fruit Grows in Community"', fr: 'Plénière 4 — « Le fruit grandit en communauté »' } },
       { time: '12:15 – 1:15 PM', title: { en: 'Lunch', fr: 'Déjeuner' } },
-      { time: '1:15 – 1:30 PM', title: { en: 'Prep & Departure for the Excursion', fr: "Préparatifs & Départ pour l'Excursion" } },
-      {
-        time: '1:30 – 6:00 PM',
-        title: { en: "Ladies' Excursion", fr: "Excursion des Femmes" },
-        subtitle: { en: 'Includes Table Talk 4 & Panel 2 — Women, Calling & Influence · returns by 6:00 PM', fr: "Incl. Échange de Table 4 & Panel 2 — Femmes, Appel & Influence · retour avant 18 h" },
-      },
+      { time: '1:15 – 1:30 PM', title: { en: 'Prep & Departure for the Excursion', fr: 'Préparatifs et départ pour l\'excursion' } },
+      { time: '1:30 – 2:45 PM', title: { en: 'Ladies\' Excursion begins (incl. Table Talk 4 & Panel 2)', fr: 'Début de l\'excursion des femmes (incl. échange de table 4 et Panel 2)' }, subtitle: { en: 'Table Talk 4 & Panel 2 — Women, Calling & Influence', fr: 'Échange de Table 4 & Panel 2 — Femmes, Appel & Influence' } },
+      { time: '2:45 – 3:15 PM', title: { en: 'Ladies\' Excursion continues', fr: 'L\'excursion des femmes se poursuit' }, cont: true },
+      { time: '3:15 – 3:30 PM', title: { en: 'Ladies\' Excursion continues', fr: 'L\'excursion des femmes se poursuit' }, cont: true },
+      { time: '3:30 – 3:45 PM', title: { en: 'Ladies\' Excursion continues', fr: 'L\'excursion des femmes se poursuit' }, cont: true },
+      { time: '4:00 – 5:30 PM', title: { en: 'Ladies\' Excursion continues', fr: 'L\'excursion des femmes se poursuit' }, cont: true },
+      { time: '5:30 – 6:00 PM', title: { en: 'Ladies\' Excursion returns by 6:00 PM', fr: 'Retour de l\'excursion des femmes avant 18 h' } },
       { time: '6:00 – 7:00 PM', title: { en: 'Dinner', fr: 'Dîner' } },
-      { time: '7:00 – 8:00 PM', title: { en: 'Free Time', fr: 'Temps Libre' } },
-      { time: '8:00 – 9:00 PM', title: { en: 'Evening Worship Hour', fr: 'Heure de Louange du Soir' } },
+      { time: '7:00 – 8:00 PM', title: { en: 'Free Time', fr: 'Temps libre' } },
+      { time: '8:00 – 9:00 PM', title: { en: 'Evening Worship Hour', fr: 'Heure de louange du soir' } },
     ],
   },
   {
@@ -113,62 +96,27 @@ const fullScheduleData: ScheduleDay[] = [
     date: { en: 'Thursday, August 13', fr: 'Jeudi, 13 Août' },
     theme: { en: 'Sent to Bear Fruit', fr: 'Envoyées pour Porter du Fruit' },
     blocks: [
-      { time: '5:30 – 6:00 AM', title: { en: 'Morning Sports & Wellness', fr: 'Sport & Bien-être Matinal' } },
-      { time: '6:00 – 6:30 AM', title: { en: 'Morning Devotion (dorms/rooms)', fr: 'Méditation Matinale (dortoirs/chambres)' } },
-      { time: '6:30 – 7:00 AM', title: { en: 'Morning Preparation', fr: 'Préparation Matinale' } },
+      { time: '5:30 – 6:00 AM', title: { en: 'Morning Sports & Wellness', fr: 'Sport et bien-être matinal' } },
+      { time: '6:00 – 6:30 AM', title: { en: 'Morning Devotion (dorms/rooms)', fr: 'Méditation matinale (dortoirs/chambres)' } },
+      { time: '6:30 – 7:00 AM', title: { en: 'Morning Preparation', fr: 'Préparation matinale' } },
       { time: '7:00 – 8:00 AM', title: { en: 'Breakfast', fr: 'Petit-déjeuner' } },
-      { time: '8:00 – 8:30 AM', title: { en: 'Praise & Worship', fr: 'Louange & Adoration' } },
-      { time: '8:30 – 9:00 AM', title: { en: 'God Focus Time', fr: 'Temps Centré sur Dieu' } },
-      { time: '9:00 – 10:15 AM', title: { en: 'Plenary 5 — "Counting the Cost of Being Sent"', fr: "Plénière 5 — « Compter le prix d'être envoyée »" } },
-      { time: '10:15 – 10:45 AM', title: { en: 'Table Talk 5', fr: 'Échange de Table 5' } },
-      { time: '10:45 – 11:00 AM', title: { en: 'Praise & Worship', fr: 'Louange & Adoration' } },
-      { time: '11:00 AM – 12:15 PM', title: { en: 'Panel 3 — Bearing Fruit Beyond the Conference', fr: 'Panel 3 — Porter du Fruit Au-delà de la Conférence' } },
+      { time: '8:00 – 8:30 AM', title: { en: 'Praise & Worship', fr: 'Louange et adoration' } },
+      { time: '8:30 – 9:00 AM', title: { en: 'God Focus Time', fr: 'Temps centré sur Dieu' } },
+      { time: '9:00 – 10:15 AM', title: { en: 'Plenary 5 — "Counting the Cost of Being Sent"', fr: 'Plénière 5 — « Compter le prix d\'être envoyée »' } },
+      { time: '10:15 – 10:45 AM', title: { en: 'Table Talk 5', fr: 'Échange de table 5' } },
+      { time: '10:45 – 11:00 AM', title: { en: 'Praise & Worship', fr: 'Louange et adoration' } },
+      { time: '11:00 AM – 12:15 PM', title: { en: 'Panel 3 — Bearing Fruit Beyond the Conference', fr: 'Panel 3 — Porter du fruit au-delà de la conférence' } },
       { time: '12:15 – 1:15 PM', title: { en: 'Lunch', fr: 'Déjeuner' } },
-      { time: '1:15 – 1:30 PM', title: { en: 'Praise & Worship', fr: 'Louange & Adoration' } },
-      { time: '1:30 – 2:45 PM', title: { en: 'Plenary 6 — "From Rooted to Sent"', fr: "Plénière 6 — « D'enracinée à envoyée »" } },
-      { time: '2:45 – 3:15 PM', title: { en: 'Table Talk 6', fr: 'Échange de Table 6' } },
-      { time: '3:15 – 3:30 PM', title: { en: 'Praise & Worship', fr: 'Louange & Adoration' } },
-      { time: '3:30 – 3:45 PM', title: { en: 'Testimony of the Day', fr: 'Témoignage du Jour' } },
-      {
-        time: '4:00 – 5:30 PM',
-        title: { en: 'Breakout Sessions — Round 2 (choose one of six)', fr: 'Ateliers — Série 2 (choisir parmi six)' },
-        items: {
-          en: ['Marriage & Family as Discipleship', 'Leadership & Influence', 'Purpose & Calling', 'Faithful Stewardship', 'Mentorship Across Generations', 'Missions & Disciple-Making'],
-          fr: ['Le Mariage & la Famille comme Discipulat', 'Leadership & Influence', 'Sens de la Vie & Appel', 'Une Intendance Fidèle', 'Le Mentorat Intergénérationnel', 'Missions & Formation de Disciples'],
-        },
-      },
-      { time: '5:30 – 6:00 PM', title: { en: 'Break / Free Time', fr: 'Pause / Temps Libre' } },
-      {
-        time: '6:00 – 9:00 PM',
-        title: { en: 'Closing Gala Night — The Harvest Table', fr: 'Soirée de Gala de Clôture — La Table de la Moisson' },
-        subtitle: { en: 'Thanksgiving & Celebration: Rooted Together, Bearing Fruit Forever', fr: "Action de Grâce & Célébration : Enracinées Ensemble, Portant du Fruit pour Toujours" },
-        items: {
-          en: [
-            '6:00 PM — Welcome Dinner & Reception',
-            '6:45 PM — Gala Opening Remarks',
-            '6:55 PM — Thanksgiving Worship Set',
-            '7:20 PM — Special Number: "The Journey of the Seed" (Creative Worship Dance)',
-            '7:35 PM — Testimonies: The Fruit I Carry Home',
-            '8:00 PM — Collective Choreography: "Rooted Together"',
-            '8:20 PM — Thanksgiving Ceremony: Harvest Offering Moment',
-            '8:40 PM — Final Blessing & Commissioning Prayer',
-            '8:50 PM — Final Celebration Song',
-            '9:00 PM — Close',
-          ],
-          fr: [
-            "18h00 — Dîner d'Accueil & Réception",
-            "18h45 — Mot d'Ouverture du Gala",
-            "18h55 — Temps de Louange d'Action de Grâce",
-            '19h20 — Numéro Spécial : « Le Voyage de la Graine » (Danse de Louange Créative)',
-            "19h35 — Témoignages : Le Fruit que j'Emporte avec Moi",
-            '20h00 — Chorégraphie Collective : « Enracinées Ensemble »',
-            "20h20 — Cérémonie d'Action de Grâce : Moment de l'Offrande de la Moisson",
-            "20h40 — Bénédiction Finale & Prière d'Envoi",
-            '20h50 — Chant Final de Célébration',
-            '21h00 — Clôture',
-          ],
-        },
-      },
+      { time: '1:15 – 1:30 PM', title: { en: 'Praise & Worship', fr: 'Louange et adoration' } },
+      { time: '1:30 – 2:45 PM', title: { en: 'Plenary 6 — "From Rooted to Sent"', fr: 'Plénière 6 — « D\'enracinée à envoyée »' } },
+      { time: '2:45 – 3:15 PM', title: { en: 'Table Talk 6', fr: 'Échange de table 6' } },
+      { time: '3:15 – 3:30 PM', title: { en: 'Praise & Worship', fr: 'Louange et adoration' } },
+      { time: '3:30 – 3:45 PM', title: { en: 'Testimony of the Day', fr: 'Témoignage du jour' } },
+      { time: '4:00 – 5:30 PM', title: { en: 'Breakout Sessions — Round 2', fr: 'Ateliers — série 2' }, items: { en: ['Marriage & Family as Discipleship', 'Leadership & Influence', 'Purpose & Calling', 'Faithful Stewardship', 'Mentorship Across Generations', 'Missions & Disciple-Making'], fr: ['Le Mariage & la Famille comme Discipulat', 'Leadership & Influence', 'Sens de la Vie & Appel', 'Une Intendance Fidèle', 'Le Mentorat Intergénérationnel', 'Missions & Formation de Disciples'] } },
+      { time: '5:30 – 6:00 PM', title: { en: 'Break / Free Time', fr: 'Pause / temps libre' } },
+      { time: '6:00 – 7:00 PM', title: { en: 'Closing Gala Night begins — The Harvest Table', fr: 'Début de la soirée de gala — La table de la moisson' }, subtitle: { en: 'Thanksgiving & Celebration: Rooted Together, Bearing Fruit Forever', fr: 'Action de Grâce & Célébration : Enracinées Ensemble, Portant du Fruit pour Toujours' }, items: { en: ['6:00 PM — Welcome Dinner & Reception', '6:45 PM — Gala Opening Remarks', '6:55 PM — Thanksgiving Worship Set', '7:20 PM — Special Number: "The Journey of the Seed" (Creative Worship Dance)', '7:35 PM — Testimonies: The Fruit I Carry Home', '8:00 PM — Collective Choreography: "Rooted Together"', '8:20 PM — Thanksgiving Ceremony: Harvest Offering Moment', '8:40 PM — Final Blessing & Commissioning Prayer', '8:50 PM — Final Celebration Song', '9:00 PM — Close'], fr: ['18h00 — Dîner d\'Accueil & Réception', '18h45 — Mot d\'Ouverture du Gala', '18h55 — Temps de Louange d\'Action de Grâce', '19h20 — Numéro Spécial : « Le Voyage de la Graine » (Danse de Louange Créative)', '19h35 — Témoignages : Le Fruit que j\'Emporte avec Moi', '20h00 — Chorégraphie Collective : « Enracinées Ensemble »', '20h20 — Cérémonie d\'Action de Grâce : Moment de l\'Offrande de la Moisson', '20h40 — Bénédiction Finale & Prière d\'Envoi', '20h50 — Chant Final de Célébration', '21h00 — Clôture'] } },
+      { time: '7:00 – 8:00 PM', title: { en: 'Gala continues', fr: 'Le gala se poursuit' }, cont: true },
+      { time: '8:00 – 9:00 PM', title: { en: 'Gala continues', fr: 'Le gala se poursuit' }, cont: true },
     ],
   },
   {
@@ -177,18 +125,12 @@ const fullScheduleData: ScheduleDay[] = [
     theme: { en: 'Commissioned to Bear Lasting Fruit', fr: 'Envoyées pour Porter du Fruit qui Demeure' },
     blocks: [
       { time: '7:00 – 8:00 AM', title: { en: 'Breakfast', fr: 'Petit-déjeuner' } },
-      { time: '8:00 – 8:30 AM', title: { en: 'Praise & Worship', fr: 'Louange & Adoration' } },
-      { time: '8:30 – 9:00 AM', title: { en: 'God Focus Time', fr: 'Temps Centré sur Dieu' } },
-      {
-        time: '9:00 – 10:15 AM',
-        title: { en: '"Going Forward Together"', fr: '« Avancer Ensemble »' },
-        subtitle: { en: 'Commissioning teaching · Acts 1:8', fr: "Enseignement d'envoi · Actes 1:8" },
-        items: {
-          en: ['Teaching Segment 1 — Chosen for a Purpose (John 15:16)', 'Teaching Segment 2 — Sent Into the World (Acts 1:8)', 'A Covenant of Obedience', 'Final Testimony Moment — "What I Am Taking Home"'],
-          fr: ["Segment d'Enseignement 1 — Choisies pour un Dessein (Jean 15:16)", "Segment d'Enseignement 2 — Envoyées dans le Monde (Actes 1:8)", "Une Alliance d'Obéissance", 'Moment de Témoignage Final — « Ce que j\'emporte avec moi »'],
-        },
-      },
-      { time: '10:15 AM – 12:15 PM', title: { en: 'Evaluation & Feedback, Q&A, Announcements & Closing', fr: 'Évaluation, Questions, Annonces & Clôture' } },
+      { time: '8:00 – 8:30 AM', title: { en: 'Praise & Worship', fr: 'Louange et adoration' } },
+      { time: '8:30 – 9:00 AM', title: { en: 'God Focus Time', fr: 'Temps centré sur Dieu' } },
+      { time: '9:00 – 10:15 AM', title: { en: '"Going Forward Together"', fr: '« Avancer ensemble »' }, subtitle: { en: 'Commissioning teaching · Acts 1:8', fr: 'Enseignement d\'envoi · Actes 1:8' }, items: { en: ['Teaching Segment 1 — Chosen for a Purpose (John 15:16)', 'Teaching Segment 2 — Sent Into the World (Acts 1:8)', 'A Covenant of Obedience', 'Final Testimony Moment — "What I Am Taking Home"'], fr: ['Segment d\'Enseignement 1 — Choisies pour un Dessein (Jean 15:16)', 'Segment d\'Enseignement 2 — Envoyées dans le Monde (Actes 1:8)', 'Une Alliance d\'Obéissance', 'Moment de Témoignage Final — « Ce que j\'emporte avec moi »'] } },
+      { time: '10:15 – 10:45 AM', title: { en: 'Evaluation & Feedback, Q&A, Announcements & Closing', fr: 'Évaluation, questions, annonces et clôture' } },
+      { time: '10:45 – 11:00 AM', title: { en: 'Closing block continues', fr: 'Le bloc de clôture se poursuit' }, cont: true },
+      { time: '11:00 AM – 12:15 PM', title: { en: 'Closing block continues', fr: 'Le bloc de clôture se poursuit' }, cont: true },
     ],
   },
 ]
@@ -262,8 +204,8 @@ function startMinutes(str: string): number {
 
 const timeGroups = [
   { key: 'morning',   icon: '☀️', from: 0,    to: 720,  label: { en: 'Morning',   fr: 'Matin' } },
-  { key: 'afternoon', icon: '🌤️', from: 720,  to: 1020, label: { en: 'Afternoon', fr: 'Après-midi' } },
-  { key: 'evening',   icon: '🌙', from: 1020, to: 2400, label: { en: 'Evening',   fr: 'Soir' } },
+  { key: 'afternoon', icon: '🌤️', from: 720,  to: 1080, label: { en: 'Afternoon', fr: 'Après-midi' } },
+  { key: 'evening',   icon: '🌙', from: 1080, to: 2400, label: { en: 'Evening',   fr: 'Soir' } },
 ]
 
 /* Build a downloadable .ics for the whole conference. */
@@ -338,18 +280,19 @@ function TimelineBlock({ block, lang, bi, total, live }: {
     return () => observer.disconnect()
   }, [])
 
+  const cont = !!block.cont
   const type = TYPES[inferType(block.title.en)]
-  const tier = type.tier
-  const isBig = tier === 'marquee' || tier === 'feature'
-  const isMuted = tier === 'muted'
+  const tier: Tier = cont ? 'muted' : type.tier
+  const isBig = !cont && (tier === 'marquee' || tier === 'feature')
+  const isMuted = cont || tier === 'muted'
 
   return (
     <div
       ref={ref}
-      className={`px-4 sm:px-5 py-3.5 flex gap-3 sm:gap-4 timeline-block${visible ? ' visible' : ''}${isMuted ? ' opacity-80' : ''}`}
+      className={`px-4 sm:px-5 ${cont ? 'py-1.5' : 'py-3.5'} flex gap-3 sm:gap-4 timeline-block${visible ? ' visible' : ''}${isMuted ? ' opacity-80' : ''}`}
       style={{
         transitionDelay: `${bi * 40}ms`,
-        ...(tier === 'marquee'
+        ...(!cont && tier === 'marquee'
           ? { background: `${type.color}12`, borderLeft: `3px solid ${type.color}` }
           : live === 'now'
             ? { background: '#2D6A4F0D', borderLeft: '3px solid #2D6A4F' }
@@ -382,11 +325,14 @@ function TimelineBlock({ block, lang, bi, total, live }: {
 
       <div className="flex-1 pb-1 min-w-0">
         <div className="flex items-center gap-2 flex-wrap">
-          {!isBig && <span className="text-xs leading-none">{type.icon}</span>}
+          {cont
+            ? <span className="text-gray-300 text-xs leading-none">⤷</span>
+            : !isBig && <span className="text-xs leading-none">{type.icon}</span>}
           <p className={`leading-snug ${
-            tier === 'marquee' ? 'text-[#1B3A5C] font-bold text-base'
-              : isMuted ? 'text-gray-500 font-medium text-sm'
-                : 'text-[#1B3A5C] font-semibold text-sm'
+            cont ? 'text-gray-400 font-normal italic text-xs'
+              : tier === 'marquee' ? 'text-[#1B3A5C] font-bold text-base'
+                : isMuted ? 'text-gray-500 font-medium text-sm'
+                  : 'text-[#1B3A5C] font-semibold text-sm'
           }`}>
             {lang === 'en' ? block.title.en : block.title.fr}
           </p>
