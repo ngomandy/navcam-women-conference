@@ -44,7 +44,7 @@ const DIRECTIONS_VIDEO = '/venue/directions-care-hope.mp4'
 // Last-mile, on-the-ground directions from the Neptune Happi landmark.
 const ROUTE_STEPS = [
   { en: 'Meet at Neptune Happi.',                                        fr: 'Se retrouver à Neptune Happi.' },
-  { en: 'Take a moto (200 FCFA) to Godwin School (École Godwin).',       fr: 'Prendre une moto (200 F) pour l’école Godwin.' },
+  { en: 'Take a bike (200 FCFA) to Godwin School (École Godwin).',       fr: 'Prendre une moto (200 F) pour l’école Godwin.' },
   { en: 'Care & Hope Center is directly opposite Godwin School.',        fr: 'Le Care and Hope Center est en face de l’école Godwin.' },
   { en: 'Enter through the small gate — it’s open.',           fr: 'Entrez par le petit portail, c’est ouvert.' },
 ]
@@ -327,7 +327,7 @@ export default function VenuePage() {
                     <span className="text-[#C9A84C] mt-0.5">🏙️</span>
                     <span>
                       {lang === 'en'
-                        ? 'From Yaoundé city centre: 15–20 min by taxi or moto'
+                        ? 'From Yaoundé city centre: 15–20 min by taxi or bike'
                         : 'Depuis le centre-ville de Yaoundé : 15–20 min en taxi ou moto'}
                     </span>
                   </li>
@@ -335,7 +335,7 @@ export default function VenuePage() {
                     <span className="text-[#C9A84C] mt-0.5">📌</span>
                     <span>
                       {lang === 'en'
-                        ? 'Coming by moto? See the step-by-step route from Neptune Happi below'
+                        ? 'Coming by bike? See the step-by-step route from Neptune Happi below'
                         : 'Vous venez en moto ? Voir l’itinéraire pas à pas depuis Neptune Happi ci-dessous'}
                     </span>
                   </li>
