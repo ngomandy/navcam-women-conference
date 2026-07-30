@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guide des Tenues &amp; Bagages — Femmes Navigateurs 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Themed to match the conference site (green / navy / gold on ivory) */
+    --green:#2D6A4F;
+    --green-deep:#1B3A5C;
+    --green-mist:#EAF3EC;
+    --sage:#74C69D;
+    --gold:#C9A84C;
+    --gold-deep:#B8963A;
+    --gold-soft:#F5EBCF;
+    --ivory:#FDF6EC;
+    --ink:#1E2B24;
+    --mute:#6E8478;
+    --line:#DCE8E0;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--ivory);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.55;
+  }
+
+  /* ---------- decorative wax-print header band ---------- */
+  .band{
+    height:14px;
+    background:repeating-linear-gradient(
+      -45deg,
+      var(--green) 0 18px,
+      var(--gold) 18px 22px,
+      var(--green-mist) 22px 40px
+    );
+  }
+
+  header{
+    max-width:920px;
+    margin:0 auto;
+    padding:48px 32px 24px;
+    text-align:center;
+    position:relative;
+  }
+
+  .eyebrow{
+    font-family:'Work Sans',sans-serif;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    font-size:12.5px;
+    color:var(--gold-deep);
+    font-weight:600;
+    margin-bottom:14px;
+  }
+
+  h1{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    font-size:52px;
+    color:var(--green-deep);
+    margin:0 0 10px;
+    line-height:1.08;
+  }
+
+  .subtitle{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:22px;
+    color:var(--mute);
+    margin:0 0 26px;
+  }
+
+  .intro{
+    max-width:640px;
+    margin:0 auto;
+    font-size:16px;
+    color:#3c4a42;
+  }
+
+  main{
+    max-width:920px;
+    margin:0 auto;
+    padding:8px 32px 72px;
+  }
+
+  section{ margin-top:56px; }
+
+  .num{
+    font-family:'Cormorant Garamond', serif;
+    font-size:15px;
+    color:var(--gold-deep);
+    font-weight:600;
+    letter-spacing:.08em;
+  }
+
+  h2{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    font-size:32px;
+    color:var(--green-deep);
+    margin:2px 0 22px;
+    display:flex;
+    align-items:baseline;
+    gap:12px;
+  }
+  h2 .num{ font-size:18px; }
+
+  h3{
+    font-family:'Work Sans',sans-serif;
+    font-size:14px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--gold-deep);
+    font-weight:700;
+    margin:30px 0 12px;
+  }
+
+  /* ---------- schedule table ---------- */
+  .schedule{
+    width:100%;
+    border-collapse:collapse;
+    font-size:15px;
+    box-shadow:0 1px 0 var(--line);
+  }
+  .schedule thead th{
+    background:var(--green);
+    color:#fff;
+    text-align:left;
+    font-weight:600;
+    padding:12px 16px;
+    font-family:'Work Sans',sans-serif;
+    font-size:13px;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+  }
+  .schedule thead th:first-child{ border-radius:8px 0 0 0; }
+  .schedule thead th:last-child{ border-radius:0 8px 0 0; }
+  .schedule td{
+    padding:14px 16px;
+    border-bottom:1px solid var(--line);
+    vertical-align:top;
+  }
+  .schedule tr:nth-child(even) td{ background:var(--green-mist); }
+  .schedule tr.gala td{ background:var(--gold-soft); }
+  .day{ font-weight:600; color:var(--green-deep); white-space:nowrap; }
+  .moment{ font-style:italic; color:var(--mute); white-space:nowrap; }
+  .note{ color:var(--mute); font-size:13.5px; font-style:italic; }
+
+  .sport-note{
+    margin-top:20px;
+    padding:16px 20px;
+    background:var(--gold-soft);
+    border-left:3px solid var(--gold);
+    border-radius:4px;
+    font-size:15px;
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+  }
+  .sport-note .icon{ font-size:20px; line-height:1.3; }
+
+  /* ---------- checklists ---------- */
+  ul.check{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:grid;
+    gap:10px;
+  }
+  ul.check li{
+    padding-left:28px;
+    position:relative;
+    font-size:15.5px;
+  }
+  ul.check li::before{
+    content:"";
+    position:absolute;
+    left:0; top:5px;
+    width:14px; height:14px;
+    border:1.5px solid var(--gold);
+    border-radius:3px;
+    background:#fff;
+  }
+
+  .grid-2{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px 40px;
+  }
+
+  footer{
+    text-align:center;
+    padding:40px 32px 56px;
+    border-top:1px solid var(--line);
+    margin-top:30px;
+  }
+  footer p{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:19px;
+    color:var(--green-deep);
+    max-width:520px;
+    margin:0 auto;
+  }
+
+  .lang-block{ display:none; }
+  .lang-block.active{ display:block; }
+
+  @media(max-width:640px){
+    h1{ font-size:38px; }
+    .subtitle{ font-size:18px; }
+    .grid-2{ grid-template-columns:1fr; }
+    .schedule{ font-size:13.5px; }
+    .schedule td, .schedule thead th{ padding:10px 10px; }
+    header{ padding:32px 20px 18px; }
+    main{ padding:8px 20px 56px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="band"></div>
+
+<header>
+  <div class="eyebrow" data-fr="Femmes Navigateurs · Conférence Nationale" data-en="Women Navigators · National Conference">Femmes Navigateurs · Conférence Nationale</div>
+  <h1 data-fr="Guide des Tenues &amp; Bagages" data-en="Outfits &amp; Packing Guide">Guide des Tenues &amp; Bagages</h1>
+  <p class="subtitle" data-fr="10 au 14 août 2026" data-en="August 10–14, 2026">10 au 14 août 2026</p>
+  <p class="intro" data-fr="Chère sœur, voici toutes les informations pratiques pour préparer sereinement ta valise : le programme vestimentaire de la semaine et la liste des affaires personnelles à ne pas oublier."
+     data-en="Dear sister, here is everything you need to pack with peace of mind: the week's outfit schedule and the list of personal items not to forget.">
+     Chère sœur, voici toutes les informations pratiques pour préparer sereinement ta valise : le programme vestimentaire de la semaine et la liste des affaires personnelles à ne pas oublier.
+  </p>
+</header>
+
+<main>
+
+  <!-- ============ FRENCH ============ -->
+  <div class="lang-block active" id="lang-fr">
+
+    <section>
+      <h2><span class="num">01</span> Programme des tenues</h2>
+      <table class="schedule">
+        <thead>
+          <tr><th>Jour</th><th>Moment</th><th>Tenue</th><th>Précision</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="day">Lundi 10 août</td>
+            <td class="moment">Journée</td>
+            <td>Tenue choisie par la région (ex. : thème tout blanc, thème jean, ou autre thème)</td>
+            <td class="note">Au choix de chaque région</td>
+          </tr>
+          <tr>
+            <td class="day">Mardi 11 août</td>
+            <td class="moment">Journée</td>
+            <td>Tenue pagne ou kaba</td>
+            <td class="note">Pour toutes les femmes</td>
+          </tr>
+          <tr>
+            <td class="day">Mercredi 12 août</td>
+            <td class="moment">Journée</td>
+            <td>Tissu pagne uniforme des Femmes Nav Cameroun — ou bien tenue orange ou noire</td>
+            <td class="note">Selon disponibilité du pagne</td>
+          </tr>
+          <tr>
+            <td class="day">Jeudi 13 août</td>
+            <td class="moment">Matin</td>
+            <td>Tenue libre</td>
+            <td class="note">Au choix de chaque participante</td>
+          </tr>
+          <tr class="gala">
+            <td class="day">Jeudi 13 août</td>
+            <td class="moment">Soirée</td>
+            <td>Tenue de gala ✨</td>
+            <td class="note">Soirée de gala — soigner l'élégance</td>
+          </tr>
+          <tr>
+            <td class="day">Vendredi 14 août</td>
+            <td class="moment">Journée</td>
+            <td>Tenue libre</td>
+            <td class="note">Au choix de chaque participante</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="sport-note">
+        <span class="icon">🏃🏾‍♀️</span>
+        <span>Chaque matin débutera par une séance de sport. Prévoir <strong>idéalement deux tenues de sport</strong> que vous pourrez laver sur place pour les réutiliser.</span>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="num">02</span> Récapitulatif des tenues à prévoir</h2>
+      <ul class="check">
+        <li>1 tenue selon le thème de la région (à confirmer avec sa région)</li>
+        <li>1 tenue pagne ou kaba</li>
+        <li>1 tissu pagne uniforme Femmes Nav Cameroun, ou à défaut une tenue orange ou noire</li>
+        <li>2 tenues libres (jeudi matin et vendredi)</li>
+        <li>1 tenue de gala (jeudi soir)</li>
+        <li>2 tenues de sport (lavables sur place pour les réutiliser) + chaussures de sport</li>
+        <li>2 pullovers — le climat à Yaoundé est plutôt frais</li>
+        <li>Foulards, châles ou écharpes pour se protéger du froid</li>
+        <li>Un large pagne pour la sortie en pique-nique</li>
+        <li>Chaussures assorties à chaque tenue</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="num">03</span> Trousse de toilette &amp; literie</h2>
+
+      <h3>Hygiène personnelle</h3>
+      <div class="grid-2">
+        <ul class="check">
+          <li>Serviette de bain + petite serviette de toilette</li>
+          <li>Brosse à dents et pâte dentifrice</li>
+          <li>Savon de toilette (ou gel douche)</li>
+          <li>Lait / crème de toilette (hydratant corps)</li>
+        </ul>
+        <ul class="check">
+          <li>Shampoing et nécessaire de coiffure (peigne, foulard de nuit, produits capillaires)</li>
+          <li>Déodorant</li>
+          <li>Papier hygiénique / mouchoirs, protections hygiéniques</li>
+          <li>Lingettes</li>
+        </ul>
+      </div>
+
+      <h3>Literie</h3>
+      <ul class="check">
+        <li>Une paire de draps</li>
+        <li>Une taie d'oreiller (et oreiller si possible)</li>
+        <li>Une moustiquaire de voyage (selon le lieu d'hébergement)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="num">04</span> Autres indispensables</h2>
+      <ul class="check">
+        <li>Pièce d'identité</li>
+        <li>Bible, cahier de notes et stylo</li>
+        <li>Téléphone, chargeur et éventuel adaptateur/multiprise</li>
+        <li>Parapluie ou coupe-vent léger (saison des pluies en août)</li>
+        <li>Crème anti-moustique (si possible)</li>
+      </ul>
+    </section>
+
+  </div>
+
+  <!-- ============ ENGLISH ============ -->
+  <div class="lang-block" id="lang-en">
+
+    <section>
+      <h2><span class="num">01</span> Outfit Schedule</h2>
+      <table class="schedule">
+        <thead>
+          <tr><th>Day</th><th>Time</th><th>Outfit</th><th>Note</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="day">Monday, Aug 10</td>
+            <td class="moment">All day</td>
+            <td>Outfit chosen by the region (e.g., all-white theme, denim theme, or another theme)</td>
+            <td class="note">Each region's choice</td>
+          </tr>
+          <tr>
+            <td class="day">Tuesday, Aug 11</td>
+            <td class="moment">All day</td>
+            <td>Pagne (wrapper) outfit or kaba</td>
+            <td class="note">For all women</td>
+          </tr>
+          <tr>
+            <td class="day">Wednesday, Aug 12</td>
+            <td class="moment">All day</td>
+            <td>Uniform pagne fabric of Cameroon Women Navigators — or an orange or black outfit</td>
+            <td class="note">Depending on pagne availability</td>
+          </tr>
+          <tr>
+            <td class="day">Thursday, Aug 13</td>
+            <td class="moment">Morning</td>
+            <td>Free choice of outfit</td>
+            <td class="note">Each participant's choice</td>
+          </tr>
+          <tr class="gala">
+            <td class="day">Thursday, Aug 13</td>
+            <td class="moment">Evening</td>
+            <td>Gala outfit ✨</td>
+            <td class="note">Gala evening — dress elegantly</td>
+          </tr>
+          <tr>
+            <td class="day">Friday, Aug 14</td>
+            <td class="moment">All day</td>
+            <td>Free choice of outfit</td>
+            <td class="note">Each participant's choice</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="sport-note">
+        <span class="icon">🏃🏾‍♀️</span>
+        <span>Every morning will start with a sports session. Ideally bring <strong>two sports outfits</strong> that you can wash on-site and reuse.</span>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="num">02</span> Outfit Checklist</h2>
+      <ul class="check">
+        <li>1 outfit per the region's theme (confirm with your region)</li>
+        <li>1 pagne outfit or kaba</li>
+        <li>1 uniform pagne fabric of Cameroon Women Navigators, or otherwise an orange or black outfit</li>
+        <li>2 free-choice outfits (Thursday morning and Friday)</li>
+        <li>1 gala outfit (Thursday evening)</li>
+        <li>2 sports outfits (washable on-site for reuse) + sports shoes</li>
+        <li>2 pullovers — Yaoundé's climate is quite cool</li>
+        <li>Scarves, shawls, or wraps to stay warm</li>
+        <li>A large pagne for the picnic outing</li>
+        <li>Shoes matching each outfit</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="num">03</span> Toiletries &amp; Bedding</h2>
+
+      <h3>Personal hygiene</h3>
+      <div class="grid-2">
+        <ul class="check">
+          <li>Bath towel + small hand towel</li>
+          <li>Toothbrush and toothpaste</li>
+          <li>Bar soap (or shower gel)</li>
+          <li>Body lotion / cream</li>
+        </ul>
+        <ul class="check">
+          <li>Shampoo and hair care items (comb, night scarf, hair products)</li>
+          <li>Deodorant</li>
+          <li>Toilet paper / tissues, sanitary items</li>
+          <li>Wet wipes</li>
+        </ul>
+      </div>
+
+      <h3>Bedding</h3>
+      <ul class="check">
+        <li>A pair of bedsheets</li>
+        <li>A pillowcase (and pillow if possible)</li>
+        <li>A travel mosquito net (depending on accommodation)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="num">04</span> Other Essentials</h2>
+      <ul class="check">
+        <li>ID card</li>
+        <li>Bible, notebook and pen</li>
+        <li>Phone, charger and adapter/power strip if needed</li>
+        <li>Umbrella or light windbreaker (rainy season in August)</li>
+        <li>Mosquito repellent cream (if possible)</li>
+      </ul>
+    </section>
+
+  </div>
+
+</main>
+
+<footer>
+  <p data-fr="Que cette conférence soit un temps de communion, de ressourcement et de joie pour chacune de nous !"
+     data-en="May this conference be a time of fellowship, renewal, and joy for each one of us!">
+     Que cette conférence soit un temps de communion, de ressourcement et de joie pour chacune de nous !
+  </p>
+</footer>
+
+<script>
+  // Language is controlled entirely by the host site (no in-document toggle).
+  var langFr = document.getElementById('lang-fr');
+  var langEn = document.getElementById('lang-en');
+  var translatable = document.querySelectorAll('[data-fr]');
+
+  function setLang(lang){
+    var isEn = lang === 'en';
+    langFr.classList.toggle('active', !isEn);
+    langEn.classList.toggle('active', isEn);
+    translatable.forEach(function(el){ el.innerHTML = el.getAttribute('data-' + lang); });
+    document.documentElement.lang = lang;
+  }
+
+  // Report content height so the host can size the iframe (no inner scrollbar).
+  function reportHeight(){
+    var h = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+    parent.postMessage({ type: 'packingGuideHeight', height: h }, '*');
+  }
+
+  // Initial language from ?lang= query param (site passes it on first load).
+  (function(){
+    var qp = new URLSearchParams(window.location.search).get('lang');
+    if(qp === 'fr' || qp === 'en') setLang(qp);
+  })();
+
+  // Listen for language changes pushed from the site's toggle.
+  window.addEventListener('message', function(ev){
+    var d = ev.data;
+    if(d && d.type === 'setLang' && (d.lang === 'en' || d.lang === 'fr')){
+      setLang(d.lang);
+      // content height differs between languages — re-measure after reflow
+      setTimeout(reportHeight, 60);
+    }
+  });
+
+  window.addEventListener('load', reportHeight);
+  window.addEventListener('resize', reportHeight);
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(function(){ setTimeout(reportHeight, 80); }); }
+</script>
+
+</body>
+</html>
