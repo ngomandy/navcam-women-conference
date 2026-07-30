@@ -38,7 +38,17 @@ const FACILITIES = [
 
 const MAPS_EMBED = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.786!2d11.5447!3d3.8110!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x108bdbbcff6fc2a9%3A0xcb5cff82f71442af!2sCare%26Hope%20Center!5e0!3m2!1sen!2scm!4v1'
 const MAPS_LINK   = 'https://maps.app.goo.gl/7qvQWfhFru2Y2LXG7'
+const MAPS_PIN    = 'https://maps.app.goo.gl/J9jLSDLPDpMimPtx7'
 const FB_LINK     = 'https://www.facebook.com/p/Care-Hope-Centre-61555523830106/'
+const DIRECTIONS_VIDEO = '/venue/directions-care-hope.mp4'
+
+// Last-mile, on-the-ground directions from the Neptune Happi landmark.
+const ROUTE_STEPS = [
+  { en: 'Meet at Neptune Happi.',                                        fr: 'Se retrouver à Neptune Happi.' },
+  { en: 'Take a moto (200 FCFA) to Godwin School (École Godwin).',       fr: 'Prendre une moto (200 F) pour l’école Godwin.' },
+  { en: 'Care & Hope Center is directly opposite Godwin School.',        fr: 'Le Care and Hope Center est en face de l’école Godwin.' },
+  { en: 'Enter through the small gate — it’s open.',           fr: 'Entrez par le petit portail, c’est ouvert.' },
+]
 
 export default function VenuePage() {
   const { lang } = useLanguage()
@@ -326,8 +336,8 @@ export default function VenuePage() {
                     <span className="text-[#C9A84C] mt-0.5">📌</span>
                     <span>
                       {lang === 'en'
-                        ? 'Detailed directions will be sent to all confirmed registrants'
-                        : 'Des itinéraires détaillés seront envoyés à tous les inscrits confirmés'}
+                        ? 'Coming by moto? See the step-by-step route from Neptune Happi below'
+                        : 'Vous venez en moto ? Voir l’itinéraire pas à pas depuis Neptune Happi ci-dessous'}
                     </span>
                   </li>
                 </ul>
@@ -356,6 +366,74 @@ export default function VenuePage() {
               </div>
             </ScrollReveal>
           </div>
+
+          {/* Step-by-step last-mile directions + video */}
+          <ScrollReveal>
+            <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+              {/* Numbered route */}
+              <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-[#74C69D]/20 flex flex-col">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-10 h-10 bg-[#C9A84C] rounded-xl flex items-center justify-center text-lg flex-shrink-0">🛵</div>
+                  <h3 className="text-xl font-bold text-[#1B3A5C]" style={{ fontFamily: "'Playfair Display', serif" }}>
+                    {lang === 'en' ? 'Step-by-Step from Neptune Happi' : 'Itinéraire pas à pas depuis Neptune Happi'}
+                  </h3>
+                </div>
+                <ol className="space-y-4">
+                  {ROUTE_STEPS.map((step, i) => (
+                    <li key={i} className="flex items-start gap-4">
+                      <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#2D6A4F] text-white text-sm font-bold flex items-center justify-center" style={{ fontFamily: "'Playfair Display', serif" }}>
+                        {i + 1}
+                      </span>
+                      <span className="text-gray-700 leading-relaxed pt-1">
+                        {lang === 'en' ? step.en : step.fr}
+                      </span>
+                    </li>
+                  ))}
+                </ol>
+                <div className="mt-6 pt-5 border-t border-[#74C69D]/20">
+                  <p className="text-[#2D6A4F] font-bold uppercase tracking-widest text-sm mb-4">
+                    {lang === 'en' ? '✨ Welcome!' : '✨ Bienvenue !'}
+                  </p>
+                  <a
+                    href={MAPS_PIN}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#2D6A4F] hover:bg-[#40916C] text-white text-sm font-semibold rounded-full transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
+                  >
+                    📍 {lang === 'en' ? 'Open Care & Hope Center in Google Maps' : 'Ouvrir Care & Hope Center dans Google Maps'}
+                  </a>
+                </div>
+              </div>
+
+              {/* Directions video */}
+              <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-[#74C69D]/20 flex flex-col">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-10 h-10 bg-[#1B3A5C] rounded-xl flex items-center justify-center text-lg flex-shrink-0">🎥</div>
+                  <h3 className="text-xl font-bold text-[#1B3A5C]" style={{ fontFamily: "'Playfair Display', serif" }}>
+                    {lang === 'en' ? 'Watch the Way There' : 'La Route en Vidéo'}
+                  </h3>
+                </div>
+                <div className="rounded-xl overflow-hidden bg-black flex-1 flex items-center">
+                  <video
+                    controls
+                    playsInline
+                    preload="metadata"
+                    className="w-full h-auto block rounded-xl"
+                  >
+                    <source src={DIRECTIONS_VIDEO} type="video/mp4" />
+                    {lang === 'en'
+                      ? 'Your browser does not support the video tag.'
+                      : 'Votre navigateur ne prend pas en charge la lecture vidéo.'}
+                  </video>
+                </div>
+                <p className="text-gray-500 text-sm mt-4 leading-relaxed">
+                  {lang === 'en'
+                    ? 'A short clip showing the final stretch to the center — follow along with the steps on the left.'
+                    : 'Une courte vidéo montrant les derniers mètres jusqu’au centre — à suivre avec les étapes ci-contre.'}
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
