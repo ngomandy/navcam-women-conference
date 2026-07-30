@@ -134,7 +134,7 @@ export function ScriptureHighlight() {
         <p className="mt-5 text-[#74C69D] text-sm italic">
           {lang === 'en'
             ? '"Rooted in Christ, Bearing Lasting Fruit"'
-            : '"Enracinées en Christ, Portant des Fruits Durables"'}
+            : '"Enracinées en Christ, Portant du Fruit qui Demeure"'}
         </p>
       </div>
     </section>

@@ -207,6 +207,311 @@ const PRAYERS = [
   },
 ]
 
+// ── DAILY PRAYER JOURNEY ──────────────────────────────────────────────────
+// Guide 1: Praying through the Lord's Prayer (Matthew 6) · July 20–26
+const LORDS_PRAYER_DAYS = [
+  {
+    weekday: { en: 'Mon', fr: 'Lun' },
+    date: { en: 'July 20', fr: '20 Juil' },
+    scripture: 'Matthew 6:9',
+    scriptureRef: 'Matthieu 6:9',
+    title: { en: 'Hallowed Be Your Name', fr: 'Que Ton Nom Soit Sanctifié' },
+    points: {
+      en: [
+        'Give thanks to God because He is our Father.',
+        'Thank God that we are His chosen people — through Christ our Savior He has adopted us as His children; thank Him too for Christ\'s sacrifice.',
+        'That God would help us hallow His holy name each day through our lives, our words, our marriages, and our children.',
+        'That throughout the conference, our Father\'s name would be honored in every part of the event — the upkeep of the facilities, our conduct, and every message shared.',
+      ],
+      fr: [
+        'Rendre grâce à Dieu de ce qu\'il est notre Père.',
+        'Nous sommes le choix de Dieu ; il a fait de nous ses enfants par Christ notre Sauveur — rendre grâce aussi pour le sacrifice de Christ.',
+        'Que Dieu nous donne chaque jour de sanctifier son nom au travers de notre vie, nos paroles, notre couple, nos enfants.',
+        'Durant toute la conférence, que nous sanctifiions le nom de notre Père au travers de toutes les articulations de la conférence (entretien des locaux, comportement, messages…).',
+      ],
+    },
+  },
+  {
+    weekday: { en: 'Tue', fr: 'Mar' },
+    date: { en: 'July 21', fr: '21 Juil' },
+    scripture: 'Matthew 6:10',
+    scriptureRef: 'Matthieu 6:10',
+    title: { en: 'Your Kingdom Come, Your Will Be Done', fr: 'Que Ton Règne Vienne, Que Ta Volonté Soit Faite' },
+    points: {
+      en: [
+        'Pray that God\'s Kingdom would reign in our lives, our families, and throughout the conference.',
+        'Pray that God\'s will may be done in our lives, families, marriages, and children, and in every moment of the conference.',
+        'Pray that the Holy Spirit would reign supreme in our lives, families, marriages, and children, and throughout every part of the conference.',
+      ],
+      fr: [
+        'Inviter le règne de Dieu dans chacune de nos vies, nos familles, et la conférence.',
+        'Que la volonté de Dieu se fasse dans ma vie, ma famille, mon couple, mes enfants, pendant toute la conférence.',
+        'Que le Saint-Esprit règne en maître dans ma vie, ma famille, mon couple, mes enfants, pendant toutes les articulations de la conférence.',
+      ],
+    },
+  },
+  {
+    weekday: { en: 'Wed', fr: 'Mer' },
+    date: { en: 'July 22', fr: '22 Juil' },
+    scripture: 'Matthew 6:11',
+    scriptureRef: 'Matthieu 6:11',
+    title: { en: 'Give Us This Day Our Daily Bread', fr: 'Donne-Nous Notre Pain Quotidien' },
+    points: {
+      en: [
+        'That God would provide food and clean drinking water throughout the conference.',
+        'That God would provide every resource needed — sound system, microphones, tables, chairs, and all logistics.',
+        'That the Lord would provide the finances so every woman who desires to attend could cover registration and travel to and from the conference.',
+        'That our "daily bread" would be spiritual nourishment too — that every teaching, meditation, message, and worship session would feed us, so that each of us leaves with a stronger, deeper faith.',
+      ],
+      fr: [
+        'Que Dieu pourvoie en nourriture et en eau à boire dans ma vie, ma famille, mon couple, mes enfants, pendant toute la conférence.',
+        'Que Dieu pourvoie en matériel (sonorisation, micro, tables, chaises…).',
+        'Que le Seigneur pourvoie en finances pour que les femmes trouvent les moyens de participer et de voyager (aller et retour).',
+        'Le pain représente aussi l\'instruction reçue de Dieu : que tout enseignement, méditation, louange et adoration nous nourrisse, afin qu\'à la fin chacune ait une foi plus solide.',
+      ],
+    },
+  },
+  {
+    weekday: { en: 'Thu', fr: 'Jeu' },
+    date: { en: 'July 23', fr: '23 Juil' },
+    scripture: 'Matthew 6:12, 14',
+    scriptureRef: 'Matthieu 6:12, 14',
+    title: { en: 'Forgive Us Our Debts', fr: 'Pardonne-Nous Nos Offenses' },
+    points: {
+      en: [
+        'That God would prepare the women\'s hearts to forgive and show mercy — beginning with forgiving themselves, then their husbands, children, families, and one another throughout the conference.',
+        'That we would give thanks to God for the forgiveness we have received through Him.',
+      ],
+      fr: [
+        'Que Dieu dispose les femmes à pardonner et à faire miséricorde, en commençant par se pardonner à elles-mêmes, puis leurs époux, enfants, famille, et les unes envers les autres durant toute la conférence.',
+        'Rendre grâce à Dieu pour le pardon que nous recevons de lui.',
+      ],
+    },
+  },
+  {
+    weekday: { en: 'Fri', fr: 'Ven' },
+    date: { en: 'July 24', fr: '24 Juil' },
+    scripture: 'Matthew 6:13a; James 4:1–5',
+    scriptureRef: 'Matthieu 6:13a ; Jacques 4:1–5',
+    title: { en: 'Lead Us Not Into Temptation', fr: 'Ne Nous Laisse Pas Entrer en Tentation' },
+    points: {
+      en: [
+        'That God would help us avoid situations, company, and events that could lead us into sin.',
+        'That during this conference the Lord would enable us to bear the fruit of the Spirit.',
+        'That God would deliver us from every trap of the enemy and send His angels to watch over us — during our travels, throughout the conference, and on our return home (Psalm 90–91).',
+      ],
+      fr: [
+        'Que Dieu nous aide à ne pas nous retrouver face à des situations, compagnies, événements qui pourraient nous amener à pécher contre lui.',
+        'Que le Seigneur nous accorde durant cette conférence de produire le fruit de l\'Esprit.',
+        'Que Dieu nous donne d\'échapper à tout piège de l\'ennemi ; qu\'il déploie ses anges pour nous secourir pendant les déplacements, pendant et après la conférence (Ps 90).',
+      ],
+    },
+  },
+  {
+    weekday: { en: 'Sat', fr: 'Sam' },
+    date: { en: 'July 25', fr: '25 Juil' },
+    scripture: 'Matthew 6:13b',
+    scriptureRef: 'Matthieu 6:13b',
+    title: { en: 'Yours Is the Kingdom, the Power & the Glory', fr: 'À Toi le Règne, la Puissance & la Gloire' },
+    points: {
+      en: [
+        'That God\'s reign, power, and glory would be manifested among the women throughout the conference, and that we would experience His presence.',
+        'That we would give glory to God, for to Him belong all glory, power, and strength forever and ever.',
+      ],
+      fr: [
+        'Que le règne, la puissance et la gloire de Dieu se déploient au milieu des femmes pendant la conférence, et que nous le vivions.',
+        'Rendre gloire à Dieu, car à lui la gloire, la puissance et la force pour des siècles des siècles.',
+      ],
+    },
+  },
+  {
+    weekday: { en: 'Sun', fr: 'Dim' },
+    date: { en: 'July 26', fr: '26 Juil' },
+    scripture: '',
+    scriptureRef: '',
+    title: { en: 'Thanksgiving', fr: 'Action de Grâce' },
+    points: {
+      en: ['Offer thanks to God for answering the prayers prayed throughout the week.'],
+      fr: ['Action de grâce pour l\'exaucement des prières priées tout au long de la semaine.'],
+    },
+  },
+]
+
+// Guide 2: Prayer Programme · July 27 – August 10 (seven themes to pray through)
+const PROGRAMME_DAYS = [
+  {
+    weekday: { en: 'Mon', fr: 'Lun' },
+    date: { en: 'July 27', fr: '27 Juil' },
+    scripture: 'Ephesians 4:24; 2 Cor. 3:18',
+    scriptureRef: 'Éph. 4:24 ; 2 Cor. 3:18',
+    title: {
+      en: 'The Passion to Know, Love & Become Like Jesus Christ',
+      fr: 'La Passion de Connaître, d\'Aimer & de Devenir comme Jésus-Christ',
+    },
+    points: {
+      en: ['That during the conference women would learn to know and love Christ, and grow into His image and likeness.'],
+      fr: ['Que pendant la conférence les femmes apprennent à connaître et aimer Christ, et qu\'elles grandissent à l\'image et à la ressemblance de Christ.'],
+    },
+  },
+  {
+    weekday: { en: 'Tue', fr: 'Mar' },
+    date: { en: 'July 28', fr: '28 Juil' },
+    scripture: '2 Timothy 3:16–17',
+    scriptureRef: '2 Timothée 3:16–17',
+    title: {
+      en: 'The Truth & Sufficiency of Scripture for All of Life',
+      fr: 'La Véracité & la Suffisance des Écritures pour Toute la Vie',
+    },
+    points: {
+      en: ['That women would be taught, corrected, and trained by the Word — devoted to Scripture throughout our lives.'],
+      fr: ['Que nous soyons enseignées, convaincues, corrigées et instruites pour être des femmes attachées à la Parole toute notre vie.'],
+    },
+  },
+  {
+    weekday: { en: 'Wed', fr: 'Mer' },
+    date: { en: 'July 29', fr: '29 Juil' },
+    scripture: 'Romans 1:16',
+    scriptureRef: 'Romains 1:16',
+    title: { en: 'The Transforming Power of the Gospel', fr: 'La Puissance de Transformation de l\'Évangile' },
+    points: {
+      en: ['That God\'s Word would fully transform our character and mind, so we leave changed — for a stronger ministry, marriage, and family life.'],
+      fr: ['Que la parole de Dieu nous transforme, afin qu\'au sortir de la conférence nous soyons totalement changées dans notre caractère et notre pensée, pour une meilleure vie dans le ministère, le couple et la famille.'],
+    },
+  },
+  {
+    weekday: { en: 'Thu', fr: 'Jeu' },
+    date: { en: 'July 30', fr: '30 Juil' },
+    scripture: 'Romans 8:9–11, 14, 16',
+    scriptureRef: 'Romains 8:9–11, 14, 16',
+    title: { en: 'The Leading & Empowering of the Holy Spirit', fr: 'La Direction & la Puissance du Saint-Esprit' },
+    points: {
+      en: [
+        'That we would no longer live according to the flesh, that the Spirit of God would dwell in us, and that God would restore life to our mortal bodies.',
+        'That leaving the conference women would always be led by the Spirit, and everything that was dead — ministry, projects, the very cells of the body — would receive new life.',
+      ],
+      fr: [
+        'Que nous ne vivions plus selon la chair, que l\'Esprit de Dieu demeure en nous, et que Dieu redonne vie à nos corps mortels.',
+        'Qu\'au sortir de cette conférence les femmes soient toujours conduites par l\'Esprit, et que tout ce qui était mort (ministère, projet, cellules du corps…) reprenne vie.',
+      ],
+    },
+  },
+  {
+    weekday: { en: 'Fri', fr: 'Ven' },
+    date: { en: 'July 31', fr: '31 Juil' },
+    scripture: 'Hebrews 6:12',
+    scriptureRef: 'Hébreux 6:12',
+    title: {
+      en: 'Expectant Faith & Persevering Prayer Rooted in God\'s Promises',
+      fr: 'La Foi Agissante & la Prière Persévérante Ancrées dans les Promesses de Dieu',
+    },
+    points: {
+      en: [
+        'That God would grant us a persevering spirit and teach us to be rooted in His promises.',
+        'That our faith would be firm, and that we would no longer neglect prayer and the Word of God.',
+      ],
+      fr: [
+        'Que Dieu nous donne de persévérer et que nous apprenions à nous enraciner dans ses promesses.',
+        'Qu\'au sortir de la conférence notre foi soit ferme, et que nous ne nous relâchions plus dans la prière et la parole de Dieu.',
+      ],
+    },
+  },
+  {
+    weekday: { en: 'Sat', fr: 'Sam' },
+    date: { en: 'August 1', fr: '1 Août' },
+    scripture: 'Matthew 10:29–30',
+    scriptureRef: 'Matthieu 10:29–30',
+    title: { en: 'The Dignity & Value of Every Person', fr: 'La Dignité & la Valeur de Chaque Personne' },
+    points: {
+      en: [
+        'That God would help us know our own worth and the worth of our neighbor, understanding that we have value in His eyes.',
+        'That we would leave more assured, knowing the value and dignity of every person to whom we will preach the gospel.',
+      ],
+      fr: [
+        'Que Dieu nous donne de connaître notre valeur et celle du prochain, et de comprendre que nous avons de la valeur à ses yeux.',
+        'Qu\'au sortir de la conférence nous soyons plus sûres de nous, connaissant la valeur et la dignité de chaque personne à qui nous irons prêcher l\'Évangile.',
+      ],
+    },
+  },
+  {
+    weekday: { en: 'Sun', fr: 'Dim' },
+    date: { en: 'August 2', fr: '2 Août' },
+    scripture: 'Acts 2:42–44',
+    scriptureRef: 'Actes 2:42–44',
+    title: { en: 'Love & Grace Expressed Among Us in Community', fr: 'L\'Amour & la Grâce Exprimés parmi Nous dans la Communauté' },
+    points: {
+      en: [
+        'That God would help us show love to one another — patient, kind, not envious, not proud, not dishonest, not easily angered, always seeking the other\'s good.',
+        'That from now on we would know how to communicate love to our neighbor as the gospel is proclaimed.',
+      ],
+      fr: [
+        'Que Dieu nous donne de manifester de l\'amour entre nous — patience, bonté, sans envie, sans orgueil, sans malhonnêteté, sans irritation, cherchant l\'intérêt de l\'autre.',
+        'Que désormais nous sachions communiquer l\'amour à notre prochain pendant que l\'Évangile est annoncé.',
+      ],
+    },
+  },
+]
+
+const GUIDE_DOWNLOADS = [
+  { label: { en: 'Lord\'s Prayer Guide (EN)', fr: 'Guide Notre Père (EN)' }, href: '/prayer/lords-prayer-guide-en.pdf' },
+  { label: { en: 'Prayer Guide (FR)', fr: 'Guide de Prière (FR)' }, href: '/prayer/guide-priere-fr.docx' },
+  { label: { en: 'Prayer Programme (EN)', fr: 'Programme de Prière (EN)' }, href: '/prayer/prayer-programme-en.pdf' },
+  { label: { en: 'Prayer Programme (FR)', fr: 'Programme de Prière (FR)' }, href: '/prayer/programme-priere-fr.pdf' },
+]
+
+// Shared renderer for a single day in the daily prayer journey.
+function DayRow({
+  day,
+  lang,
+  accent,
+  light,
+}: {
+  day: typeof LORDS_PRAYER_DAYS[number]
+  lang: 'en' | 'fr'
+  accent: string
+  light: string
+}) {
+  return (
+    <div className="flex gap-4 sm:gap-5 p-5 sm:p-6">
+      {/* Date pill */}
+      <div
+        className="flex-shrink-0 w-16 sm:w-20 rounded-2xl flex flex-col items-center justify-center py-3 text-center"
+        style={{ backgroundColor: light }}
+      >
+        <span className="text-[10px] font-semibold uppercase tracking-wide" style={{ color: accent }}>
+          {lang === 'en' ? day.weekday.en : day.weekday.fr}
+        </span>
+        <span className="text-sm font-bold leading-tight mt-0.5" style={{ color: accent }}>
+          {lang === 'en' ? day.date.en : day.date.fr}
+        </span>
+      </div>
+
+      {/* Content */}
+      <div className="flex-1 min-w-0">
+        <h4 className="text-base sm:text-lg font-bold text-[#1B3A5C] leading-snug" style={{ fontFamily: "'Playfair Display', serif" }}>
+          {lang === 'en' ? day.title.en : day.title.fr}
+        </h4>
+        {(lang === 'en' ? day.scripture : day.scriptureRef) && (
+          <div
+            className="inline-flex items-center gap-1.5 mt-2 px-3 py-1 rounded-lg text-xs font-semibold"
+            style={{ backgroundColor: light, color: accent }}
+          >
+            <span>📖</span>
+            {lang === 'en' ? day.scripture : day.scriptureRef}
+          </div>
+        )}
+        <ul className="mt-3 space-y-2">
+          {(lang === 'en' ? day.points.en : day.points.fr).map((point, j) => (
+            <li key={j} className="flex items-start gap-2.5">
+              <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: accent, opacity: 0.6 }} />
+              <p className="text-gray-600 text-sm leading-relaxed">{point}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  )
+}
+
 export default function PrayerWallPage() {
   const { lang } = useLanguage()
 
@@ -342,6 +647,93 @@ export default function PrayerWallPage() {
         </div>
       </section>
 
+      {/* ── DAILY PRAYER JOURNEY ──────────────────────────────────────────── */}
+      <section className="py-16 bg-white border-t border-[#74C69D]/20">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center mb-12">
+          <ScrollReveal>
+            <p className="text-[#C9A84C] text-sm font-semibold uppercase tracking-widest mb-3">
+              {lang === 'en' ? 'Pray Day by Day' : 'Prier Jour Après Jour'}
+            </p>
+            <h2
+              className="text-3xl sm:text-4xl font-bold text-[#1B3A5C] mb-4"
+              style={{ fontFamily: "'Playfair Display', serif" }}
+            >
+              {lang === 'en' ? 'A Daily Prayer Journey to the Conference' : 'Un Parcours de Prière Quotidien vers la Conférence'}
+            </h2>
+            <p className="text-gray-500 text-base leading-relaxed max-w-xl mx-auto">
+              {lang === 'en'
+                ? 'From July 20 through August 10, we pray together day by day — first through the Lord\'s Prayer, then through the passions that shape us — preparing our hearts for all God will do.'
+                : 'Du 20 juillet au 10 août, prions ensemble jour après jour — d\'abord à travers le Notre Père, puis à travers les passions qui nous façonnent — pour préparer nos cœurs à tout ce que Dieu fera.'}
+            </p>
+
+            {/* Downloads */}
+            <div className="flex flex-wrap items-center justify-center gap-2.5 mt-8">
+              <span className="text-xs font-semibold text-gray-400 uppercase tracking-wide w-full sm:w-auto mb-1 sm:mb-0 sm:mr-1">
+                {lang === 'en' ? 'Printable guides:' : 'Guides à imprimer :'}
+              </span>
+              {GUIDE_DOWNLOADS.map((d) => (
+                <a
+                  key={d.href}
+                  href={d.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-[#FDF6EC] hover:bg-[#74C69D]/15 border border-[#74C69D]/30 text-[#2D6A4F] text-xs font-semibold rounded-full transition-all"
+                >
+                  <span>⬇️</span>
+                  {lang === 'en' ? d.label.en : d.label.fr}
+                </a>
+              ))}
+            </div>
+          </ScrollReveal>
+        </div>
+
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          {/* Guide 1 — Lord's Prayer */}
+          <ScrollReveal>
+            <div>
+              <div className="flex items-center gap-3 mb-5">
+                <span className="text-2xl">🙏</span>
+                <div>
+                  <h3 className="text-xl font-bold text-[#2D6A4F]" style={{ fontFamily: "'Playfair Display', serif" }}>
+                    {lang === 'en' ? 'Week 1 · Praying the Lord\'s Prayer' : 'Semaine 1 · Prier avec le Notre Père'}
+                  </h3>
+                  <p className="text-gray-400 text-sm">
+                    {lang === 'en' ? 'July 20 – 26 · Matthew 6:9–13' : '20 – 26 juillet · Matthieu 6:9–13'}
+                  </p>
+                </div>
+              </div>
+              <div className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden divide-y divide-gray-50">
+                {LORDS_PRAYER_DAYS.map((day, i) => (
+                  <DayRow key={i} day={day} lang={lang} accent="#2D6A4F" light="#E8F5EE" />
+                ))}
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Guide 2 — Prayer Programme */}
+          <ScrollReveal>
+            <div>
+              <div className="flex items-center gap-3 mb-5">
+                <span className="text-2xl">🌿</span>
+                <div>
+                  <h3 className="text-xl font-bold text-[#1B3A5C]" style={{ fontFamily: "'Playfair Display', serif" }}>
+                    {lang === 'en' ? 'Prayer Programme · Seven Passions' : 'Programme de Prière · Sept Passions'}
+                  </h3>
+                  <p className="text-gray-400 text-sm">
+                    {lang === 'en' ? 'July 27 – August 10 · Pray through these themes' : '27 juillet – 10 août · Prier à travers ces thèmes'}
+                  </p>
+                </div>
+              </div>
+              <div className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden divide-y divide-gray-50">
+                {PROGRAMME_DAYS.map((day, i) => (
+                  <DayRow key={i} day={day} lang={lang} accent="#1B3A5C" light="#EEF2F7" />
+                ))}
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* ── CALL TO PRAYER ────────────────────────────────────────────────── */}
       <section className="py-16 bg-white border-t border-[#74C69D]/20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
@@ -410,7 +802,7 @@ export default function PrayerWallPage() {
             >
               {lang === 'en'
                 ? 'Rooted in Christ, Bearing Lasting Fruit'
-                : 'Enracinées en Christ, Portant des Fruits Durables'}
+                : 'Enracinées en Christ, Portant du Fruit qui Demeure'}
             </h2>
             <Link
               href="/register"

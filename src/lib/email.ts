@@ -36,7 +36,7 @@ function buildHtml(data: RegistrationEmailData): string {
           ${isEn ? "2026 Navigators of Cameroon National Women's Conference" : 'Conférence Nationale des Femmes Navigateurs du Cameroun 2026'}
         </h1>
         <p style="margin:8px 0 0;color:#74C69D;font-size:14px;font-style:italic">
-          "${isEn ? 'Rooted in Christ, Bearing Lasting Fruit' : 'Enracinées en Christ, Portant des Fruits Durables'}"
+          "${isEn ? 'Rooted in Christ, Bearing Lasting Fruit' : 'Enracinées en Christ, Portant du Fruit qui Demeure'}"
         </p>
       </td></tr>
 

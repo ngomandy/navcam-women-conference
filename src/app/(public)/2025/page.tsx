@@ -476,7 +476,7 @@ export default function Edition2025Page() {
             <p className="text-[#74C69D] text-lg mb-8">
               {lang === 'en'
                 ? '"Rooted in Christ, Bearing Lasting Fruit" — August 10–14, 2026 · Yaoundé'
-                : '« Enracinées en Christ, Portant des Fruits Durables » — 10–14 août 2026 · Yaoundé'}
+                : '« Enracinées en Christ, Portant du Fruit qui Demeure » — 10–14 août 2026 · Yaoundé'}
             </p>
             <Link
               href="/register"

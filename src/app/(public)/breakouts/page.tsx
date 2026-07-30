@@ -448,7 +448,7 @@ export default function BreakoutsPage() {
       {/* ── ROUND 2 ──────────────────────────────────────────────────────── */}
       <RoundSection
         label={lang === 'en' ? 'Round 2 · Day 3 · August 12' : 'Tour 2 · Jour 3 · 12 Août'}
-        theme={lang === 'en' ? 'Bearing Lasting Fruits' : 'Porter des Fruits Durables'}
+        theme={lang === 'en' ? 'Bearing Lasting Fruit' : 'Porter du Fruit qui Demeure'}
         sessions={ROUND2}
         color="#C9848A"
         bg="bg-[#FDF6EC]"

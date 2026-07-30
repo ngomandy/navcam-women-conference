@@ -25,7 +25,7 @@ export default function Footer() {
               className="text-white text-xl sm:text-2xl font-bold"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
-              {lang === 'en' ? 'Rooted in Christ, Bearing Lasting Fruit' : 'Enracinées en Christ, Portant des Fruits Durables'}
+              {lang === 'en' ? 'Rooted in Christ, Bearing Lasting Fruit' : 'Enracinées en Christ, Portant du Fruit qui Demeure'}
             </p>
           </div>
         </div>
