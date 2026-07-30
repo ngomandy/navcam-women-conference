@@ -187,9 +187,9 @@ function buildFaq(lang: 'en' | 'fr') {
     {
       q: lang === 'en' ? 'Where exactly is the venue?' : 'Où se trouve exactement le lieu de la conférence ?',
       a: lang === 'en'
-        ? 'The conference will be held at Care & Hope Center, Yaoundé, Cameroon. Detailed directions will be sent to all confirmed registrants.'
-        : 'La conférence se tiendra au Care & Hope Center, Yaoundé, Cameroun. Des itinéraires détaillés seront envoyés à tous les inscrits confirmés.',
-      link: { href: 'https://maps.app.goo.gl/7qvQWfhFru2Y2LXG7', labelEn: '🗺️ View on Google Maps', labelFr: '🗺️ Voir sur Google Maps' },
+        ? 'The conference will be held at Care & Hope Center, Yaoundé, Cameroon. Step-by-step directions and a short route video are on the Venue page.'
+        : 'La conférence se tiendra au Care & Hope Center, Yaoundé, Cameroun. Un itinéraire pas à pas et une courte vidéo du trajet sont disponibles sur la page Lieu.',
+      link: { href: 'https://maps.app.goo.gl/J9jLSDLPDpMimPtx7', labelEn: '🗺️ View on Google Maps', labelFr: '🗺️ Voir sur Google Maps' },
     },
     {
       q: lang === 'en' ? 'What should I bring?' : 'Que dois-je apporter ?',

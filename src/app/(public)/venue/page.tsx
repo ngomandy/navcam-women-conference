@@ -37,8 +37,7 @@ const FACILITIES = [
 ]
 
 const MAPS_EMBED = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.786!2d11.5447!3d3.8110!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x108bdbbcff6fc2a9%3A0xcb5cff82f71442af!2sCare%26Hope%20Center!5e0!3m2!1sen!2scm!4v1'
-const MAPS_LINK   = 'https://maps.app.goo.gl/7qvQWfhFru2Y2LXG7'
-const MAPS_PIN    = 'https://maps.app.goo.gl/J9jLSDLPDpMimPtx7'
+const MAPS_LINK   = 'https://maps.app.goo.gl/J9jLSDLPDpMimPtx7'
 const FB_LINK     = 'https://www.facebook.com/p/Care-Hope-Centre-61555523830106/'
 const DIRECTIONS_VIDEO = '/venue/directions-care-hope.mp4'
 
@@ -395,7 +394,7 @@ export default function VenuePage() {
                     {lang === 'en' ? '✨ Welcome!' : '✨ Bienvenue !'}
                   </p>
                   <a
-                    href={MAPS_PIN}
+                    href={MAPS_LINK}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#2D6A4F] hover:bg-[#40916C] text-white text-sm font-semibold rounded-full transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
